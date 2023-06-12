@@ -1,17 +1,69 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import './index.css'
+import { createRoot } from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import { Provider } from 'react-redux'
+import { store } from './store'
+import RegisterPage from './pages/RegisterPage'
+import LoginPage from './pages/LoginPage'
+import MobilePhonesPages from './pages/MobilePhonesPages'
+import HomePage from './pages/HomePage'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const router = createBrowserRouter([
+	{
+		path: '/',
+		element: (
+			<>
+				<Header />
+				<main>
+					<HomePage />
+				</main>
+				<Footer />
+			</>
+		),
+	},
+	{
+		path: '/mobile',
+		element: (
+			<>
+				<Header />
+				<main>
+					<MobilePhonesPages />
+				</main>
+				<Footer />
+			</>
+		),
+	},
+	{
+		path: '/register',
+		element: (
+			<>
+				<Header />
+				<main>
+					<RegisterPage />
+				</main>
+				<Footer />
+			</>
+		),
+	},
+	{
+		path: '/login',
+		element: (
+			<>
+				<Header />
+				<main>
+					<LoginPage />
+				</main>
+				<Footer />
+			</>
+		),
+	},
+])
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+createRoot(document.getElementById('root')).render(
+	<Provider store={store}>
+		<RouterProvider router={router} />
+	</Provider>
+)
