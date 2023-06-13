@@ -4,23 +4,25 @@ export const StyledRegisterContainer = styled.div`
 	width: 300px;
 	height: 400px;
 	border: 1px solid #64615a;
-	background-color: rgba(0, 0, 0, 0.6);
 	padding: 20px;
-	font-size: 16px;
+	font-size: 12px;
+	color: black;
 `
 
-export const StyledRegisterHeader = styled.div`
-	display: flex;
-	justify-content: space-between;
-	height: 50px;
-`
+// export const StyledRegisterHeader = styled.div`
+// 	display: flex;
+// 	justify-content: space-between;
+// 	margin-bottom: 20px;
+// `
 
-export const StyledRegisterTitle = styled.h1`
-	/* margin-bottom: 20px; */
-	color: white;
-	font-size: 22px;
-	text-transform: uppercase;
-	text-align: center;
+export const StyledRegisterTitle = styled.h4`
+	color: black;
+	font-size: 14px;
+	text-align: left;
+	border-bottom: 1px solid black;
+	font-weight: 300;
+	width: 100%;
+	margin-bottom: 20px;
 `
 
 export const StyledFormRegister = styled.form`
@@ -34,33 +36,40 @@ export const StyledBoxInput = styled.div`
 `
 
 export const StyledLabel = styled.label`
-	font-weight: 700;
+	color: black;
 `
 
 export const StyledInput = styled.input`
-	border: none;
-	border-bottom: 1px solid #b9b5a8;
+	border: 1px solid black;
 	background-color: transparent;
 	width: 100%;
 `
 
 export const StyledPError = styled.p`
 	font-size: 12px;
-	font-weight: 700;
+	color: black;
 `
 
 export const StyledBtn = styled.button`
-	font-size: 20px;
+	font-size: 10px;
+	background-color: #222222;
+	width: 100px;
+	height: 35px;
+	text-transform: uppercase;
+	color: white;
+
 	&:hover {
-		border: 1px solid white;
+		background-color: gray;
 	}
 `
 
 export const StyledPLogin = styled.p`
-	font-size: 14px;
+	font-size: 12px;
+	color: black;
 `
 
 export const StyledSpanLink = styled.span`
 	font-weight: 700;
-	color: #b9b5a8;
+	color: black;
+	padding: 0 5px;
 `

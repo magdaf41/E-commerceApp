@@ -1,21 +1,38 @@
 import React from 'react'
 import { products } from '../db/products'
-import { StyledNavProductsWrapper } from './StyledNavProductsWrapper.css'
+import {
+	StyledProductsListContainer,
+	StyledProduct,
+	StyledProductImage,
+	StyledProductHeader,
+} from '../components/ProductsListTemplate.css'
+import ReturnBtn from '../components/ReturnBtn'
+import { StyledNextPage } from './HomePage.css'
 
 const MobilePhonesPages = () => {
 	return (
-		<StyledNavProductsWrapper>
-			{products
-				.filter(p => p.type === 'mobile phone')
-				.map(phone => (
-					<>
-						<p>{phone.title}</p>
-						<p>{phone.desc}</p>
-						<p>{phone.price}</p>
-						<img src={phone.image} />
-					</>
-				))}
-		</StyledNavProductsWrapper>
+		<StyledNextPage>
+			<ReturnBtn />
+			<StyledProductsListContainer>
+				{products
+					.filter(p => p.type === 'mobile phone')
+					.map(phone => (
+						<StyledProduct>
+							<StyledProductImage>
+								<img src={phone.image} />
+							</StyledProductImage>
+							<StyledProductHeader>
+								<h3>{phone.title}</h3>
+								<p>{phone.price}</p>
+							</StyledProductHeader>
+
+							<p>{phone.desc}</p>
+
+							<button>Add to cart</button>
+						</StyledProduct>
+					))}
+			</StyledProductsListContainer>
+		</StyledNextPage>
 	)
 }
 

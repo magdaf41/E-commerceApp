@@ -1,9 +1,9 @@
 import React from 'react'
-import { StyledContainer, StyledImage } from './HomePage.css'
+import { StyledContainerHomePage, StyledImage } from './HomePage.css'
 
 const HomePage = () => {
 	return (
-		<StyledContainer>
+		<StyledContainerHomePage>
 			<StyledImage>
 				<img src='https://www.slashgear.com/img/gallery/12-best-uses-for-old-iphones/l-intro-1652467350.jpg'></img>
 			</StyledImage>
@@ -17,7 +17,7 @@ const HomePage = () => {
 			<StyledImage>
 				<img src='https://images.unsplash.com/photo-1559485494-b45fbb7b586b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&w=1000&q=80'></img>
 			</StyledImage>
-		</StyledContainer>
+		</StyledContainerHomePage>
 	)
 }
 

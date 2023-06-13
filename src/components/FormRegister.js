@@ -4,7 +4,7 @@ import * as Yup from 'yup'
 import { AiOutlineClose } from 'react-icons/ai'
 import {
 	StyledRegisterContainer,
-	StyledRegisterHeader,
+	// StyledRegisterHeader,
 	StyledRegisterTitle,
 	StyledBoxInput,
 	StyledBtn,
@@ -52,10 +52,10 @@ export const FormRegister = () => {
 	}
 	return (
 		<StyledRegisterContainer>
-			<StyledRegisterHeader style={{ fontSize: '20px' }}>
-				<StyledRegisterTitle>Sing up</StyledRegisterTitle>
-				<AiOutlineClose onClick={() => navigate('/')} />
-			</StyledRegisterHeader>
+			{/* <StyledRegisterHeader style={{ fontSize: '20px' }}> */}
+			<StyledRegisterTitle>Sing up</StyledRegisterTitle>
+			{/* <AiOutlineClose onClick={() => navigate('/')} /> */}
+			{/* </StyledRegisterHeader> */}
 			<Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={submitForm}>
 				{({ errors, touched, handleBlur, handleChange, handleSubmit, values }) => (
 					<StyledFormRegister onSubmit={handleSubmit} noValidate>
