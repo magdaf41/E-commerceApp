@@ -9,6 +9,8 @@ import { store } from './store'
 import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
 import MobilePhonesPages from './pages/MobilePhonesPages'
+import HeadphonesPages from './pages/HeadphonesPages'
+import SmartwatchPages from './pages/SmartwatchPages'
 import HomePage from './pages/HomePage'
 
 const router = createBrowserRouter([
@@ -31,6 +33,30 @@ const router = createBrowserRouter([
 				<Header />
 				<main>
 					<MobilePhonesPages />
+				</main>
+				<Footer />
+			</>
+		),
+	},
+	{
+		path: '/headphone',
+		element: (
+			<>
+				<Header />
+				<main>
+					<HeadphonesPages />
+				</main>
+				<Footer />
+			</>
+		),
+	},
+	{
+		path: '/smartwatch',
+		element: (
+			<>
+				<Header />
+				<main>
+					<SmartwatchPages />
 				</main>
 				<Footer />
 			</>

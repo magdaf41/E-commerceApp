@@ -71,12 +71,21 @@ const Header = () => {
 					<Link to='/mobile'>
 						<a>mobile phone</a>
 					</Link>
-
-					<a>headphone</a>
-					<a>smartwatch</a>
-					<a>laptop</a>
-					<a>the newest</a>
-					<a>sale</a>
+					<Link to='/headphone'>
+						<a>headphone</a>
+					</Link>
+					<Link to='/smartwatch'>
+						<a>smartwatch</a>
+					</Link>
+					<Link to='/laptop'>
+						<a>laptop</a>
+					</Link>
+					<Link to='/thenewest'>
+						<a>the newest</a>
+					</Link>
+					<Link to='/thenewest'>
+						<a>sale</a>
+					</Link>
 				</StyledNav>
 			</StyledRowNav>
 		</StyledHeader>

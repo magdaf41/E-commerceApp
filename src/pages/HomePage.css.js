@@ -8,6 +8,7 @@ export const StyledContainerHomePage = styled.div`
 	padding: 30px 0;
 `
 export const StyledNextPage = styled.div`
+	padding: 30px;
 	background: #ffffff;
 `
 
@@ -17,15 +18,17 @@ export const StyledContainerRegisterPage = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 30px 0;
+	padding: 30px;
 	background: #ffffff;
 `
 
 export const StyledButtonPreviousPage = styled.button`
-	width: 80%;
-	color: black;
+	width: 100%;
+	display: flex;
+	justify-content: end;
 	font-size: 10px;
-	text-align: right;
+	color: black;
+	font-weight: 500;
 `
 
 export const StyledImage = styled.div`
