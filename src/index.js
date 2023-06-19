@@ -12,6 +12,7 @@ import MobilePhonesPages from './pages/MobilePhonesPages'
 import HeadphonesPages from './pages/HeadphonesPages'
 import SmartwatchPages from './pages/SmartwatchPages'
 import HomePage from './pages/HomePage'
+import OrderPage from './pages/OrderPage'
 
 const router = createBrowserRouter([
 	{
@@ -81,6 +82,18 @@ const router = createBrowserRouter([
 				<Header />
 				<main>
 					<LoginPage />
+				</main>
+				<Footer />
+			</>
+		),
+	},
+	{
+		path: '/order',
+		element: (
+			<>
+				<Header />
+				<main>
+					<OrderPage />
 				</main>
 				<Footer />
 			</>

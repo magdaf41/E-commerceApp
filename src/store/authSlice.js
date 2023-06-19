@@ -55,9 +55,17 @@ export const authSlice = createSlice({
     logout: (state) => {
       state.loggedUser = null;
     },
+    clearResponse: (state) => {
+      state.response = {
+        response: {
+          success: null,
+          message: "",
+        },
+      };
+    },
   },
 });
 
-export const { login, logout, register } = authSlice.actions;
+export const { login, logout, register, clearResponse } = authSlice.actions;
 
 export default authSlice.reducer;

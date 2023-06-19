@@ -1,5 +1,4 @@
 import React from 'react'
-import { products } from '../db/products'
 import {
 	StyledProductsListContainer,
 	StyledProduct,
@@ -8,8 +7,10 @@ import {
 } from '../components/ProductsListTemplate.css'
 import ReturnBtn from '../components/ReturnBtn'
 import { StyledNextPage } from './HomePage.css'
+import { useSelector } from 'react-redux'
 
 const HeadphonesPages = () => {
+	const products = useSelector(state => state.order.products)
 	return (
 		<StyledNextPage>
 			<ReturnBtn />
