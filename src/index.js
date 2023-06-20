@@ -13,6 +13,8 @@ import HeadphonesPages from './pages/HeadphonesPages'
 import SmartwatchPages from './pages/SmartwatchPages'
 import HomePage from './pages/HomePage'
 import OrderPage from './pages/OrderPage'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const router = createBrowserRouter([
 	{
@@ -104,5 +106,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
 	<Provider store={store}>
 		<RouterProvider router={router} />
+		<ToastContainer />
 	</Provider>
 )

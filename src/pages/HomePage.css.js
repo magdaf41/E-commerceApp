@@ -12,7 +12,7 @@ export const StyledNextPage = styled.div`
 	background: #ffffff;
 `
 
-export const StyledContainerRegisterPage = styled.div`
+export const StyledContainerFormPage = styled.div`
 	width: 100%;
 	display: flex;
 	flex-direction: column;

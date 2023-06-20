@@ -7,10 +7,13 @@ import {
 } from '../components/ProductsListTemplate.css'
 import ReturnBtn from '../components/ReturnBtn'
 import { StyledNextPage } from './HomePage.css'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { addProductToOrder } from '../store/orderSlice'
 
 const HeadphonesPages = () => {
+	const dispatch = useDispatch()
 	const products = useSelector(state => state.order.products)
+
 	return (
 		<StyledNextPage>
 			<ReturnBtn />
@@ -29,7 +32,12 @@ const HeadphonesPages = () => {
 
 							<p>{headphone.desc}</p>
 
-							<button>Add to cart</button>
+							<button
+								onClick={() => {
+									dispatch(addProductToOrder(headphone))
+								}}>
+								Add to cart
+							</button>
 						</StyledProduct>
 					))}
 			</StyledProductsListContainer>
