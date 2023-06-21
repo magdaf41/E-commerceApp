@@ -15,6 +15,7 @@ import HomePage from './pages/HomePage'
 import OrderPage from './pages/OrderPage'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import LaptopPages from './pages/LaptopPages'
 
 const router = createBrowserRouter([
 	{
@@ -60,6 +61,18 @@ const router = createBrowserRouter([
 				<Header />
 				<main>
 					<SmartwatchPages />
+				</main>
+				<Footer />
+			</>
+		),
+	},
+	{
+		path: '/laptop',
+		element: (
+			<>
+				<Header />
+				<main>
+					<LaptopPages />
 				</main>
 				<Footer />
 			</>

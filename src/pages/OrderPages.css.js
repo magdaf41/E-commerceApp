@@ -57,3 +57,22 @@ export const StyledOrderedQuantity = styled.div`
 		text-align: center;
 	}
 `
+export const StyledCartSumUp = styled.div`
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	gap: 20px;
+`
+
+export const StyledClearCart = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+`
+
+export const StyledSubtotal = styled.div`
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+`
