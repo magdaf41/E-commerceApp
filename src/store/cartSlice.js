@@ -9,11 +9,11 @@ const initialState = {
 	cartTotalAmount: 0,
 }
 
-export const orderSlice = createSlice({
-	name: 'order',
+export const cartSlice = createSlice({
+	name: 'cart',
 	initialState,
 	reducers: {
-		addProductToOrder: (state, action) => {
+		addProductToCart: (state, action) => {
 			// state.orderedProducts = [...state.orderedProducts, action.payload]
 			const existingIndex = state.orderedProducts.findIndex(item => item.id === action.payload.id)
 			if (existingIndex >= 0) {
@@ -56,7 +56,7 @@ export const orderSlice = createSlice({
 
 			// localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
 		},
-		removeProductFromOrder: (state, action) => {
+		removeProductFromCart: (state, action) => {
 			state.orderedProducts.map(orderedProducts => {
 				if (orderedProducts.id === action.payload.id) {
 					const updateOrderedProducts = state.orderedProducts.filter(item => item.id !== orderedProducts.id)
@@ -85,13 +85,36 @@ export const orderSlice = createSlice({
 			state.cartTotalQuantity = quantity
 			state.cartTotalAmount = total
 		},
-		clearOrderedProducts: state => {
+		clearCart: state => {
 			state.orderedProducts = []
+		},
+		addNewProduct: (state, action) => {
+			state.products = [...state.products, action.payload]
+		},
+		removeProduct: (state, action) => {
+			state.products = state.products.filter(product => product.id !== action.payload)
+		},
+		editProduct: (state, action) => {
+			state.products = state.products.map(product => {
+				if (product.id === action.payload.id) {
+					return action.payload
+				} else {
+					return product
+				}
+			})
 		},
 	},
 })
 
-export const { addProductToOrder, decreaseOrderedProducts, clearOrderedProducts, removeProductFromOrder, getTotals } =
-	orderSlice.actions
+export const {
+	addProductToCart,
+	decreaseOrderedProducts,
+	clearCart,
+	removeProductFromCart,
+	getTotals,
+	addNewProduct,
+	removeProduct,
+	editProduct,
+} = cartSlice.actions
 
-export default orderSlice.reducer
+export default cartSlice.reducer

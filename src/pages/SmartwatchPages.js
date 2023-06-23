@@ -10,7 +10,7 @@ import { StyledNextPage } from './HomePage.css'
 import { useSelector } from 'react-redux'
 
 const SmartwatchPages = () => {
-	const products = useSelector(state => state.order.products)
+	const products = useSelector(state => state.cart.products)
 	return (
 		<StyledNextPage>
 			<ReturnBtn />

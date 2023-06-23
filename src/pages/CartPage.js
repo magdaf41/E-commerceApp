@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import {
-	removeProductFromOrder,
-	addProductToOrder,
+	removeProductFromCart,
+	addProductToCart,
 	decreaseOrderedProducts,
-	clearOrderedProducts,
+	clearCart,
 	getTotals,
-} from '../store/orderSlice'
+} from '../store/cartSlice'
 import {
 	StyledContainerFormPage,
 	StyledCart,
@@ -21,13 +22,17 @@ import {
 	StyledCartSumUp,
 	StyledClearCart,
 	StyledSubtotal,
-} from './OrderPages.css'
+} from './CartPage.css'
 import { StyledBtn } from '../components/_shared/Form.css'
+import { addOrder } from '../store/ordersListSlice'
 
-const OrderPage = () => {
+const CartPage = () => {
 	const dispatch = useDispatch()
-	const orderedProducts = useSelector(state => state.order.orderedProducts)
-	const totalAmount = useSelector(state => state.order.cartTotalAmount)
+	const orderedProducts = useSelector(state => state.cart.orderedProducts)
+	const totalAmount = useSelector(state => state.cart.cartTotalAmount)
+	const ordersList = useSelector(state => state.ordersList.orders)
+	const loggeduser = useSelector(state => state.auth.loggedUser)
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		dispatch(getTotals())
@@ -35,11 +40,23 @@ const OrderPage = () => {
 	}, [orderedProducts, dispatch])
 
 	const handleAddToCart = product => {
-		dispatch(addProductToOrder(product))
+		dispatch(addProductToCart(product))
 	}
 
 	const handleDecreaseCart = product => {
 		dispatch(decreaseOrderedProducts(product))
+	}
+
+	const sendOrder = () => {
+		dispatch(
+			addOrder({
+				id: 'test',
+				date: new Date(),
+				user: loggeduser,
+				products: orderedProducts,
+			})
+		)
+		navigate('/orders')
 	}
 
 	return (
@@ -64,7 +81,7 @@ const OrderPage = () => {
 										<p>{product.title}</p>
 										<button
 											onClick={() => {
-												dispatch(removeProductFromOrder(product))
+												dispatch(removeProductFromCart(product))
 											}}>
 											Remove
 										</button>
@@ -94,7 +111,7 @@ const OrderPage = () => {
 						<StyledClearCart>
 							<StyledBtn
 								onClick={() => {
-									dispatch(clearOrderedProducts(orderedProducts))
+									dispatch(clearCart(orderedProducts))
 								}}>
 								Clear Cart
 							</StyledBtn>
@@ -105,7 +122,7 @@ const OrderPage = () => {
 								<span> ${totalAmount}</span>
 							</StyledSubtotal>
 							<div>
-								<StyledBtn>Check out</StyledBtn>
+								<StyledBtn onClick={sendOrder}>Check out</StyledBtn>
 							</div>
 
 							<div className='continue-shopping'>
@@ -121,4 +138,4 @@ const OrderPage = () => {
 	)
 }
 
-export default OrderPage
+export default CartPage

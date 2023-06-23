@@ -2,7 +2,7 @@ const { v4: uuidv4 } = require('uuid')
 
 export const productsList = [
 	{
-		id: uuidv4(),
+		id: 'e64d2713-2c18-4d77-a484-3530d5577d34',
 		title: 'Apple iPhone 13',
 		desc: 'The latest flagship smartphone from Apple',
 		image:
@@ -12,7 +12,7 @@ export const productsList = [
 		category: 'newest',
 	},
 	{
-		id: uuidv4(),
+		id: '7d643123-640e-4024-af5f-75fa830b883c',
 		title: 'Samsung Galaxy S21',
 		desc: 'Powerful Android smartphone with a stunning display',
 		image: 'https://mobile-city.pl/pol_pm_Samsung-Galaxy-S21-5G-G991-8-128GB-Dual-Sim-Fioletowy-33399_1.jpg',
@@ -21,7 +21,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: 'db560cc6-343a-49c6-876c-d89f49f70a4f',
 		title: 'Google Pixel 6',
 		desc: 'High-end smartphone with a top-notch camera',
 		image:
@@ -31,7 +31,7 @@ export const productsList = [
 		category: 'newest',
 	},
 	{
-		id: uuidv4(),
+		id: '7dd26012-b308-49cf-9896-490cb4eb7cb6',
 		title: 'OnePlus 9 Pro',
 		desc: 'Flagship smartphone with fast performance and impressive display',
 		image:
@@ -41,7 +41,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '7f22d992-1724-4fa9-bbc7-ba5b6c615d77',
 		title: 'Xiaomi Mi 11',
 		desc: 'Affordable smartphone with powerful hardware',
 		image:
@@ -51,7 +51,7 @@ export const productsList = [
 		category: 'sale',
 	},
 	{
-		id: uuidv4(),
+		id: '4c1f764c-1164-4bc8-9dab-4a651d331ff0',
 		title: 'Sony Xperia 1 III',
 		desc: 'Premium smartphone with a 4K OLED display and advanced camera system',
 		image:
@@ -61,7 +61,7 @@ export const productsList = [
 		category: 'newest',
 	},
 	{
-		id: uuidv4(),
+		id: '09b36de7-9e1b-4a8f-a16c-06fe975a7f20',
 		title: 'Samsung Galaxy Note 20 Ultra',
 		desc: 'Feature-packed smartphone with S Pen support',
 		image: 'https://files.refurbed.com/ii/samsung-glxy-note-20-ultra-1676298739.jpg?t=resize&h=600&w=800',
@@ -70,7 +70,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: 'eec2ce27-657d-4bcd-88ef-d976b808adeb',
 		title: 'iPhone SE (2022)',
 		desc: 'Compact and powerful iPhone with an affordable price',
 		image:
@@ -80,7 +80,7 @@ export const productsList = [
 		category: 'sale',
 	},
 	{
-		id: uuidv4(),
+		id: 'a3f62e03-d075-4666-9743-4ef9d26cd4e4',
 		title: 'OnePlus Nord 2',
 		desc: 'Mid-range smartphone with impressive performance',
 		image:
@@ -90,7 +90,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: 'ba573f2c-2088-47b9-abd8-bff2f4b041fc',
 		title: 'Xiaomi Redmi Note 11 Pro 5G',
 		desc: 'Budget-friendly smartphone with a high-resolution camera',
 		image: 'https://files.refurbed.com/ii/xiaomi-redmi-note-11-pro-5g-1676615255.jpg?t=resize&h=600&w=800',
@@ -99,7 +99,7 @@ export const productsList = [
 		category: 'sale',
 	},
 	{
-		id: uuidv4(),
+		id: '048785ad-6e8c-4835-b1e2-70a667a89d69',
 		title: 'Apple Watch Series 7',
 		desc: 'The latest smartwatch from Apple with advanced features',
 		image:
@@ -109,7 +109,7 @@ export const productsList = [
 		category: 'newest',
 	},
 	{
-		id: uuidv4(),
+		id: '7b2d1637-5da8-4d01-8108-9e9bb6d9b6b0',
 		title: 'Samsung Galaxy Watch 4',
 		desc: 'High-end smartwatch with fitness tracking capabilities',
 		image:
@@ -119,7 +119,7 @@ export const productsList = [
 		category: 'newest',
 	},
 	{
-		id: uuidv4(),
+		id: '430bc125-e936-4ec4-b0d2-8948c0adc3cf',
 		title: 'Fitbit Versa 3',
 		desc: 'Versatile smartwatch with built-in GPS and health monitoring',
 		image:
@@ -129,7 +129,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: 'c6e8351c-efef-4c23-b28c-a4480614e848',
 		title: 'Garmin Fenix 6 Pro',
 		desc: 'Premium multisport smartwatch with rugged design',
 		image:
@@ -139,7 +139,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '28a389ca-aee2-4fc5-9fc2-6ce013e782a4',
 		title: 'Amazfit GTS 2',
 		desc: 'Affordable smartwatch with AMOLED display and long battery life',
 		image:
@@ -149,7 +149,7 @@ export const productsList = [
 		category: 'sale',
 	},
 	{
-		id: uuidv4(),
+		id: '0166d1fd-5b55-4427-8146-4dd05b172833',
 		title: 'Huawei Watch GT 2 Pro',
 		desc: 'Stylish smartwatch with exceptional battery life',
 		image:
@@ -159,7 +159,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '408a35df-d69b-43a3-9aeb-e97a4cf76eaf',
 		title: 'Fossil Gen 5',
 		desc: 'Fashionable smartwatch with Wear OS by Google',
 		image: 'https://image.ceneostatic.pl/data/products/85434019/f-fossil-gen-5-czarny-ftw4025.jpg',
@@ -168,7 +168,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '57792981-c477-42f3-9fe3-78621ab18319',
 		title: 'Xiaomi Mi Watch Lite',
 		desc: 'Affordable smartwatch with basic fitness tracking features',
 		image:
@@ -178,7 +178,7 @@ export const productsList = [
 		category: 'sale',
 	},
 	{
-		id: uuidv4(),
+		id: '213901b8-c7af-4acb-8cb8-e7c56993bd7f',
 		title: 'TicWatch Pro 3',
 		desc: 'Advanced smartwatch with dual-display technology',
 		image:
@@ -188,7 +188,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '36e4c0bd-c725-4394-bfd7-0ab1bee5e105',
 		title: 'Garmin Venu 2',
 		desc: 'Smartwatch with vibrant AMOLED display and health monitoring',
 		image:
@@ -198,7 +198,7 @@ export const productsList = [
 		category: 'newest',
 	},
 	{
-		id: uuidv4(),
+		id: '9439cf31-7ec2-4c97-a2e1-c360bd013c60',
 		title: 'Samsung Galaxy Watch Active 2',
 		desc: 'Sleek and lightweight smartwatch with fitness tracking',
 		image:
@@ -208,7 +208,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '1d6a9b38-ebd5-42eb-a75e-4b29b67ff422',
 		title: 'Amazfit Bip U Pro',
 		desc: 'Budget-friendly smartwatch with built-in GPS and heart rate monitoring',
 		image:
@@ -218,7 +218,7 @@ export const productsList = [
 		category: 'sale',
 	},
 	{
-		id: uuidv4(),
+		id: 'cabdc670-83ae-4de0-842a-4960032baa3e',
 		title: 'Huawei Watch Fit',
 		desc: 'Lightweight and stylish smartwatch with long battery life',
 		image:
@@ -228,7 +228,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '1514805d-7817-4a3e-8249-88f0cf6caf36',
 		title: 'Fitbit Sense',
 		desc: 'Advanced health and fitness smartwatch with stress management features',
 		image:
@@ -238,7 +238,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '66902c7e-a8c9-4086-a434-bddd8ed8bc3c',
 		title: 'Garmin Forerunner 245 Music',
 		desc: 'GPS running smartwatch with music storage and playback',
 		image:
@@ -248,7 +248,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '839c4d4d-6a3b-49d7-84a1-e34b24775f8d',
 		title: 'Sony WH-1000XM4',
 		desc: 'High-quality wireless noise-cancelling headphones',
 		image:
@@ -258,7 +258,7 @@ export const productsList = [
 		category: 'newest',
 	},
 	{
-		id: uuidv4(),
+		id: 'e70ccde7-af2d-461e-abe6-b3e8e02f5109',
 		title: 'Bose QuietComfort 35 II',
 		desc: 'Comfortable over-ear headphones with excellent noise cancellation',
 		image: 'https://prod-api.mediaexpert.pl/api/images/gallery/thumbnails/images/12/1220649/1.jpg',
@@ -267,7 +267,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '8c02e268-0aee-4b6f-96d5-789169849e26',
 		title: 'Apple AirPods Pro',
 		desc: 'Wireless earbuds with active noise cancellation',
 		image:
@@ -277,7 +277,7 @@ export const productsList = [
 		category: 'newest',
 	},
 	{
-		id: uuidv4(),
+		id: 'b30525fb-3951-4f7c-b09b-8af28b45a12e',
 		title: 'Sennheiser HD 660 S',
 		desc: 'Open-back headphones for audiophiles',
 		image: 'https://prod-api.mediaexpert.pl/api/images/gallery_500_500/thumbnails/images/11/1176853/11.JPG',
@@ -286,7 +286,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: 'a8cf6f13-db67-4a93-884e-fd2252187fb3',
 		title: 'Jabra Elite 85t',
 		desc: 'True wireless earbuds with advanced sound quality',
 		image:
@@ -296,7 +296,7 @@ export const productsList = [
 		category: 'newest',
 	},
 	{
-		id: uuidv4(),
+		id: 'fff9141a-38a2-4863-97d1-4644f01386af',
 		title: 'Beyerdynamic DT 990 Pro',
 		desc: 'Professional open-back studio headphones',
 		image:
@@ -306,7 +306,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '4dc48c76-ebba-489d-aca5-46771bd3b4ef',
 		title: 'JBL Free X',
 		desc: 'True wireless earbuds with a compact design',
 		image: 'https://prod-api.mediaexpert.pl/api/images/gallery_500_500/thumbnails/images/16/1650037/FREE_X_1.jpg',
@@ -315,7 +315,7 @@ export const productsList = [
 		category: 'sale',
 	},
 	{
-		id: uuidv4(),
+		id: '01b38757-b268-41de-9593-8cb5c9bbaaed',
 		title: 'Audio-Technica ATH-M50x',
 		desc: 'Popular closed-back headphones for studio and DJ use',
 		image:
@@ -325,7 +325,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '1c08fdb5-b430-4cb1-b613-0dec0bdee63c',
 		title: 'Sennheiser Momentum True Wireless 2',
 		desc: 'Premium true wireless earbuds with excellent sound quality',
 		image:
@@ -335,7 +335,7 @@ export const productsList = [
 		category: 'newest',
 	},
 	{
-		id: uuidv4(),
+		id: '494e6135-0f15-4021-86d6-df07b398d5f8',
 		title: 'Sony WF-1000XM4',
 		desc: 'Wireless earbuds with industry-leading noise cancellation',
 		image:
@@ -345,7 +345,7 @@ export const productsList = [
 		category: 'newest',
 	},
 	{
-		id: uuidv4(),
+		id: 'f9687b16-9a15-450c-9ebc-179ade69e002',
 		title: 'Beats Studio3 Wireless',
 		desc: 'Stylish over-ear headphones with balanced sound',
 		image:
@@ -355,7 +355,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: 'a8c52e90-efed-4bd9-a3d8-80dd8e8976eb',
 		title: 'JBL Live 650BTNC',
 		desc: 'Wireless headphones with active noise cancellation',
 		image:
@@ -365,7 +365,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: 'fbdade50-00c1-491b-a81d-e8905dcb9b86',
 		title: 'Bose SoundSport Free',
 		desc: 'True wireless earbuds designed for sports activities',
 		image:
@@ -375,7 +375,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: 'f576f5bf-007c-4d83-b1d3-e32481eb3601',
 		title: 'AKG K371',
 		desc: 'Closed-back studio headphones with accurate sound reproduction',
 		image:
@@ -385,7 +385,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: 'db505efb-ce5c-4013-8046-c433897bdeeb',
 		title: 'Jabra Elite 75t',
 		desc: 'Compact true wireless earbuds with great call quality',
 		image:
@@ -395,7 +395,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '5564cde8-54f3-4efc-86e1-5fd550919bed',
 		title: 'Apple iPad Pro',
 		desc: 'Powerful tablet with a stunning display and advanced features',
 		image:
@@ -405,7 +405,7 @@ export const productsList = [
 		category: 'newest',
 	},
 	{
-		id: uuidv4(),
+		id: '63261acf-cbb2-4e9c-861f-dca25d82e647',
 		title: 'Samsung Galaxy Tab S7+',
 		desc: 'High-end Android tablet with a large AMOLED display',
 		image:
@@ -415,7 +415,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: 'd0501506-211a-459c-a72e-4f9c19aa20aa',
 		title: 'Microsoft Surface Pro 7',
 		desc: 'Versatile 2-in-1 tablet with a detachable keyboard',
 		image:
@@ -425,7 +425,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '479ac61e-1bc8-4fcd-af33-b79a69f8ef00',
 		title: 'Amazon Fire HD 10',
 		desc: 'Affordable tablet with a Full HD display and Alexa integration',
 		image:
@@ -435,7 +435,7 @@ export const productsList = [
 		category: 'sale',
 	},
 	{
-		id: uuidv4(),
+		id: 'a8af7ed0-670f-413b-a1b8-55c83f8b2b9c',
 		title: 'Lenovo Tab P11 Pro',
 		desc: 'Premium Android tablet with a vibrant OLED display',
 		image:
@@ -445,7 +445,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '7f9c2fc5-43f0-46a5-9a8d-13f29ab61f01',
 		title: 'Huawei MatePad Pro',
 		desc: 'Sleek and powerful tablet with a large screen and fast performance',
 		image: 'https://files.refurbed.com/ii/huawei-matepad-pro-10-8-1642080935.jpg?t=resize&h=600&w=800',
@@ -454,7 +454,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '3b21d544-9799-4d92-b75b-79037e1170fa',
 		title: 'Apple MacBook Pro',
 		desc: 'Powerful laptop with stunning Retina display and long battery life',
 		image:
@@ -464,7 +464,7 @@ export const productsList = [
 		category: 'newest',
 	},
 	{
-		id: uuidv4(),
+		id: 'a900b143-7e56-432c-ae4b-def4dbbdf6bc',
 		title: 'Dell XPS 15',
 		desc: 'Premium laptop with a sleek design and excellent performance',
 		image:
@@ -474,7 +474,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: 'd6601f9f-e755-4033-b2cf-1d8f40fdb4c4',
 		title: 'HP Spectre x360',
 		desc: 'Versatile 2-in-1 laptop with a convertible design and high-quality display',
 		image:
@@ -484,7 +484,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: 'f9ebb363-74fa-4121-b36d-0494d98b4028',
 		title: 'Lenovo ThinkPad X1 Carbon',
 		desc: 'Lightweight and durable business laptop with powerful performance',
 		image:
@@ -494,7 +494,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '8069c0fc-1ce5-4a62-b385-eb0c61c736d8',
 		title: 'Asus ROG Zephyrus G14',
 		desc: 'Gaming laptop with a powerful AMD processor and high-refresh-rate display',
 		image:
@@ -504,7 +504,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '90795419-5f4e-4cbd-b833-e4dd3a0db10c',
 		title: 'Microsoft Surface Laptop 4',
 		desc: 'Slim and stylish laptop with excellent build quality and smooth performance',
 		image:
@@ -514,7 +514,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: 'cadd4a74-f491-4b11-9524-1d5de446ba03',
 		title: 'Acer Predator Helios 300',
 		desc: 'Gaming laptop with powerful specifications and a high-refresh-rate display',
 		image:
@@ -524,7 +524,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: 'ab0d706e-d62e-4bda-8ef7-e30d66f03687',
 		title: 'Razer Blade 15',
 		desc: 'Sleek gaming laptop with a high-refresh-rate display and customizable RGB keyboard',
 		image:
@@ -534,7 +534,7 @@ export const productsList = [
 		category: 'newest',
 	},
 	{
-		id: uuidv4(),
+		id: '0001af2b-92b5-4d25-8ec1-45b89a5c30cd',
 		title: 'LG Gram 14',
 		desc: 'Ultra-lightweight laptop with long battery life and a durable build',
 		image:
@@ -544,7 +544,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '6e828fe8-9321-4d6b-b4af-33348d6ad5a9',
 		title: 'Lenovo Yoga C940',
 		desc: 'Flexible 2-in-1 laptop with a high-resolution display and powerful performance',
 		image:
@@ -554,7 +554,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: '87260dfb-91a0-40f9-bc00-04d67d8a0b17',
 		title: 'Alienware M15 R4',
 		desc: 'High-performance gaming laptop with a futuristic design and advanced features',
 		image: 'https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big,,2023/3/pr_2023_3_3_9_17_19_352_02.jpg',
@@ -563,7 +563,7 @@ export const productsList = [
 		category: 'newest',
 	},
 	{
-		id: uuidv4(),
+		id: '3306ddce-3906-4a35-a0fe-4dcd77b314e8',
 		title: 'HP Envy 13',
 		desc: 'Stylish and portable laptop with a vibrant display and fast performance',
 		image:
@@ -573,7 +573,7 @@ export const productsList = [
 		category: 'regular',
 	},
 	{
-		id: uuidv4(),
+		id: 'd9e6cf7c-f332-423d-b936-d9a9b98d4435',
 		title: 'Asus ZenBook 14',
 		desc: 'Slim and lightweight laptop with a powerful processor and immersive display',
 		image:
@@ -583,7 +583,7 @@ export const productsList = [
 		category: 'newest',
 	},
 	{
-		id: uuidv4(),
+		id: 'b8aadf6b-6ccd-4c23-8753-4e9a96ed1cb1',
 		title: 'Microsoft Surface Book 3',
 		desc: 'Premium 2-in-1 laptop with detachable display and excellent performance',
 		image:
@@ -593,7 +593,7 @@ export const productsList = [
 		category: 'newest',
 	},
 	{
-		id: uuidv4(),
+		id: 'c17f1a0c-59cf-408d-835f-2cf44665b801',
 		title: 'Acer Swift 3',
 		desc: 'Affordable and lightweight laptop with a long battery life and decent performance',
 		image:
@@ -603,7 +603,7 @@ export const productsList = [
 		category: 'sale',
 	},
 	{
-		id: uuidv4(),
+		id: '75377e83-69ae-4821-8334-fe66dd3a1304',
 		title: 'Lenovo Legion 5',
 		desc: 'Gaming laptop with powerful specifications and a high-refresh-rate display',
 		image:

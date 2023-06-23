@@ -26,7 +26,7 @@ const Header = () => {
 	const logOutUser = values => {
 		dispatch(logout(values))
 	}
-	const orderedProducts = useSelector(state => state.order.orderedProducts)
+	const orderedProducts = useSelector(state => state.cart.orderedProducts)
 
 	return (
 		<StyledHeader>

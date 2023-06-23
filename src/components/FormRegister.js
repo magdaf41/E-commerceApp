@@ -1,7 +1,7 @@
 import { React, useEffect } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
-import { AiOutlineClose } from "react-icons/ai";
+// import { AiOutlineClose } from "react-icons/ai";
 import {
   StyledRegisterContainer,
   // StyledRegisterHeader,

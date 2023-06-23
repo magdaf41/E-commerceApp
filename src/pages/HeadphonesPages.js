@@ -8,11 +8,11 @@ import {
 import ReturnBtn from '../components/ReturnBtn'
 import { StyledNextPage } from './HomePage.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { addProductToOrder } from '../store/orderSlice'
+import { addProductToCart } from '../store/cartSlice'
 
 const HeadphonesPages = () => {
 	const dispatch = useDispatch()
-	const products = useSelector(state => state.order.products)
+	const products = useSelector(state => state.cart.products)
 
 	return (
 		<StyledNextPage>
@@ -34,7 +34,7 @@ const HeadphonesPages = () => {
 
 							<button
 								onClick={() => {
-									dispatch(addProductToOrder(headphone))
+									dispatch(addProductToCart(headphone))
 								}}>
 								Add to cart
 							</button>

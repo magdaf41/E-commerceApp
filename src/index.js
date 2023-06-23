@@ -12,10 +12,11 @@ import MobilePhonesPages from './pages/MobilePhonesPages'
 import HeadphonesPages from './pages/HeadphonesPages'
 import SmartwatchPages from './pages/SmartwatchPages'
 import HomePage from './pages/HomePage'
-import OrderPage from './pages/OrderPage'
+import CartPage from './pages/CartPage'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import LaptopPages from './pages/LaptopPages'
+import OrdersList from './pages/OrdersList'
 
 const router = createBrowserRouter([
 	{
@@ -108,7 +109,19 @@ const router = createBrowserRouter([
 			<>
 				<Header />
 				<main>
-					<OrderPage />
+					<CartPage />
+				</main>
+				<Footer />
+			</>
+		),
+	},
+	{
+		path: '/orders',
+		element: (
+			<>
+				<Header />
+				<main>
+					<OrdersList />
 				</main>
 				<Footer />
 			</>
