@@ -90,6 +90,13 @@ const Header = () => {
 					</Link>
 				</StyledNav>
 			</StyledRowNav>
+			<StyledRowNav>
+				<StyledNav>
+					<Link to='/products'>
+						<a>products list</a>
+					</Link>
+				</StyledNav>
+			</StyledRowNav>
 		</StyledHeader>
 	)
 }

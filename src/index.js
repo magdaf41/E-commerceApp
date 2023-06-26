@@ -17,6 +17,8 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import LaptopPages from './pages/LaptopPages'
 import OrdersList from './pages/OrdersList'
+import ProductsList from './pages/ProductsList'
+import FormAdminEditProduct from './components/FormAdminEditProduct'
 
 const router = createBrowserRouter([
 	{
@@ -122,6 +124,30 @@ const router = createBrowserRouter([
 				<Header />
 				<main>
 					<OrdersList />
+				</main>
+				<Footer />
+			</>
+		),
+	},
+	{
+		path: '/products',
+		element: (
+			<>
+				<Header />
+				<main>
+					<ProductsList />
+				</main>
+				<Footer />
+			</>
+		),
+	},
+	{
+		path: '/newproduct',
+		element: (
+			<>
+				<Header />
+				<main>
+					<FormAdminEditProduct />
 				</main>
 				<Footer />
 			</>

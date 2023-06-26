@@ -5,6 +5,7 @@ import { toast } from 'react-toastify'
 const initialState = {
 	products: productsList,
 	orderedProducts: [],
+	updateListOfProducts: productsList,
 	cartTotalQuantity: 0,
 	cartTotalAmount: 0,
 }
@@ -89,10 +90,17 @@ export const cartSlice = createSlice({
 			state.orderedProducts = []
 		},
 		addNewProduct: (state, action) => {
-			state.products = [...state.products, action.payload]
+			state.updateListOfProducts = [...state.updateListOfProducts, action.payload]
 		},
 		removeProduct: (state, action) => {
-			state.products = state.products.filter(product => product.id !== action.payload)
+			state.updateListOfProducts.map(products => {
+				if (products.id === action.payload.id) {
+					const updateProductsList = state.updateListOfProducts.filter(item => item.id !== products.id)
+
+					state.updateListOfProducts = updateProductsList
+				}
+			})
+			// state.products = state.products.filter(product => product.id !== action.payload)
 		},
 		editProduct: (state, action) => {
 			state.products = state.products.map(product => {
