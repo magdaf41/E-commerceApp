@@ -12,7 +12,7 @@ import { Link, Navigate } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { removeProduct } from '../store/cartSlice'
 import { editProduct } from '../store/cartSlice'
-
+import { StyledBtn } from '../components/_shared/Form.css'
 
 const ProductsList = () => {
 	const dispatch = useDispatch()
@@ -64,9 +64,10 @@ const ProductsList = () => {
 						</div>
 					</StyledProduct>
 				))}
-				<button onClick={() => navigate('/addNewproduct')}>
+
+				<StyledBtn onClick={() => navigate('/addNewproduct')}>
 					<span>Add new product</span>
-				</button>
+				</StyledBtn>
 			</StyledProductsList>
 		</StyledContainerProductsList>
 	)

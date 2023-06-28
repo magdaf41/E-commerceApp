@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { productsList } from '../db/productsList'
-import { toast } from 'react-toastify'
+// import { toast } from 'react-toastify'
 
 const initialState = {
 	products: productsList,
@@ -22,9 +22,9 @@ export const cartSlice = createSlice({
 					...state.orderedProducts[existingIndex],
 					cartQuantity: state.orderedProducts[existingIndex].cartQuantity + 1,
 				}
-				toast.info('Increased product quantity', {
-					position: 'bottom-left',
-				})
+				// toast.info('Increased product quantity', {
+				// 	position: 'bottom-left',
+				// })
 				// toast.info('Increased product quantity', {
 				// 	position: 'bottom-left',
 				// })
