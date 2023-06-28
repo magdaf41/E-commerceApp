@@ -21,7 +21,7 @@ import {
 	StyledInputsWrapper,
 } from './FormAdminAddProduct.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { editProduct } from '../store/cartSlice'
+import { addNewProduct } from '../store/cartSlice'
 
 const initialValues = {
 	id: '',
@@ -49,7 +49,8 @@ const FormAdminEditProduct = () => {
 	const products = useSelector(state => state.cart.updateListOfProducts)
 
 	const submitForm = values => {
-		// dispatch(editProduct(values))
+		dispatch(addNewProduct(values))
+		console.log('Added product')
 		navigate('/')
 		console.log(products)
 	}
@@ -149,7 +150,7 @@ const FormAdminEditProduct = () => {
 									</StyledInput>
 									{errors.category && touched.category && <StyledPError>{errors.category}</StyledPError>}
 								</StyledBoxInput>
-								<StyledBtn>Accept</StyledBtn>
+								<StyledBtn>Add</StyledBtn>
 							</StyledFormContainer>
 						</StyledAdminForm>
 					)}

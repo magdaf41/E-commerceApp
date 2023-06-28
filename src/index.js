@@ -18,7 +18,10 @@ import 'react-toastify/dist/ReactToastify.css'
 import LaptopPages from './pages/LaptopPages'
 import OrdersList from './pages/OrdersList'
 import ProductsList from './pages/ProductsList'
+import FormAdminAddProduct from './components/FormAdminAddProduct'
 import FormAdminEditProduct from './components/FormAdminEditProduct'
+import TheNewesPage from './pages/TheNewestPage'
+import SalePage from './pages/SalePage'
 
 const router = createBrowserRouter([
 	{
@@ -82,6 +85,30 @@ const router = createBrowserRouter([
 		),
 	},
 	{
+		path: '/thenewest',
+		element: (
+			<>
+				<Header />
+				<main>
+					<TheNewesPage />
+				</main>
+				<Footer />
+			</>
+		),
+	},
+	{
+		path: '/sale',
+		element: (
+			<>
+				<Header />
+				<main>
+					<SalePage />
+				</main>
+				<Footer />
+			</>
+		),
+	},
+	{
 		path: '/register',
 		element: (
 			<>
@@ -118,7 +145,7 @@ const router = createBrowserRouter([
 		),
 	},
 	{
-		path: '/orders',
+		path: '/ordersList',
 		element: (
 			<>
 				<Header />
@@ -142,7 +169,19 @@ const router = createBrowserRouter([
 		),
 	},
 	{
-		path: '/newproduct',
+		path: '/addNewproduct',
+		element: (
+			<>
+				<Header />
+				<main>
+					<FormAdminAddProduct />
+				</main>
+				<Footer />
+			</>
+		),
+	},
+	{
+		path: '/editproduct',
 		element: (
 			<>
 				<Header />

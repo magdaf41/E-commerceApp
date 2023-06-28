@@ -56,7 +56,8 @@ const CartPage = () => {
 				products: orderedProducts,
 			})
 		)
-		navigate('/orders')
+		dispatch(clearCart(orderedProducts))
+		navigate('/ordersList')
 	}
 
 	return (
@@ -122,7 +123,7 @@ const CartPage = () => {
 								<span> ${totalAmount}</span>
 							</StyledSubtotal>
 							<div>
-								<StyledBtn onClick={sendOrder}>Check out</StyledBtn>
+								<StyledBtn onClick={sendOrder}>Buy</StyledBtn>
 							</div>
 
 							<div className='continue-shopping'>

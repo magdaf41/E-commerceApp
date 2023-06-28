@@ -11,19 +11,16 @@ import { addProductToCart } from '../store/cartSlice'
 import { Link, Navigate } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { removeProduct } from '../store/cartSlice'
+import { editProduct } from '../store/cartSlice'
+
 
 const ProductsList = () => {
 	const dispatch = useDispatch()
 	const products = useSelector(state => state.cart.updateListOfProducts)
+	const editProductValue = useSelector(state => state.cart.editProduct)
 	const navigate = useNavigate()
 
-	// const remove = value => {
-	// 	dispatch(removeProduct(value.id))
-	// 	console.log('działa')
-	// 	console.log(dispatch(removeProduct(value)))
-	// 	console.log(products)
-	// }
-
+	console.log(editProductValue)
 	return (
 		<StyledContainerProductsList>
 			<ReturnBtn />
@@ -48,8 +45,15 @@ const ProductsList = () => {
 						<p>{p.price}</p>
 						<p>{p.type}</p>
 						<p>{p.category}</p>
-						<p>
-							<button>Edit</button>
+						<div>
+							<button
+								onClick={() => {
+									dispatch(editProduct(p.id))
+									console.log(dispatch(editProduct(p.id)))
+									navigate('/editproduct')
+								}}>
+								Edit
+							</button>
 							<button
 								onClick={() => {
 									dispatch(removeProduct(p))
@@ -57,10 +61,10 @@ const ProductsList = () => {
 								}}>
 								Remove
 							</button>
-						</p>
+						</div>
 					</StyledProduct>
 				))}
-				<button onClick={() => navigate('/newproduct')}>
+				<button onClick={() => navigate('/addNewproduct')}>
 					<span>Add new product</span>
 				</button>
 			</StyledProductsList>

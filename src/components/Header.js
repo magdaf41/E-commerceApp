@@ -85,7 +85,7 @@ const Header = () => {
 					<Link to='/thenewest'>
 						<a>the newest</a>
 					</Link>
-					<Link to='/thenewest'>
+					<Link to='/sale'>
 						<a>sale</a>
 					</Link>
 				</StyledNav>
@@ -94,6 +94,9 @@ const Header = () => {
 				<StyledNav>
 					<Link to='/products'>
 						<a>products list</a>
+					</Link>
+					<Link to='/ordersList'>
+						<a>orders list</a>
 					</Link>
 				</StyledNav>
 			</StyledRowNav>

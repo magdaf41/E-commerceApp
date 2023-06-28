@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
 	StyledProductsListContainer,
 	StyledProduct,
@@ -10,30 +10,32 @@ import { StyledNextPage } from './HomePage.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { addProductToCart } from '../store/cartSlice'
 
-const SmartwatchPages = () => {
+const TheNewesPage = () => {
 	const dispatch = useDispatch()
 	const products = useSelector(state => state.cart.products)
+	//   const orderedProducts = useSelector((state) => state.order.orderedProducts);
+
 	return (
 		<StyledNextPage>
 			<ReturnBtn />
 			<StyledProductsListContainer>
 				{products
-					.filter(p => p.type === 'smartwatch')
-					.map(smartwatch => (
+					.filter(p => p.category === 'newest')
+					.map(newProduct => (
 						<StyledProduct>
 							<StyledProductImage>
-								<img src={smartwatch.image} />
+								<img src={newProduct.image} />
 							</StyledProductImage>
 							<StyledProductHeader>
-								<h3>{smartwatch.title}</h3>
-								<p>{smartwatch.price}</p>
+								<h3>{newProduct.title}</h3>
+								<p>{newProduct.price}</p>
 							</StyledProductHeader>
 
-							<p>{smartwatch.desc}</p>
+							<p>{newProduct.desc}</p>
 
 							<button
 								onClick={() => {
-									dispatch(addProductToCart(smartwatch))
+									dispatch(addProductToCart(newProduct))
 								}}>
 								Add to cart
 							</button>
@@ -44,4 +46,4 @@ const SmartwatchPages = () => {
 	)
 }
 
-export default SmartwatchPages
+export default TheNewesPage
