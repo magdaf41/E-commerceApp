@@ -25,6 +25,8 @@ import {
 } from './CartPage.css'
 import { StyledBtn } from '../components/_shared/Form.css'
 import { addOrder } from '../store/ordersListSlice'
+import { openModal } from '../store/modalSlice'
+import Modal from '../components/Modals/ClearCartModal'
 
 const CartPage = () => {
 	const dispatch = useDispatch()
@@ -33,6 +35,9 @@ const CartPage = () => {
 	const ordersList = useSelector(state => state.ordersList.orders)
 	const loggeduser = useSelector(state => state.auth.loggedUser)
 	const navigate = useNavigate()
+	const orderValue = orderedProducts.reduce((prev, curr) => prev + curr.price * curr.cartQuantity, 0)
+	console.log(orderedProducts)
+	const isOpen = useSelector(store => store.modal.isOpen)
 
 	useEffect(() => {
 		dispatch(getTotals())
@@ -112,15 +117,18 @@ const CartPage = () => {
 						<StyledClearCart>
 							<StyledBtn
 								onClick={() => {
-									dispatch(clearCart(orderedProducts))
+									dispatch(openModal())
+									// dispatch(clearCart(orderedProducts))
 								}}>
 								Clear Cart
 							</StyledBtn>
+							{isOpen ? <Modal></Modal> : null}
 						</StyledClearCart>
 						<div>
 							<StyledSubtotal>
 								<div>Subtotal</div>
-								<span> ${totalAmount}</span>
+								{/* <span> ${totalAmount}</span> */}
+								<span> ${orderValue}</span>
 							</StyledSubtotal>
 							<div>
 								<StyledBtn onClick={sendOrder}>Buy</StyledBtn>

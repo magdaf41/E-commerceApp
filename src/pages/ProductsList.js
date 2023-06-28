@@ -13,14 +13,20 @@ import { useNavigate } from 'react-router-dom'
 import { removeProduct } from '../store/cartSlice'
 import { editProduct } from '../store/cartSlice'
 import { StyledBtn } from '../components/_shared/Form.css'
+import Modal from '../components/Modals/ClearCartModal'
+import { openModal } from '../store/modalSlice'
 
 const ProductsList = () => {
 	const dispatch = useDispatch()
-	const products = useSelector(state => state.cart.updateListOfProducts)
+	// const products = useSelector(state => state.cart.updateListOfProducts)
 	const editProductValue = useSelector(state => state.cart.editProduct)
 	const navigate = useNavigate()
+	const products = useSelector(state => state.cart.products)
+	const loggedUser = useSelector(state => state.auth.loggedUser)
+	const isOpen = useSelector(store => store.modal.isOpen)
 
-	console.log(editProductValue)
+	console.log(isOpen)
+
 	return (
 		<StyledContainerProductsList>
 			<ReturnBtn />
@@ -34,7 +40,9 @@ const ProductsList = () => {
 				<p>type</p>
 				<p>category</p>
 			</StyledProductsListHeader>
+			{isOpen ? <Modal></Modal> : null}
 			<StyledProductsList>
+				{/* {products.map((p) => ( */}
 				{products.map(p => (
 					<StyledProduct>
 						<p>{products.indexOf(p) + 1}</p>
@@ -46,18 +54,19 @@ const ProductsList = () => {
 						<p>{p.type}</p>
 						<p>{p.category}</p>
 						<div>
+							{/* {loggedUser.role !== 'client' && ( */}
 							<button
 								onClick={() => {
 									dispatch(editProduct(p.id))
 									console.log(dispatch(editProduct(p.id)))
-									navigate('/editproduct')
+									navigate(`/editproduct/${p.id}`)
 								}}>
 								Edit
 							</button>
+							{/* )} */}
 							<button
-								onClick={() => {
-									dispatch(removeProduct(p))
-									console.log(products)
+								onClick={e => {
+									dispatch(openModal())
 								}}>
 								Remove
 							</button>

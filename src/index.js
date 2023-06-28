@@ -13,8 +13,8 @@ import HeadphonesPages from './pages/HeadphonesPages'
 import SmartwatchPages from './pages/SmartwatchPages'
 import HomePage from './pages/HomePage'
 import CartPage from './pages/CartPage'
-import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+// import { ToastContainer } from 'react-toastify'
+// import "react-toastify/dist/ReactToastify.css";
 import LaptopPages from './pages/LaptopPages'
 import OrdersList from './pages/OrdersList'
 import ProductsList from './pages/ProductsList'
@@ -22,6 +22,9 @@ import FormAdminAddProduct from './components/FormAdminAddProduct'
 import FormAdminEditProduct from './components/FormAdminEditProduct'
 import TheNewesPage from './pages/TheNewestPage'
 import SalePage from './pages/SalePage'
+import Modal from './components/Modals/ClearCartModal'
+
+// import Modal from './components/Modal'
 
 const router = createBrowserRouter([
 	{
@@ -181,7 +184,7 @@ const router = createBrowserRouter([
 		),
 	},
 	{
-		path: '/editproduct',
+		path: '/editproduct/:id',
 		element: (
 			<>
 				<Header />
@@ -197,6 +200,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
 	<Provider store={store}>
 		<RouterProvider router={router} />
-		<ToastContainer />
+		{/* <ToastContainer /> */}
 	</Provider>
 )

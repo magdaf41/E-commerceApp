@@ -25,6 +25,7 @@ const Header = () => {
 	const loggedUser = useSelector(state => state.auth.loggedUser)
 	const logOutUser = values => {
 		dispatch(logout(values))
+		navigate('/')
 	}
 	const orderedProducts = useSelector(state => state.cart.orderedProducts)
 
@@ -91,14 +92,18 @@ const Header = () => {
 				</StyledNav>
 			</StyledRowNav>
 			<StyledRowNav>
-				<StyledNav>
-					<Link to='/products'>
-						<a>products list</a>
-					</Link>
-					<Link to='/ordersList'>
-						<a>orders list</a>
-					</Link>
-				</StyledNav>
+				{/* {loggedUser !== null && loggedUser.role !== 'client' && ( */ }
+					<StyledNav>
+						<div>
+							<Link to='/products'>
+								<a>products list</a>
+							</Link>
+							<Link to='/ordersList'>
+								<a>orders list</a>
+							</Link>
+						</div>
+					</StyledNav>
+				{/* )} */}
 			</StyledRowNav>
 		</StyledHeader>
 	)
