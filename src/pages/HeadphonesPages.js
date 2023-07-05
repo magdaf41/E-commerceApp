@@ -13,6 +13,15 @@ import { addProductToCart } from '../store/cartSlice'
 const HeadphonesPages = () => {
 	const dispatch = useDispatch()
 	const products = useSelector(state => state.cart.products)
+	const loggedUser = useSelector(state => state.auth.loggedUser)
+
+	const addProductToCart = headphone => {
+		console.log(loggedUser)
+
+		{
+			loggedUser ? dispatch(addProductToCart(headphone)) : console.log('Musisz być zalogowany')
+		}
+	}
 
 	return (
 		<StyledNextPage>
@@ -27,14 +36,13 @@ const HeadphonesPages = () => {
 							</StyledProductImage>
 							<StyledProductHeader>
 								<h3>{headphone.title}</h3>
-								<p>{headphone.price}</p>
+								<p>${headphone.price}</p>
 							</StyledProductHeader>
-
 							<p>{headphone.desc}</p>
-
 							<button
 								onClick={() => {
-									dispatch(addProductToCart(headphone))
+									addProductToCart(headphone)
+									// dispatch(addProductToCart(headphone))
 								}}>
 								Add to cart
 							</button>

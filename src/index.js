@@ -23,6 +23,7 @@ import FormAdminEditProduct from './components/FormAdminEditProduct'
 import TheNewesPage from './pages/TheNewestPage'
 import SalePage from './pages/SalePage'
 import Modal from './components/Modals/ClearCartModal'
+import UsersListPage from './pages/UsersListPage'
 
 // import Modal from './components/Modal'
 
@@ -172,7 +173,7 @@ const router = createBrowserRouter([
 		),
 	},
 	{
-		path: '/addNewproduct',
+		path: '/products/addNewproduct',
 		element: (
 			<>
 				<Header />
@@ -190,6 +191,18 @@ const router = createBrowserRouter([
 				<Header />
 				<main>
 					<FormAdminEditProduct />
+				</main>
+				<Footer />
+			</>
+		),
+	},
+	{
+		path: '/usersList',
+		element: (
+			<>
+				<Header />
+				<main>
+					<UsersListPage />
 				</main>
 				<Footer />
 			</>

@@ -27,6 +27,13 @@ export const StyledNav = styled.div`
 	text-transform: uppercase;
 `
 
+export const StyledNavAdmin = styled.div`
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	text-transform: uppercase;
+`
+
 export const StyledTitle = styled.h3`
 	color: white;
 	font-weight: 700;

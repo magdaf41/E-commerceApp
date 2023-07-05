@@ -26,3 +26,8 @@ export const StyledProductsListHeader = styled.div`
 `
 
 export const StyledProductsList = styled.div``
+
+export const StyledProductsButtons = styled.div`
+	display: flex;
+	flex-direction: column;
+`

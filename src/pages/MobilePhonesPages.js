@@ -13,7 +13,16 @@ import { addProductToCart } from '../store/cartSlice'
 const MobilePhonesPages = () => {
 	const dispatch = useDispatch()
 	const products = useSelector(state => state.cart.products)
+	const loggedUser = useSelector(state => state.auth.loggedUser)
 	//   const orderedProducts = useSelector((state) => state.order.orderedProducts);
+
+	const addProductToCart = phone => {
+		console.log(loggedUser)
+
+		{
+			loggedUser ? dispatch(addProductToCart(phone)) : console.log('Musisz być zalogowany')
+		}
+	}
 
 	return (
 		<StyledNextPage>
@@ -28,14 +37,15 @@ const MobilePhonesPages = () => {
 							</StyledProductImage>
 							<StyledProductHeader>
 								<h3>{phone.title}</h3>
-								<p>{phone.price}</p>
+								<p>${phone.price}</p>
 							</StyledProductHeader>
 
 							<p>{phone.desc}</p>
 
 							<button
 								onClick={() => {
-									dispatch(addProductToCart(phone))
+									addProductToCart(phone)
+									// dispatch(addProductToCart(headphone))
 								}}>
 								Add to cart
 							</button>

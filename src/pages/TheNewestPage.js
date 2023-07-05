@@ -13,8 +13,14 @@ import { addProductToCart } from '../store/cartSlice'
 const TheNewesPage = () => {
 	const dispatch = useDispatch()
 	const products = useSelector(state => state.cart.products)
-	//   const orderedProducts = useSelector((state) => state.order.orderedProducts);
 
+	const loggedUser = useSelector(state => state.auth.loggedUser)
+
+	const addProductToCart = newProduct => {
+		{
+			loggedUser ? dispatch(addProductToCart(newProduct)) : console.log('Musisz być zalogowany')
+		}
+	}
 	return (
 		<StyledNextPage>
 			<ReturnBtn />
@@ -28,14 +34,14 @@ const TheNewesPage = () => {
 							</StyledProductImage>
 							<StyledProductHeader>
 								<h3>{newProduct.title}</h3>
-								<p>{newProduct.price}</p>
+								<p>${newProduct.price}</p>
 							</StyledProductHeader>
 
 							<p>{newProduct.desc}</p>
 
 							<button
 								onClick={() => {
-									dispatch(addProductToCart(newProduct))
+									addProductToCart(newProduct)
 								}}>
 								Add to cart
 							</button>

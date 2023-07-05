@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReturnBtn from '../components/ReturnBtn'
 import {
 	StyledContainerProductsList,
 	StyledProduct,
 	StyledProductsList,
 	StyledProductsListHeader,
+	StyledProductsButtons,
 } from './ProductsList.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { addProductToCart } from '../store/cartSlice'
@@ -13,7 +14,7 @@ import { useNavigate } from 'react-router-dom'
 import { removeProduct } from '../store/cartSlice'
 import { editProduct } from '../store/cartSlice'
 import { StyledBtn } from '../components/_shared/Form.css'
-import Modal from '../components/Modals/ClearCartModal'
+import RemoveProductModal from '../components/Modals/RemoveProductModals'
 import { openModal } from '../store/modalSlice'
 
 const ProductsList = () => {
@@ -24,12 +25,74 @@ const ProductsList = () => {
 	const products = useSelector(state => state.cart.products)
 	const loggedUser = useSelector(state => state.auth.loggedUser)
 	const isOpen = useSelector(store => store.modal.isOpen)
+	// const [openModul, setOpenModul] = useState(false)
 
-	console.log(isOpen)
+	const [searchProducts, setSearchProducts] = useState(products)
+	const [searchPhrase, setSearchPhrase] = useState('')
+	const [sortedProducts, setSortedProducts] = useState(searchProducts)
 
+	// const [sortAscending, setSortAscending] = useState(true)
+
+	// const updateProducts = () => {
+	// 	let updateSortedProducts = sortAscending ? [...sortedProducts].reverse() : [...sortedProducts].reverse()
+	// 	setSortedProducts(updateSortedProducts)
+	// }
+
+	// useEffect(() => {
+	// 	updateProducts()
+	// }, [sortAscending])
+	const onSorterChange = e => {
+		let selectedSorter = e.target.value
+		const sortedListProducts = [...sortedProducts]
+		if (selectedSorter === 'title') {
+			sortedListProducts.sort((a, b) => (a.title > b.title ? 1 : a.title === b.title ? 0 : -1))
+		} else if (selectedSorter === 'price') {
+			sortedListProducts.sort((a, b) => a.price - b.price)
+		} else if (selectedSorter === 'stock') {
+			sortedListProducts.sort((a, b) => a.stock - b.stock)
+		}
+		setSortedProducts(sortedListProducts)
+		// if (!sortAscending) {
+		// 	setSortAscending(true)
+		// }
+	}
+	const search = event => {
+		const matchedProducts = products.filter(
+			product =>
+				// (product.title || product.category || product.type).toLowerCase().includes(event.target.value.toLowerCase())
+				product.title.toLowerCase().includes(event.target.value.toLowerCase()) ||
+				product.category.toLowerCase().includes(event.target.value.toLowerCase()) ||
+				product.type.toLowerCase().includes(event.target.value.toLowerCase())
+		)
+		setSearchProducts(matchedProducts)
+		setSearchPhrase(event.target.value)
+	}
 	return (
 		<StyledContainerProductsList>
 			<ReturnBtn />
+
+			<div className='select-column'>
+				<label for='column-name'>Sort by column </label>
+				<select className='select' onChange={onSorterChange}>
+					<option value=''>--Please choose an option--</option>
+					<option value='title'>Title</option>
+					<option value='price'>Price</option>
+					<option value='stock'>Stock</option>
+				</select>
+			</div>
+
+			{/* <Switch
+				onColor='#136c94'
+				offColor='white'
+				height={20}
+				onChange={setSortAscending}
+				checked={sortAscending}
+				checkedIcon='asc'
+				uncheckedIcon='desc'></Switch> */}
+
+			<div>
+				<input type='text' placeholder='Search by title, category and type' value={searchPhrase} onChange={search} />
+			</div>
 			<StyledProductsListHeader>
 				<p>Lp.</p>
 				<p>Id</p>
@@ -40,41 +103,41 @@ const ProductsList = () => {
 				<p>type</p>
 				<p>category</p>
 			</StyledProductsListHeader>
-			{isOpen ? <Modal></Modal> : null}
+
 			<StyledProductsList>
 				{/* {products.map((p) => ( */}
-				{products.map(p => (
+				{searchProducts.map(p => (
 					<StyledProduct>
-						<p>{products.indexOf(p) + 1}</p>
+						<p>{searchProducts.indexOf(p) + 1}</p>
 						<p>{p.id}</p>
-						<p>{p.title}</p>
+						{isOpen ? <RemoveProductModal id={p.id} /> : null}
+						<p>{p.title} </p>
 						<p>{p.desc}</p>
 						<img src={p.image}></img>
 						<p>{p.price}</p>
 						<p>{p.type}</p>
 						<p>{p.category}</p>
-						<div>
+						<StyledProductsButtons>
 							{/* {loggedUser.role !== 'client' && ( */}
 							<button
 								onClick={() => {
 									dispatch(editProduct(p.id))
-									console.log(dispatch(editProduct(p.id)))
 									navigate(`/editproduct/${p.id}`)
 								}}>
 								Edit
 							</button>
-							{/* )} */}
+
 							<button
-								onClick={e => {
+								onClick={() => {
 									dispatch(openModal())
 								}}>
 								Remove
 							</button>
-						</div>
+						</StyledProductsButtons>
 					</StyledProduct>
 				))}
 
-				<StyledBtn onClick={() => navigate('/addNewproduct')}>
+				<StyledBtn onClick={() => navigate('/products/addNewproduct')}>
 					<span>Add new product</span>
 				</StyledBtn>
 			</StyledProductsList>

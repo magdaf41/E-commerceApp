@@ -13,6 +13,16 @@ import { addProductToCart } from '../store/cartSlice'
 const SmartwatchPages = () => {
 	const dispatch = useDispatch()
 	const products = useSelector(state => state.cart.products)
+	const loggedUser = useSelector(state => state.auth.loggedUser)
+
+	const addProductToCart = smartwatch => {
+		console.log(loggedUser)
+
+		{
+			loggedUser ? dispatch(addProductToCart(smartwatch)) : console.log('Musisz być zalogowany')
+		}
+	}
+
 	return (
 		<StyledNextPage>
 			<ReturnBtn />
@@ -26,14 +36,14 @@ const SmartwatchPages = () => {
 							</StyledProductImage>
 							<StyledProductHeader>
 								<h3>{smartwatch.title}</h3>
-								<p>{smartwatch.price}</p>
+								<p>${smartwatch.price}</p>
 							</StyledProductHeader>
 
 							<p>{smartwatch.desc}</p>
 
 							<button
 								onClick={() => {
-									dispatch(addProductToCart(smartwatch))
+									addProductToCart(smartwatch)
 								}}>
 								Add to cart
 							</button>

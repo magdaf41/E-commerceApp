@@ -16,6 +16,7 @@ import {
 	StyledRowNav,
 	StyledNav,
 	StyledDivLogged,
+	StyledNavAdmin,
 } from './Header.css'
 import { logout } from '../store/authSlice'
 
@@ -92,18 +93,23 @@ const Header = () => {
 				</StyledNav>
 			</StyledRowNav>
 			<StyledRowNav>
-				{/* {loggedUser !== null && loggedUser.role !== 'client' && ( */ }
+				{loggedUser !== null && loggedUser.role !== 'client' && (
 					<StyledNav>
-						<div>
+						<StyledNavAdmin>
 							<Link to='/products'>
 								<a>products list</a>
 							</Link>
 							<Link to='/ordersList'>
 								<a>orders list</a>
 							</Link>
-						</div>
+							{loggedUser !== null && loggedUser.role === 'admin' && (
+								<Link to='/usersList'>
+									<a>users list</a>
+								</Link>
+							)}
+						</StyledNavAdmin>
 					</StyledNav>
-				{/* )} */}
+				)}
 			</StyledRowNav>
 		</StyledHeader>
 	)

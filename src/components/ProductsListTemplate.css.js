@@ -26,8 +26,8 @@ export const StyledProductHeader = styled.div`
 `
 
 export const StyledProductImage = styled.div`
-	width: 260px;
-	height: 260px;
+	width: 200px;
+	height: 200px;
 	border: 1px solid white;
 	& img {
 		object-fit: contain;

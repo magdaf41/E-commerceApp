@@ -1,69 +1,60 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React from 'react'
+import { useSelector } from 'react-redux'
 import {
-  StyledOrderListContainer,
-  StyledOrderWrapper,
-  StyledOrdersListHeader,
-  StyledOrdersList,
-  StyledOrderedProductList,
-  StyledProduct,
-  StyledProductQuantity,
-} from "./OrdersList.css";
+	StyledOrderListContainer,
+	StyledOrderWrapper,
+	StyledOrdersListHeader,
+	StyledOrdersList,
+	StyledOrderedProductList,
+	StyledProduct,
+	StyledProductQuantity,
+} from './OrdersList.css'
 
 const OrdersList = () => {
-  const orders = useSelector((state) => state.ordersList.orders);
-  const totalAmount = useSelector((state) => state.cart.cartTotalAmount);
-  const orderedProducts = useSelector((state) => state.cart.orderedProducts);
+	const orders = useSelector(state => state.ordersList.orders)
+	const totalAmount = useSelector(state => state.cart.cartTotalAmount)
+	const orderedProducts = useSelector(state => state.cart.orderedProducts)
 
-  console.log(orders);
-  orders.map((o) => console.log(o.products));
-  return (
-    <StyledOrderListContainer>
-      <StyledOrdersListHeader>
-        <p>Lp.</p>
-        <p>Id</p>
-        <p>User Name</p>
-        <p>Product List</p>
-        <p>Quantity</p>
-        <p>Price</p>
-      </StyledOrdersListHeader>
-      <StyledOrdersList>
-        {orders.map((o) => (
-          <StyledOrderWrapper>
-            <p>{orders.indexOf(o) + 1}</p>
-            <p>{o.id}</p>
+	console.log(orders)
+	orders.map(o => console.log(o.products))
+	return (
+		<StyledOrderListContainer>
+			<StyledOrdersListHeader>
+				<p>Lp.</p>
+				<p>Id</p>
+				<p>Date</p>
+				<p>User Name</p>
+				<p>Product List</p>
+				<p>Quantity</p>
+				<p>Price</p>
+			</StyledOrdersListHeader>
+			<StyledOrdersList>
+				{orders.map(o => (
+					<StyledOrderWrapper>
+						<p>{orders.indexOf(o) + 1}</p>
+						<p>{o.id}</p>
+						<p>{new Date(8.64e15).toString()}</p>
+						{o.user !== null ? <p>{o.user.name}</p> : <p>null</p>}
+						<p>
+							{o.products.map(p => (
+								<StyledOrderedProductList>
+									<StyledProduct>{p.title}</StyledProduct>
+								</StyledOrderedProductList>
+							))}
+						</p>
+						<p>
+							{o.products.map(p => (
+								<StyledOrderedProductList>
+									<StyledProductQuantity>{p.cartQuantity}</StyledProductQuantity>
+								</StyledOrderedProductList>
+							))}
+						</p>
+						<span> ${o.products.reduce((prev, curr) => prev + curr.price * curr.cartQuantity, 0)}</span>
+					</StyledOrderWrapper>
+				))}
+			</StyledOrdersList>
+		</StyledOrderListContainer>
+	)
+}
 
-            {o.user !== null ? <p>{o.user.name}</p> : <p>null</p>}
-
-            <p>
-              {o.products.map((p) => (
-                <StyledOrderedProductList>
-                  <StyledProduct>{p.title}</StyledProduct>
-                </StyledOrderedProductList>
-              ))}
-            </p>
-            <p>
-              {o.products.map((p) => (
-                <StyledOrderedProductList>
-                  <StyledProductQuantity>
-                    {p.cartQuantity}
-                  </StyledProductQuantity>
-                </StyledOrderedProductList>
-              ))}
-            </p>
-            <span>
-              {" "}
-              $
-              {o.products.reduce(
-                (prev, curr) => prev + curr.price * curr.cartQuantity,
-                0
-              )}
-            </span>
-          </StyledOrderWrapper>
-        ))}
-      </StyledOrdersList>
-    </StyledOrderListContainer>
-  );
-};
-
-export default OrdersList;
+export default OrdersList

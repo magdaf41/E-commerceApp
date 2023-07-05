@@ -458,7 +458,7 @@ export const productsList = [
 		title: 'Apple MacBook Pro',
 		desc: 'Powerful laptop with stunning Retina display and long battery life',
 		image:
-			'https://prod-api.mediaexpert.pl/api/images/gallery_500_500/thumbnails/images/51/5134110/Laptop-APPLE-MacBook-Pro-2023-1.jpg',
+			'https://ispot.pl/img/imagecache/85001-86000/680x523/1/680x680/product-media/85001-86000/Apple-MacBook-Pro-13-chip-M2-8-core-CPU-10-core-GPU-256GB-SSD-Space-Grey-25620-680x680.webp',
 		price: 1999,
 		type: 'laptop',
 		category: 'newest',
