@@ -27,6 +27,7 @@ import { StyledBtn } from '../components/_shared/Form.css'
 import { addOrder } from '../store/ordersListSlice'
 import { openModal } from '../store/modalSlice'
 import Modal from '../components/Modals/ClearCartModal'
+import ClearCartModal from '../components/Modals/ClearCartModal'
 
 const CartPage = () => {
 	const dispatch = useDispatch()
@@ -122,7 +123,7 @@ const CartPage = () => {
 								}}>
 								Clear Cart
 							</StyledBtn>
-							{isOpen ? <Modal></Modal> : null}
+							{isOpen ? <ClearCartModal></ClearCartModal> : null}
 						</StyledClearCart>
 						<div>
 							<StyledSubtotal>

@@ -9,6 +9,7 @@ import ReturnBtn from '../components/ReturnBtn'
 import { StyledNextPage } from './HomePage.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { addProductToCart } from '../store/cartSlice'
+import { openModal } from '../store/modalSlice'
 
 const LaptopPages = () => {
 	const dispatch = useDispatch()
@@ -17,7 +18,7 @@ const LaptopPages = () => {
 
 	const addProductToCart = laptop => {
 		{
-			loggedUser ? dispatch(addProductToCart(laptop)) : console.log('Musisz być zalogowany')
+			loggedUser ? dispatch(addProductToCart(laptop)) : dispatch(openModal())
 		}
 	}
 

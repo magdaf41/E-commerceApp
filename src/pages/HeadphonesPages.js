@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
 	StyledProductsListContainer,
 	StyledProduct,
@@ -9,19 +9,16 @@ import ReturnBtn from '../components/ReturnBtn'
 import { StyledNextPage } from './HomePage.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { addProductToCart } from '../store/cartSlice'
+import Modal from '../components/Modals/Modal'
+import { openModal } from '../store/modalSlice'
 
 const HeadphonesPages = () => {
 	const dispatch = useDispatch()
 	const products = useSelector(state => state.cart.products)
 	const loggedUser = useSelector(state => state.auth.loggedUser)
+	const isOpen = useSelector(store => store.modal.isOpen)
 
-	const addProductToCart = headphone => {
-		console.log(loggedUser)
-
-		{
-			loggedUser ? dispatch(addProductToCart(headphone)) : console.log('Musisz być zalogowany')
-		}
-	}
+	const message = 'You need to be logged in'
 
 	return (
 		<StyledNextPage>
@@ -41,13 +38,13 @@ const HeadphonesPages = () => {
 							<p>{headphone.desc}</p>
 							<button
 								onClick={() => {
-									addProductToCart(headphone)
-									// dispatch(addProductToCart(headphone))
+									loggedUser ? dispatch(addProductToCart(headphone)) : dispatch(openModal())
 								}}>
 								Add to cart
 							</button>
 						</StyledProduct>
 					))}
+				{isOpen ? <Modal message={message}></Modal> : null}
 			</StyledProductsListContainer>
 		</StyledNextPage>
 	)
