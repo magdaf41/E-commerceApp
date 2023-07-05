@@ -16,6 +16,7 @@ import { editProduct } from '../store/cartSlice'
 import { StyledBtn } from '../components/_shared/Form.css'
 import RemoveProductModal from '../components/Modals/RemoveProductModals'
 import { openModal } from '../store/modalSlice'
+import Product from '../components/Product'
 
 const ProductsList = () => {
 	const dispatch = useDispatch()
@@ -31,6 +32,10 @@ const ProductsList = () => {
 	const [searchPhrase, setSearchPhrase] = useState('')
 	const [sortedProducts, setSortedProducts] = useState(searchProducts)
 
+	const [productToDeleteId, setProductToDeleteId] = useState('')
+
+	console.log(productToDeleteId)
+	console.log(searchProducts)
 	// const [sortAscending, setSortAscending] = useState(true)
 
 	// const updateProducts = () => {
@@ -68,20 +73,21 @@ const ProductsList = () => {
 		setSearchPhrase(event.target.value)
 	}
 	return (
-		<StyledContainerProductsList>
-			<ReturnBtn />
+		<>
+			{isOpen && <RemoveProductModal id={productToDeleteId} />}
+			<StyledContainerProductsList>
+				<ReturnBtn />
+				<div className='select-column'>
+					<label for='column-name'>Sort by column </label>
+					<select className='select' onChange={onSorterChange}>
+						<option value=''>--Please choose an option--</option>
+						<option value='title'>Title</option>
+						<option value='price'>Price</option>
+						<option value='stock'>Stock</option>
+					</select>
+				</div>
 
-			<div className='select-column'>
-				<label for='column-name'>Sort by column </label>
-				<select className='select' onChange={onSorterChange}>
-					<option value=''>--Please choose an option--</option>
-					<option value='title'>Title</option>
-					<option value='price'>Price</option>
-					<option value='stock'>Stock</option>
-				</select>
-			</div>
-
-			{/* <Switch
+				{/* <Switch
 				onColor='#136c94'
 				offColor='white'
 				height={20}
@@ -90,58 +96,32 @@ const ProductsList = () => {
 				checkedIcon='asc'
 				uncheckedIcon='desc'></Switch> */}
 
-			<div>
-				<input type='text' placeholder='Search by title, category and type' value={searchPhrase} onChange={search} />
-			</div>
-			<StyledProductsListHeader>
-				<p>Lp.</p>
-				<p>Id</p>
-				<p>title</p>
-				<p>description</p>
-				<p>image</p>
-				<p>price</p>
-				<p>type</p>
-				<p>category</p>
-			</StyledProductsListHeader>
+				<div>
+					<input type='text' placeholder='Search by title, category and type' value={searchPhrase} onChange={search} />
+				</div>
+				<StyledProductsListHeader>
+					<p>Lp.</p>
+					<p>Id</p>
+					<p>title</p>
+					<p>description</p>
+					<p>image</p>
+					<p>price</p>
+					<p>type</p>
+					<p>category</p>
+				</StyledProductsListHeader>
 
-			<StyledProductsList>
-				{/* {products.map((p) => ( */}
-				{searchProducts.map(p => (
-					<StyledProduct>
-						<p>{searchProducts.indexOf(p) + 1}</p>
-						<p>{p.id}</p>
-						{isOpen ? <RemoveProductModal id={p.id} /> : null}
-						<p>{p.title} </p>
-						<p>{p.desc}</p>
-						<img src={p.image}></img>
-						<p>{p.price}</p>
-						<p>{p.type}</p>
-						<p>{p.category}</p>
-						<StyledProductsButtons>
-							{/* {loggedUser.role !== 'client' && ( */}
-							<button
-								onClick={() => {
-									dispatch(editProduct(p.id))
-									navigate(`/editproduct/${p.id}`)
-								}}>
-								Edit
-							</button>
+				<StyledProductsList>
+					{/* {products.map((p) => ( */}
+					{products.map((product, index) => (
+						<Product key={product.id} data={product} orderNo={index + 1} setProductToDeleteId={setProductToDeleteId} />
+					))}
 
-							<button
-								onClick={() => {
-									dispatch(openModal())
-								}}>
-								Remove
-							</button>
-						</StyledProductsButtons>
-					</StyledProduct>
-				))}
-
-				<StyledBtn onClick={() => navigate('/products/addNewproduct')}>
-					<span>Add new product</span>
-				</StyledBtn>
-			</StyledProductsList>
-		</StyledContainerProductsList>
+					<StyledBtn onClick={() => navigate('/products/addNewproduct')}>
+						<span>Add new product</span>
+					</StyledBtn>
+				</StyledProductsList>
+			</StyledContainerProductsList>
+		</>
 	)
 }
 

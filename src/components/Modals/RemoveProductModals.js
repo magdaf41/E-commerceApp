@@ -3,7 +3,7 @@ import { removeProduct } from '../../store/cartSlice'
 import { closeModal } from '../../store/modalSlice'
 import { StyledModalContainer } from './Modal.css'
 
-const RemoveProductModal = id => {
+const RemoveProductModal = ({ id }) => {
 	const dispatch = useDispatch()
 	const products = useSelector(state => state.cart.products)
 	console.log(id)
@@ -14,7 +14,7 @@ const RemoveProductModal = id => {
 			<h4>remove all items from your shopping cart?</h4>
 			<div>
 				{/* {products.map(p => ( */}
-				//{' '}
+
 				<div>
 					<button
 						onClick={() => {
@@ -23,7 +23,6 @@ const RemoveProductModal = id => {
 						}}>
 						Confirm
 					</button>
-					//{' '}
 				</div>
 				{/* ))} */}
 				<button

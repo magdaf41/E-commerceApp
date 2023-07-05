@@ -103,7 +103,10 @@ export const cartSlice = createSlice({
 			// 		state.updateListOfProducts = updateProductsList
 			// 	}
 			// })
+
 			state.products = state.products.filter(product => product.id !== action.payload)
+			console.log(action.payload)
+			console.log(state.products)
 		},
 		editProduct: (state, action) => {
 			state.products = state.products.map(product => {
