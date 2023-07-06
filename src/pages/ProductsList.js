@@ -36,16 +36,15 @@ const ProductsList = () => {
 
 	console.log(productToDeleteId)
 	console.log(searchProducts)
-	// const [sortAscending, setSortAscending] = useState(true)
 
-	// const updateProducts = () => {
-	// 	let updateSortedProducts = sortAscending ? [...sortedProducts].reverse() : [...sortedProducts].reverse()
-	// 	setSortedProducts(updateSortedProducts)
-	// }
+	useEffect(() => {
+		setSearchProducts(products)
+	}, [products]) //dodałam useEffect po to aby obsłużyć zarówno searchProducts jak i produkt ale jak wyświetlać tylko wyszukane produkty jak sie usunie jeden z nich
 
-	// useEffect(() => {
-	// 	updateProducts()
-	// }, [sortAscending])
+	useEffect(() => {
+		setSearchProducts(sortedProducts)
+	}, [sortedProducts])
+
 	const onSorterChange = e => {
 		let selectedSorter = e.target.value
 		const sortedListProducts = [...sortedProducts]
@@ -53,8 +52,8 @@ const ProductsList = () => {
 			sortedListProducts.sort((a, b) => (a.title > b.title ? 1 : a.title === b.title ? 0 : -1))
 		} else if (selectedSorter === 'price') {
 			sortedListProducts.sort((a, b) => a.price - b.price)
-		} else if (selectedSorter === 'stock') {
-			sortedListProducts.sort((a, b) => a.stock - b.stock)
+		} else if (selectedSorter === 'category') {
+			sortedListProducts.sort((a, b) => a.category - b.category)
 		}
 		setSortedProducts(sortedListProducts)
 		// if (!sortAscending) {
@@ -72,6 +71,8 @@ const ProductsList = () => {
 		setSearchProducts(matchedProducts)
 		setSearchPhrase(event.target.value)
 	}
+
+	console.log(searchProducts)
 	return (
 		<>
 			{isOpen && <RemoveProductModal id={productToDeleteId} />}
@@ -83,7 +84,7 @@ const ProductsList = () => {
 						<option value=''>--Please choose an option--</option>
 						<option value='title'>Title</option>
 						<option value='price'>Price</option>
-						<option value='stock'>Stock</option>
+						<option value='category'>Category</option>
 					</select>
 				</div>
 
@@ -112,7 +113,7 @@ const ProductsList = () => {
 
 				<StyledProductsList>
 					{/* {products.map((p) => ( */}
-					{products.map((product, index) => (
+					{searchProducts.map((product, index) => (
 						<Product key={product.id} data={product} orderNo={index + 1} setProductToDeleteId={setProductToDeleteId} />
 					))}
 
