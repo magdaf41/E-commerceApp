@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import ReturnBtn from '../components/ReturnBtn'
 import {
-	StyledContainerProductsList,
+	StyledTable,
+	StyledTableHeaders,
 	StyledProduct,
 	StyledProductsList,
 	StyledProductsListHeader,
 	StyledProductsButtons,
-} from './ProductsList.css'
+} from '../components/_shared/Table.css'
+import { StyledBoxSearchInput, StyledSearchInput, StyledSearchIcon } from '../components/Header.css'
+import { BsSearch } from 'react-icons/bs'
 import { useDispatch, useSelector } from 'react-redux'
 import { addProductToCart } from '../store/cartSlice'
 import { Link, Navigate } from 'react-router-dom'
@@ -53,7 +56,7 @@ const ProductsList = () => {
 		} else if (selectedSorter === 'price') {
 			sortedListProducts.sort((a, b) => a.price - b.price)
 		} else if (selectedSorter === 'category') {
-			sortedListProducts.sort((a, b) => a.category - b.category)
+			sortedListProducts.sort((a, b) => (a.category > b.category ? 1 : a.category === b.category ? 0 : -1))
 		}
 		setSortedProducts(sortedListProducts)
 		// if (!sortAscending) {
@@ -76,7 +79,7 @@ const ProductsList = () => {
 	return (
 		<>
 			{isOpen && <RemoveProductModal id={productToDeleteId} />}
-			<StyledContainerProductsList>
+			<div>
 				<ReturnBtn />
 				<div className='select-column'>
 					<label for='column-name'>Sort by column </label>
@@ -96,11 +99,53 @@ const ProductsList = () => {
 				checked={sortAscending}
 				checkedIcon='asc'
 				uncheckedIcon='desc'></Switch> */}
-
+				{/* 
 				<div>
 					<input type='text' placeholder='Search by title, category and type' value={searchPhrase} onChange={search} />
+				</div> */}
+				<StyledBoxSearchInput>
+					<StyledSearchInput
+						type='text'
+						placeholder='Search by title, category and type'
+						value={searchPhrase}
+						onChange={search}></StyledSearchInput>
+					<StyledSearchIcon>
+						<BsSearch />
+					</StyledSearchIcon>
+				</StyledBoxSearchInput>
+				<div className='productsContainer'>
+					<StyledTable>
+						<StyledTableHeaders>
+							<tr>
+								<th>Lp.</th>
+								<th>Id</th>
+								<th>Title</th>
+								<th>Description</th>
+								<th>Image</th>
+								<th>Price</th>
+								<th>Type</th>
+								<th>Category</th>
+							</tr>
+						</StyledTableHeaders>
+
+						<tbody>
+							{searchProducts.map((product, index) => (
+								<Product
+									key={product.id}
+									data={product}
+									orderNo={index + 1}
+									setProductToDeleteId={setProductToDeleteId}
+								/>
+							))}
+
+							<StyledBtn onClick={() => navigate('/products/addNewproduct')}>
+								<span>Add new product</span>
+							</StyledBtn>
+						</tbody>
+					</StyledTable>
 				</div>
-				<StyledProductsListHeader>
+
+				{/* <StyledProductsListHeader>
 					<p>Lp.</p>
 					<p>Id</p>
 					<p>title</p>
@@ -109,10 +154,9 @@ const ProductsList = () => {
 					<p>price</p>
 					<p>type</p>
 					<p>category</p>
-				</StyledProductsListHeader>
+				</StyledProductsListHeader> */}
 
-				<StyledProductsList>
-					{/* {products.map((p) => ( */}
+				{/* <StyledProductsList>
 					{searchProducts.map((product, index) => (
 						<Product key={product.id} data={product} orderNo={index + 1} setProductToDeleteId={setProductToDeleteId} />
 					))}
@@ -120,8 +164,8 @@ const ProductsList = () => {
 					<StyledBtn onClick={() => navigate('/products/addNewproduct')}>
 						<span>Add new product</span>
 					</StyledBtn>
-				</StyledProductsList>
-			</StyledContainerProductsList>
+				</StyledProductsList> */}
+			</div>
 		</>
 	)
 }

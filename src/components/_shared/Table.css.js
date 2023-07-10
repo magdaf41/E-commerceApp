@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledContainerProductsList = styled.table`
+export const StyledTable = styled.table`
 	border-collapse: collapse;
 	margin: 25px 0;
 	font-size: 14px;
@@ -27,13 +27,15 @@ export const StyledProductsListHeader = styled.div`
 	grid-template-columns: 50px 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 `
 
-export const StyledListHeaders = styled.tr`
-	/* background-color: #146c94; */
-	color: #ffffff;
-	text-align: left;
-	font-weight: bold;
-	font-size: 16px;
-	text-align: center;
+export const StyledTableHeaders = styled.thead`
+	& tr {
+		/* background-color: #146c94; */
+		color: #ffffff;
+		text-align: left;
+		font-weight: bold;
+		font-size: 16px;
+		text-align: center;
+	}
 	& th {
 		padding: 12px 20px;
 		width: auto;
@@ -48,8 +50,20 @@ export const StyledProductsButtons = styled.div`
 	flex-direction: column;
 `
 
-// export const StyledContentTableTh = styled.th`
-// 	padding: 12px 20px;
-// 	width: 160px;
-// 	text-align: center;
-// `
+export const StyledContentTableTbody = styled.tr`
+	border-bottom: 1px solid #354147;
+	/* &&:nth-of-type(even) {
+		background-color: red;
+	} */
+	& td {
+		padding: 12px 20px;
+		width: auto;
+		text-align: center;
+		font-size: 10px;
+		& img {
+			width: 100px;
+			height: auto;
+			object-fit: cover;
+		}
+	}
+`
