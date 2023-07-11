@@ -20,6 +20,7 @@ import { StyledBtn } from '../components/_shared/Form.css'
 import RemoveProductModal from '../components/Modals/RemoveProductModals'
 import { openModal } from '../store/modalSlice'
 import Product from '../components/Product'
+import { StyledButtons } from '../components/_shared/Buttons.css'
 
 const ProductsList = () => {
 	const dispatch = useDispatch()
@@ -138,9 +139,9 @@ const ProductsList = () => {
 								/>
 							))}
 
-							<StyledBtn onClick={() => navigate('/products/addNewproduct')}>
+							<StyledButtons onClick={() => navigate('/products/addNewproduct')}>
 								<span>Add new product</span>
-							</StyledBtn>
+							</StyledButtons>
 						</tbody>
 					</StyledTable>
 				</div>

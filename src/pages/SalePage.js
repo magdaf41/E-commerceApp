@@ -1,30 +1,37 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import {
 	StyledProductsListContainer,
 	StyledProduct,
 	StyledProductImage,
 	StyledProductHeader,
-} from '../components/ProductsListTemplate.css'
+	SyledBackgroundImage,
+	StyledProductContent,
+	StyledProductPrice,
+	StyledProductDesc,
+} from '../components/_shared/ProductsList.css'
 import ReturnBtn from '../components/ReturnBtn'
 import { StyledNextPage } from './HomePage.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { addProductToCart } from '../store/cartSlice'
+import Modal from '../components/Modals/Modal'
+import { openModal } from '../store/modalSlice'
+import { StyledButtons } from '../components/_shared/Buttons.css'
+import ProductsListOneType from '../components/ProductsListOneType'
 
 const SalePage = () => {
 	const dispatch = useDispatch()
 	const products = useSelector(state => state.cart.products)
-
 	const loggedUser = useSelector(state => state.auth.loggedUser)
+	const isOpen = useSelector(store => store.modal.isOpen)
 
-	const addProductToCart = saleProduct => {
-		{
-			loggedUser ? dispatch(addProductToCart(saleProduct)) : console.log('Musisz być zalogowany')
-		}
-	}
+	const message = 'You need to be logged in'
 
 	return (
 		<StyledNextPage>
 			<ReturnBtn />
+			<SyledBackgroundImage>
+				<img src='https://daisylinden.com/wp-content/uploads/apple-watch-girl-hand.jpg'></img>
+			</SyledBackgroundImage>
 			<StyledProductsListContainer>
 				{products
 					.filter(p => p.category === 'sale')
@@ -33,21 +40,21 @@ const SalePage = () => {
 							<StyledProductImage>
 								<img src={saleProduct.image} />
 							</StyledProductImage>
-							<StyledProductHeader>
-								<h3>{saleProduct.title}</h3>
-								<p>${saleProduct.price}</p>
-							</StyledProductHeader>
+							<StyledProductContent>
+								<StyledProductHeader>{saleProduct.title}</StyledProductHeader>
+								<StyledProductPrice>${saleProduct.price}</StyledProductPrice>
+								<StyledProductDesc>{saleProduct.desc}</StyledProductDesc>
+							</StyledProductContent>
 
-							<p>{saleProduct.desc}</p>
-
-							<button
+							<StyledButtons
 								onClick={() => {
-									addProductToCart(saleProduct)
+									loggedUser ? dispatch(addProductToCart(saleProduct)) : dispatch(openModal())
 								}}>
 								Add to cart
-							</button>
+							</StyledButtons>
 						</StyledProduct>
 					))}
+				{isOpen ? <Modal message={message}></Modal> : null}
 			</StyledProductsListContainer>
 		</StyledNextPage>
 	)

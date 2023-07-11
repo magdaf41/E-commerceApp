@@ -32,7 +32,7 @@ const User = ({ data, orderNo }) => {
 	console.log(role)
 	return (
 		<StyledContentTableTbody key={data.id}>
-			<td>{orderNo}</td>
+			<td order>{orderNo}</td>
 			<td>{data.id}</td>
 			<td>{data.name}</td>
 			<td>{data.email}</td>

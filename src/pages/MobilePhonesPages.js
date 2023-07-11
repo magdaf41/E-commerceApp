@@ -4,13 +4,18 @@ import {
 	StyledProduct,
 	StyledProductImage,
 	StyledProductHeader,
-} from '../components/ProductsListTemplate.css'
+	SyledBackgroundImage,
+	StyledProductContent,
+	StyledProductPrice,
+	StyledProductDesc,
+} from '../components/_shared/ProductsList.css'
 import ReturnBtn from '../components/ReturnBtn'
 import { StyledNextPage } from './HomePage.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { addProductToCart } from '../store/cartSlice'
 import { openModal } from '../store/modalSlice'
 import Modal from '../components/Modals/Modal'
+import { StyledButtons } from '../components/_shared/Buttons.css'
 
 const MobilePhonesPages = () => {
 	const dispatch = useDispatch()
@@ -23,6 +28,9 @@ const MobilePhonesPages = () => {
 	return (
 		<StyledNextPage>
 			<ReturnBtn />
+			<SyledBackgroundImage>
+				<img src='https://blog.yelp.com/wp-content/uploads/2019/07/Photo-by-Ozgu-Ozden-scaled-1200x630.jpg'></img>
+			</SyledBackgroundImage>
 			<StyledProductsListContainer>
 				{products
 					.filter(p => p.type === 'mobile phone')
@@ -31,19 +39,18 @@ const MobilePhonesPages = () => {
 							<StyledProductImage>
 								<img src={phone.image} />
 							</StyledProductImage>
-							<StyledProductHeader>
-								<h3>{phone.title}</h3>
-								<p>${phone.price}</p>
-							</StyledProductHeader>
+							<StyledProductContent>
+								<StyledProductHeader>{phone.title}</StyledProductHeader>
+								<StyledProductPrice>${phone.price}</StyledProductPrice>
+								<StyledProductDesc>{phone.desc}</StyledProductDesc>
+							</StyledProductContent>
 
-							<p>{phone.desc}</p>
-
-							<button
+							<StyledButtons
 								onClick={() => {
 									loggedUser ? dispatch(addProductToCart(phone)) : dispatch(openModal())
 								}}>
 								Add to cart
-							</button>
+							</StyledButtons>
 						</StyledProduct>
 					))}
 				{isOpen ? <Modal message={message}></Modal> : null}

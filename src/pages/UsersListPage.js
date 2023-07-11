@@ -17,6 +17,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { StyledBtn } from '../components/_shared/Form.css'
 import User from '../components/User'
+import { StyledButtons } from '../components/_shared/Buttons.css'
 
 const UsersListPage = () => {
 	// const dispatch = useDispatch()
@@ -48,9 +49,9 @@ const UsersListPage = () => {
 						// </StyledProduct>
 					))}
 
-					<StyledBtn onClick={() => navigate('/register')}>
+					<StyledButtons onClick={() => navigate('/register')}>
 						<span>Add new user</span>
-					</StyledBtn>
+					</StyledButtons>
 				</tbody>
 			</StyledTable>
 		</>

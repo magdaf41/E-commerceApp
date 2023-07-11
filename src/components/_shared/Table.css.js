@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const StyledTable = styled.table`
 	border-collapse: collapse;
 	margin: 25px 0;
-	font-size: 14px;
+	font-size: 16px;
 	min-width: 800px;
 	border: 1px solid #19a7ce;
 	border-radius: 5px 5px 0 0;
@@ -13,18 +13,12 @@ export const StyledTable = styled.table`
 export const StyledProduct = styled.div`
 	display: grid;
 	grid-template-columns: 50px 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-	font-size: 10px;
+	font-size: 14px;
 	& img {
 		width: 50px;
 		height: 50px;
 		object-fit: cover;
 	}
-`
-// do usunięcia!
-export const StyledProductsListHeader = styled.div`
-	width: 100%;
-	display: grid;
-	grid-template-columns: 50px 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 `
 
 export const StyledTableHeaders = styled.thead`
@@ -52,14 +46,10 @@ export const StyledProductsButtons = styled.div`
 
 export const StyledContentTableTbody = styled.tr`
 	border-bottom: 1px solid #354147;
-	/* &&:nth-of-type(even) {
-		background-color: red;
-	} */
 	& td {
 		padding: 12px 20px;
-		width: auto;
 		text-align: center;
-		font-size: 10px;
+		font-size: 12px;
 		& img {
 			width: 100px;
 			height: auto;

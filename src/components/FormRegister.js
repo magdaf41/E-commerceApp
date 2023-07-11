@@ -18,6 +18,7 @@ import {
 	StyledSpanLink,
 	StyledBtn,
 } from './_shared/Form.css'
+import { StyledButtons } from './_shared/Buttons.css'
 
 const validationSchema = Yup.object().shape({
 	name: Yup.string().required().min(4).max(30),
@@ -80,7 +81,7 @@ export const FormRegister = () => {
 							{errors.password && touched.password && <StyledPError>{errors.password}</StyledPError>}
 						</StyledBoxInput>
 
-						<StyledBtn>Register</StyledBtn>
+						<StyledButtons>Register</StyledButtons>
 						<StyledPLogin>
 							Already have an account?
 							<Link to='/login'>

@@ -4,13 +4,19 @@ import {
 	StyledProduct,
 	StyledProductImage,
 	StyledProductHeader,
-} from '../components/ProductsListTemplate.css'
+	SyledBackgroundImage,
+	StyledProductContent,
+	StyledProductPrice,
+	StyledProductDesc,
+} from '../components/_shared/ProductsList.css'
 import ReturnBtn from '../components/ReturnBtn'
 import { StyledNextPage } from './HomePage.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { addProductToCart } from '../store/cartSlice'
 import Modal from '../components/Modals/Modal'
 import { openModal } from '../store/modalSlice'
+import { StyledButtons } from '../components/_shared/Buttons.css'
+import ProductsListOneType from '../components/ProductsListOneType'
 
 const HeadphonesPages = () => {
 	const dispatch = useDispatch()
@@ -23,6 +29,9 @@ const HeadphonesPages = () => {
 	return (
 		<StyledNextPage>
 			<ReturnBtn />
+			<SyledBackgroundImage>
+				<img src='https://www.theladders.com/wp-content/uploads/work-headphones-190820-1490x838.jpg'></img>
+			</SyledBackgroundImage>
 			<StyledProductsListContainer>
 				{products
 					.filter(p => p.type === 'headphones')
@@ -31,17 +40,18 @@ const HeadphonesPages = () => {
 							<StyledProductImage>
 								<img src={headphone.image} />
 							</StyledProductImage>
-							<StyledProductHeader>
-								<h3>{headphone.title}</h3>
-								<p>${headphone.price}</p>
-							</StyledProductHeader>
-							<p>{headphone.desc}</p>
-							<button
+							<StyledProductContent>
+								<StyledProductHeader>{headphone.title}</StyledProductHeader>
+								<StyledProductPrice>${headphone.price}</StyledProductPrice>
+								<StyledProductDesc>{headphone.desc}</StyledProductDesc>
+							</StyledProductContent>
+
+							<StyledButtons
 								onClick={() => {
 									loggedUser ? dispatch(addProductToCart(headphone)) : dispatch(openModal())
 								}}>
 								Add to cart
-							</button>
+							</StyledButtons>
 						</StyledProduct>
 					))}
 				{isOpen ? <Modal message={message}></Modal> : null}

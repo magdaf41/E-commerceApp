@@ -17,6 +17,7 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearResponse, login } from '../store/authSlice'
+import { StyledButtons } from './_shared/Buttons.css'
 
 const validationSchema = Yup.object().shape({
 	email: Yup.string().required().min(4).max(30),
@@ -62,8 +63,7 @@ export const Login = () => {
 							<StyledInput name='password' value={values.password} onBlur={handleBlur} onChange={handleChange} />
 							{errors.password && touched.password && <StyledPError>{errors.password}</StyledPError>}
 						</StyledBoxInput>
-
-						<StyledBtn>Log In</StyledBtn>
+						<StyledButtons>Log In</StyledButtons>
 						<StyledPLogin>
 							Don't have an account?
 							<Link to='/register'>
