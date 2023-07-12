@@ -1,26 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import ReturnBtn from '../components/ReturnBtn'
-import // StyledContainerProductsList,
-// StyledProduct,
-// StyledProductsList,
-// StyledProductsListHeader,
-'./ProductsList.css'
-import {
-	StyledTable,
-	StyledTableHeaders,
-	StyledProduct,
-	StyledProductsList,
-	StyledProductsListHeader,
-	StyledProductsButtons,
-} from '../components/_shared/Table.css'
-import { useDispatch, useSelector } from 'react-redux'
+import { StyledTable, StyledTableHeaders } from '../components/_shared/Table.css'
+import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { StyledBtn } from '../components/_shared/Form.css'
 import User from '../components/User'
 import { StyledButtons } from '../components/_shared/Buttons.css'
 
 const UsersListPage = () => {
-	// const dispatch = useDispatch()
 	const navigate = useNavigate()
 	const users = useSelector(state => state.auth.users)
 
@@ -28,7 +14,6 @@ const UsersListPage = () => {
 		<>
 			<ReturnBtn />
 			<StyledTable>
-				{/* <thead> */}
 				<StyledTableHeaders>
 					<tr>
 						<th>Lp.</th>
@@ -39,20 +24,13 @@ const UsersListPage = () => {
 						<th>Role</th>
 					</tr>
 				</StyledTableHeaders>
-				{/* </thead> */}
 
 				<tbody>
-					{/* {products.map((p) => ( */}
 					{users.map((user, index) => (
-						// <StyledProduct key={user.id}>
 						<User key={user.id} data={user} orderNo={index + 1} />
-						// </StyledProduct>
 					))}
-
-					<StyledButtons onClick={() => navigate('/register')}>
-						<span>Add new user</span>
-					</StyledButtons>
 				</tbody>
+				<StyledButtons onClick={() => navigate('/register')}>Add new user</StyledButtons>
 			</StyledTable>
 		</>
 	)

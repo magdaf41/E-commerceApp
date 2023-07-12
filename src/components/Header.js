@@ -17,6 +17,7 @@ import {
 	StyledNav,
 	StyledDivLogged,
 	StyledNavAdmin,
+	StyledLoggedUser,
 } from './Header.css'
 import { logout } from '../store/authSlice'
 
@@ -51,22 +52,22 @@ const Header = () => {
 						</Link>
 					) : (
 						<StyledDivLogged>
-							<p>
+							<StyledLoggedUser>
 								<BsPerson />
 								<h4>{loggedUser.name}</h4>
-							</p>
+							</StyledLoggedUser>
 							<button onClick={logOutUser}>
 								<FiLogOut />
 							</button>
 						</StyledDivLogged>
 					)}
 
-					<p>
+					<div>
 						<Link to={'/order'}>
 							<SlBag />
-							<span>{orderedProducts.length}</span>
 						</Link>
-					</p>
+						<span>{orderedProducts.length}</span>
+					</div>
 				</StyledSingInBasket>
 			</StyledRowTitle>
 

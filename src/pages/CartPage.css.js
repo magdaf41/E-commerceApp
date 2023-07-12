@@ -9,6 +9,9 @@ export const StyledContainerFormPage = styled.div`
 	align-items: center;
 	padding: 30px;
 	background: #ffffff;
+	& h2 {
+		color: #42413c;
+	}
 `
 export const StyledCart = styled.div`
 	width: 100%;
@@ -28,7 +31,7 @@ export const StyledOrderedHeaderRow = styled.div`
 `
 
 export const StyledOrderedHeader = styled.h4`
-	color: #b9b5a8;
+	color: #42413c;
 	font-weight: 500;
 	font-size: 12px;
 	text-transform: uppercase;
@@ -39,6 +42,7 @@ export const StyledOrderedColumn = styled.div`
 	height: 80px;
 	display: flex;
 	align-items: center;
+	color: #42413c;
 
 	& img {
 		width: 40px;

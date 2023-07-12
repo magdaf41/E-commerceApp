@@ -1,45 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import ReturnBtn from '../components/ReturnBtn'
-import {
-	StyledTable,
-	StyledTableHeaders,
-	StyledProduct,
-	StyledProductsList,
-	StyledProductsListHeader,
-	StyledProductsButtons,
-} from '../components/_shared/Table.css'
+import { StyledTable, StyledTableHeaders } from '../components/_shared/Table.css'
 import { StyledBoxSearchInput, StyledSearchInput, StyledSearchIcon } from '../components/Header.css'
 import { BsSearch } from 'react-icons/bs'
 import { useDispatch, useSelector } from 'react-redux'
-import { addProductToCart } from '../store/cartSlice'
-import { Link, Navigate } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-import { removeProduct } from '../store/cartSlice'
-import { editProduct } from '../store/cartSlice'
-import { StyledBtn } from '../components/_shared/Form.css'
 import RemoveProductModal from '../components/Modals/RemoveProductModals'
-import { openModal } from '../store/modalSlice'
 import Product from '../components/Product'
 import { StyledButtons } from '../components/_shared/Buttons.css'
+import { StyledSearchAndSelectBox } from '../components/_shared/ProductsList.css'
+import Select from 'react-select'
 
 const ProductsList = () => {
-	const dispatch = useDispatch()
-	// const products = useSelector(state => state.cart.updateListOfProducts)
-	const editProductValue = useSelector(state => state.cart.editProduct)
 	const navigate = useNavigate()
 	const products = useSelector(state => state.cart.products)
-	const loggedUser = useSelector(state => state.auth.loggedUser)
 	const isOpen = useSelector(store => store.modal.isOpen)
-	// const [openModul, setOpenModul] = useState(false)
 
 	const [searchProducts, setSearchProducts] = useState(products)
 	const [searchPhrase, setSearchPhrase] = useState('')
 	const [sortedProducts, setSortedProducts] = useState(searchProducts)
 
 	const [productToDeleteId, setProductToDeleteId] = useState('')
-
-	console.log(productToDeleteId)
-	console.log(searchProducts)
 
 	useEffect(() => {
 		setSearchProducts(products)
@@ -80,8 +61,8 @@ const ProductsList = () => {
 	return (
 		<>
 			{isOpen && <RemoveProductModal id={productToDeleteId} />}
-			<div>
-				<ReturnBtn />
+			<ReturnBtn />
+			<StyledSearchAndSelectBox>
 				<div className='select-column'>
 					<label for='column-name'>Sort by column </label>
 					<select className='select' onChange={onSorterChange}>
@@ -100,10 +81,7 @@ const ProductsList = () => {
 				checked={sortAscending}
 				checkedIcon='asc'
 				uncheckedIcon='desc'></Switch> */}
-				{/* 
-				<div>
-					<input type='text' placeholder='Search by title, category and type' value={searchPhrase} onChange={search} />
-				</div> */}
+
 				<StyledBoxSearchInput>
 					<StyledSearchInput
 						type='text'
@@ -114,59 +92,32 @@ const ProductsList = () => {
 						<BsSearch />
 					</StyledSearchIcon>
 				</StyledBoxSearchInput>
-				<div className='productsContainer'>
-					<StyledTable>
-						<StyledTableHeaders>
-							<tr>
-								<th>Lp.</th>
-								<th>Id</th>
-								<th>Title</th>
-								<th>Description</th>
-								<th>Image</th>
-								<th>Price</th>
-								<th>Type</th>
-								<th>Category</th>
-							</tr>
-						</StyledTableHeaders>
+			</StyledSearchAndSelectBox>
 
-						<tbody>
-							{searchProducts.map((product, index) => (
-								<Product
-									key={product.id}
-									data={product}
-									orderNo={index + 1}
-									setProductToDeleteId={setProductToDeleteId}
-								/>
-							))}
+			<StyledTable>
+				<StyledTableHeaders>
+					<tr>
+						<th>Lp.</th>
+						<th>Id</th>
+						<th>Title</th>
+						<th>Description</th>
+						<th>Image</th>
+						<th>Price</th>
+						<th>Type</th>
+						<th>Category</th>
+					</tr>
+				</StyledTableHeaders>
 
-							<StyledButtons onClick={() => navigate('/products/addNewproduct')}>
-								<span>Add new product</span>
-							</StyledButtons>
-						</tbody>
-					</StyledTable>
-				</div>
-
-				{/* <StyledProductsListHeader>
-					<p>Lp.</p>
-					<p>Id</p>
-					<p>title</p>
-					<p>description</p>
-					<p>image</p>
-					<p>price</p>
-					<p>type</p>
-					<p>category</p>
-				</StyledProductsListHeader> */}
-
-				{/* <StyledProductsList>
+				<tbody>
 					{searchProducts.map((product, index) => (
 						<Product key={product.id} data={product} orderNo={index + 1} setProductToDeleteId={setProductToDeleteId} />
 					))}
 
-					<StyledBtn onClick={() => navigate('/products/addNewproduct')}>
+					<StyledButtons onClick={() => navigate('/products/addNewproduct')}>
 						<span>Add new product</span>
-					</StyledBtn>
-				</StyledProductsList> */}
-			</div>
+					</StyledButtons>
+				</tbody>
+			</StyledTable>
 		</>
 	)
 }

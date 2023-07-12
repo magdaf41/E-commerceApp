@@ -3,10 +3,10 @@ import { StyledButtonPreviousPage } from '../pages/HomePage.css'
 import { useNavigate } from 'react-router-dom'
 import { IoIosArrowBack } from 'react-icons/io'
 
-const ReturnBtn = () => {
+const ReturnBtn = ({ light }) => {
 	const navigate = useNavigate()
 	return (
-		<StyledButtonPreviousPage onClick={() => navigate('/')}>
+		<StyledButtonPreviousPage onClick={() => navigate('/')} light>
 			<IoIosArrowBack />
 			Return to previous page
 		</StyledButtonPreviousPage>

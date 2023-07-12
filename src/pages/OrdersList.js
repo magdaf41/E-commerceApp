@@ -1,30 +1,11 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import {
-	StyledOrderListContainer,
-	StyledOrderWrapper,
-	StyledOrdersListHeader,
-	StyledOrdersList,
-	StyledOrderedProductList,
-	StyledProduct,
-	StyledProductQuantity,
-} from './OrdersList.css'
-import {
-	StyledTable,
-	StyledTableHeaders,
-	StyledContentTableTbody,
-	StyledProductsList,
-	StyledProductsListHeader,
-	StyledProductsButtons,
-} from '../components/_shared/Table.css'
+import { StyledOrderedProductList, StyledProduct, StyledProductQuantity } from './OrdersList.css'
+import { StyledTable, StyledTableHeaders, StyledContentTableTbody } from '../components/_shared/Table.css'
 
 const OrdersList = () => {
 	const orders = useSelector(state => state.ordersList.orders)
-	const totalAmount = useSelector(state => state.cart.cartTotalAmount)
-	const orderedProducts = useSelector(state => state.cart.orderedProducts)
 
-	console.log(orders)
-	orders.map(o => console.log(o.products))
 	return (
 		<StyledTable>
 			<StyledTableHeaders>

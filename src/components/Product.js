@@ -1,5 +1,4 @@
 import React from 'react'
-import { StyledProduct, StyledProductsButtons } from '../pages/ProductsList.css'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { editProduct } from '../store/cartSlice'
@@ -9,7 +8,6 @@ import { StyledContentTableTbody } from './_shared/Table.css'
 const Product = ({ data, orderNo, setProductToDeleteId }) => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
-	console.log(orderNo)
 
 	return (
 		<StyledContentTableTbody key={data.id}>

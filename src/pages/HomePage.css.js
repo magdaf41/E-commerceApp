@@ -27,8 +27,9 @@ export const StyledButtonPreviousPage = styled.button`
 	display: flex;
 	justify-content: end;
 	font-size: 10px;
-	color: black;
+	/* color:  ${(props) => (props.light ? "white" : "black")}; */
 	font-weight: 500;
+	padding: 20px;
 `
 
 export const StyledImage = styled.div`

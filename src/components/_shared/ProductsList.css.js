@@ -57,3 +57,9 @@ export const StyledProductDesc = styled.p`
 	font-size: 12px;
 	color: #41413c;
 `
+export const StyledSearchAndSelectBox = styled.div`
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+`

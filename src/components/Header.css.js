@@ -49,15 +49,17 @@ export const StyledTitle = styled.h3`
 
 export const StyledBoxSearchInput = styled.div`
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 	border: 1px solid #b9b5a8;
 	padding: 5px;
+	max-width: 400px;
 `
 export const StyledSearchInput = styled.input`
 	background-color: transparent;
 	outline: none;
 	border: none;
+	width: 300px;
 `
 export const StyledSearchIcon = styled.div`
 	color: white;
@@ -90,4 +92,10 @@ export const StyledDivLogged = styled.div`
 			align-items: center;
 		}
 	}
+`
+export const StyledLoggedUser = styled.div`
+	min-width: 80px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 `
