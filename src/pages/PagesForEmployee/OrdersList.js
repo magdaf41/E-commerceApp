@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { StyledOrderedProductList, StyledProduct, StyledProductQuantity } from './OrdersList.css'
-import { StyledTable, StyledTableHeaders, StyledContentTableTbody } from '../components/_shared/Table.css'
+import { StyledTable, StyledTableHeaders, StyledContentTableTbody } from '../../components/_shared/Table.css'
 
 const OrdersList = () => {
 	const orders = useSelector(state => state.ordersList.orders)

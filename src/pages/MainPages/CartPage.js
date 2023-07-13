@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-// import { toast } from 'react-toastify'
 import {
 	removeProductFromCart,
 	addProductToCart,
 	decreaseOrderedProducts,
 	clearCart,
 	getTotals,
-} from '../store/cartSlice'
+} from '../../store/cartSlice'
 import {
 	StyledContainerFormPage,
 	StyledCart,
@@ -23,17 +22,15 @@ import {
 	StyledClearCart,
 	StyledSubtotal,
 } from './CartPage.css'
-import { StyledBtn } from '../components/_shared/Form.css'
-import { addOrder } from '../store/ordersListSlice'
-import { openModal } from '../store/modalSlice'
-import Modal from '../components/Modals/ClearCartModal'
-import ClearCartModal from '../components/Modals/ClearCartModal'
+import { StyledBtn } from '../../components/_shared/Form.css'
+import { addOrder } from '../../store/ordersListSlice'
+import { openModal } from '../../store/modalSlice'
+import Modal from '../../components/Modals/ClearCartModal'
+import ClearCartModal from '../../components/Modals/ClearCartModal'
 
 const CartPage = () => {
 	const dispatch = useDispatch()
 	const orderedProducts = useSelector(state => state.cart.orderedProducts)
-	const totalAmount = useSelector(state => state.cart.cartTotalAmount)
-	const ordersList = useSelector(state => state.ordersList.orders)
 	const loggeduser = useSelector(state => state.auth.loggedUser)
 	const navigate = useNavigate()
 	const orderValue = orderedProducts.reduce((prev, curr) => prev + curr.price * curr.cartQuantity, 0)
@@ -42,7 +39,6 @@ const CartPage = () => {
 
 	useEffect(() => {
 		dispatch(getTotals())
-		console.log(orderedProducts)
 	}, [orderedProducts, dispatch])
 
 	const handleAddToCart = product => {
@@ -112,14 +108,12 @@ const CartPage = () => {
 								</StyledOrderedColumn>
 							</StyledOrderedTable>
 						))}
-						{/* </div> */}
 					</StyledOrderedProductsContainer>
 					<StyledCartSumUp>
 						<StyledClearCart>
 							<StyledBtn
 								onClick={() => {
 									dispatch(openModal())
-									// dispatch(clearCart(orderedProducts))
 								}}>
 								Clear Cart
 							</StyledBtn>
@@ -128,7 +122,6 @@ const CartPage = () => {
 						<div>
 							<StyledSubtotal>
 								<div>Subtotal</div>
-								{/* <span> ${totalAmount}</span> */}
 								<span> ${orderValue}</span>
 							</StyledSubtotal>
 							<div>

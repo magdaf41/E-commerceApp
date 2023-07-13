@@ -1,10 +1,10 @@
 import React from 'react'
-import ReturnBtn from '../components/ReturnBtn'
-import { StyledTable, StyledTableHeaders } from '../components/_shared/Table.css'
+import ReturnBtn from '../../components/ReturnBtn'
+import { StyledTable, StyledTableHeaders } from '../../components/_shared/Table.css'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import User from '../components/User'
-import { StyledButtons } from '../components/_shared/Buttons.css'
+import User from '../../components/User'
+import { StyledButtons } from '../../components/_shared/Buttons.css'
 
 const UsersListPage = () => {
 	const navigate = useNavigate()

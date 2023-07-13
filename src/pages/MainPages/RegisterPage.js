@@ -1,11 +1,9 @@
 import React from 'react'
-import { FormRegister } from '../components/FormRegister'
-import { StyledContainerFormPage, StyledButtonPreviousPage } from './HomePage.css'
-import ReturnBtn from '../components/ReturnBtn'
-// import { useNavigate } from 'react-router-dom'
+import { FormRegister } from '../../components/FormRegister'
+import { StyledContainerFormPage } from './HomePage.css'
+import ReturnBtn from '../../components/ReturnBtn'
 
 const RegisterPage = () => {
-	// const navigate = useNavigate()
 	return (
 		<StyledContainerFormPage>
 			<ReturnBtn />

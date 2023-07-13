@@ -39,34 +39,6 @@ const Product = ({ data, orderNo, setProductToDeleteId }) => {
 				</button>
 			</td>
 		</StyledContentTableTbody>
-		// <StyledProduct>
-		// 	<p>{orderNo}</p>
-		// 	<p>{data.id}</p>
-		// 	<p>{data.title} </p>
-		// 	<p>{data.desc}</p>
-		// 	<img src={data.image}></img>
-		// 	<p>{data.price}</p>
-		// 	<p>{data.type}</p>
-		// 	<p>{data.category}</p>
-		// <StyledProductsButtons>
-		// 	{/* {loggedUser.role !== 'client' && ( */}
-		// 	<button
-		// 		onClick={() => {
-		// 			dispatch(editProduct(data.id))
-		// 			navigate(`/editproduct/${data.id}`)
-		// 		}}>
-		// 		Edit
-		// 	</button>
-
-		// 	<button
-		// 		onClick={() => {
-		// 			setProductToDeleteId(data.id)
-		// 			dispatch(openModal())
-		// 		}}>
-		// 		Remove
-		// 	</button>
-		// </StyledProductsButtons>
-		// </StyledProduct>
 	)
 }
 

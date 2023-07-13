@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import ReturnBtn from '../components/ReturnBtn'
-import { StyledTable, StyledTableHeaders } from '../components/_shared/Table.css'
-import { StyledBoxSearchInput, StyledSearchInput, StyledSearchIcon } from '../components/Header.css'
+import ReturnBtn from '../../components/ReturnBtn'
+import { StyledTable, StyledTableHeaders } from '../../components/_shared/Table.css'
+import { StyledBoxSearchInput, StyledSearchInput, StyledSearchIcon } from '../../components/Header.css'
 import { BsSearch } from 'react-icons/bs'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import RemoveProductModal from '../components/Modals/RemoveProductModals'
-import Product from '../components/Product'
-import { StyledButtons } from '../components/_shared/Buttons.css'
-import { StyledSearchAndSelectBox } from '../components/_shared/ProductsList.css'
+import RemoveProductModal from '../../components/Modals/RemoveProductModals'
+import Product from '../../components/Product'
+import { StyledButtons } from '../../components/_shared/Buttons.css'
+import { StyledSearchAndSelectBox } from '../../components/_shared/ProductsList.css'
 import Select from 'react-select'
 
 const ProductsList = () => {
@@ -48,7 +48,6 @@ const ProductsList = () => {
 	const search = event => {
 		const matchedProducts = products.filter(
 			product =>
-				// (product.title || product.category || product.type).toLowerCase().includes(event.target.value.toLowerCase())
 				product.title.toLowerCase().includes(event.target.value.toLowerCase()) ||
 				product.category.toLowerCase().includes(event.target.value.toLowerCase()) ||
 				product.type.toLowerCase().includes(event.target.value.toLowerCase())

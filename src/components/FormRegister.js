@@ -1,8 +1,7 @@
 import { React, useEffect } from 'react'
-import { Formik, Form, Field } from 'formik'
+import { Formik } from 'formik'
 import * as Yup from 'yup'
-// import { AiOutlineClose } from "react-icons/ai";
-import { Link, Navigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearResponse, register } from '../store/authSlice'
@@ -16,7 +15,6 @@ import {
 	StyledPError,
 	StyledPLogin,
 	StyledSpanLink,
-	StyledBtn,
 } from './_shared/Form.css'
 import { StyledButtons } from './_shared/Buttons.css'
 
@@ -36,8 +34,6 @@ export const FormRegister = () => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 	const response = useSelector(state => state.auth.response)
-	const users = useSelector(state => state.auth.users)
-	const loggedUser = useSelector(state => state.auth.loggedUser)
 
 	useEffect(() => {
 		if (response.success) {
@@ -48,11 +44,6 @@ export const FormRegister = () => {
 
 	const submitForm = values => {
 		dispatch(register(values))
-		console.log(register(values))
-		console.log(response)
-		console.log(users)
-		console.log(loggedUser)
-
 		if (response.success) {
 			navigate('/')
 		}

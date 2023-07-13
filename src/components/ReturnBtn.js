@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyledButtonPreviousPage } from '../pages/HomePage.css'
+import { StyledButtonPreviousPage } from '../pages/MainPages/HomePage.css'
 import { useNavigate } from 'react-router-dom'
 import { IoIosArrowBack } from 'react-icons/io'
 

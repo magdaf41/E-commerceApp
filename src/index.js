@@ -6,24 +6,24 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import { Provider } from 'react-redux'
 import { store } from './store'
-import RegisterPage from './pages/RegisterPage'
-import LoginPage from './pages/LoginPage'
-import MobilePhonesPages from './pages/MobilePhonesPages'
-import HeadphonesPages from './pages/HeadphonesPages'
-import SmartwatchPages from './pages/SmartwatchPages'
-import HomePage from './pages/HomePage'
-import CartPage from './pages/CartPage'
-// import { ToastContainer } from 'react-toastify'
-// import "react-toastify/dist/ReactToastify.css";
-import LaptopPages from './pages/LaptopPages'
-import OrdersList from './pages/OrdersList'
-import ProductsList from './pages/ProductsList'
+import RegisterPage from './pages/MainPages/RegisterPage'
+import LoginPage from './pages/MainPages/LoginPage'
+import MobilePhonesPages from './pages/ProductsPages/MobilePhonesPages'
+import HeadphonePages from './pages/ProductsPages/HeadphonePages'
+import LaptopPages from './pages/ProductsPages/LaptopPages'
+import SmartwatchPages from './pages/ProductsPages/SmartwatchPages'
+import TheNewesPage from './pages/ProductsPages/TheNewestPage'
+import SalePage from './pages/ProductsPages/SalePage'
+import HomePage from './pages/MainPages/HomePage'
+import CartPage from './pages/MainPages/CartPage'
+
+import OrdersList from './pages/PagesForEmployee/OrdersList'
+import ProductsList from './pages/PagesForEmployee/ProductsList'
 import FormAdminAddProduct from './components/FormAdminAddProduct'
 import FormAdminEditProduct from './components/FormAdminEditProduct'
-import TheNewesPage from './pages/TheNewestPage'
-import SalePage from './pages/SalePage'
+
 import Modal from './components/Modals/ClearCartModal'
-import UsersListPage from './pages/UsersListPage'
+import UsersListPage from './pages/PagesForEmployee/UsersListPage'
 
 // import Modal from './components/Modal'
 
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
 			<>
 				<Header />
 				<main>
-					<HeadphonesPages />
+					<HeadphonePages />
 				</main>
 				<Footer />
 			</>
@@ -213,6 +213,5 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
 	<Provider store={store}>
 		<RouterProvider router={router} />
-		{/* <ToastContainer /> */}
 	</Provider>
 )
