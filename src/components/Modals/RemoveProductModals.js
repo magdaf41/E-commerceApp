@@ -2,11 +2,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { removeProduct } from '../../store/cartSlice'
 import { closeModal } from '../../store/modalSlice'
 import { StyledModalContainer } from './Modal.css'
+import { StyledButtons } from '../_shared/Buttons.css'
 
 const RemoveProductModal = ({ id }) => {
 	const dispatch = useDispatch()
-	const products = useSelector(state => state.cart.products)
-	console.log(id)
+	// const products = useSelector(state => state.cart.products)
 
 	return (
 		<StyledModalContainer>
@@ -16,23 +16,23 @@ const RemoveProductModal = ({ id }) => {
 				{/* {products.map(p => ( */}
 
 				<div>
-					<button
+					<StyledButtons
 						onClick={() => {
 							dispatch(removeProduct(id))
 							dispatch(closeModal())
 						}}>
 						Confirm
-					</button>
+					</StyledButtons>
 				</div>
 				{/* ))} */}
-				<button
+				<StyledButtons
 					type='button'
 					className='btn clear-btn'
 					onClick={() => {
 						dispatch(closeModal())
 					}}>
 					cancel
-				</button>
+				</StyledButtons>
 			</div>
 			{/* </div> */}
 		</StyledModalContainer>

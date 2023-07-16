@@ -9,6 +9,7 @@ export const StyledFooterContainer = styled.div`
 	font-size: 10px;
 	border-top: 1px solid #354147;
 	background-color: #222222;
+	color: #dadacb;
 `
 export const StyledFooterSection = styled.div`
 	height: 80px;

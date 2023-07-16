@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { editProduct } from '../store/cartSlice'
 import { openModal } from '../store/modalSlice'
 import { StyledContentTableTbody } from './_shared/Table.css'
+import { StyledButtons } from './_shared/Buttons.css'
 
 const Product = ({ data, orderNo, setProductToDeleteId }) => {
 	const navigate = useNavigate()
@@ -22,21 +23,21 @@ const Product = ({ data, orderNo, setProductToDeleteId }) => {
 			<td>{data.type}</td>
 			<td>{data.category}</td>
 			<td>
-				<button
+				<StyledButtons
 					onClick={() => {
 						dispatch(editProduct(data.id))
 						navigate(`/editproduct/${data.id}`)
 					}}>
 					Edit
-				</button>
+				</StyledButtons>
 
-				<button
+				<StyledButtons
 					onClick={() => {
 						setProductToDeleteId(data.id)
 						dispatch(openModal())
 					}}>
 					Remove
-				</button>
+				</StyledButtons>
 			</td>
 		</StyledContentTableTbody>
 	)

@@ -20,27 +20,24 @@ import {
 	StyledLoggedUser,
 } from './Header.css'
 import { logout } from '../store/authSlice'
+import { openModal } from '../store/modalSlice'
 
 const Header = () => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 	const loggedUser = useSelector(state => state.auth.loggedUser)
+	const isOpen = useSelector(store => store.modal.isOpen)
+
 	const logOutUser = values => {
+		dispatch(openModal())
 		dispatch(logout(values))
-		navigate('/')
+		// navigate('/')
 	}
 	const orderedProducts = useSelector(state => state.cart.orderedProducts)
 
 	return (
 		<StyledHeader>
 			<StyledRowTitle>
-				<StyledBoxSearchInput>
-					<StyledSearchInput placeholder='search'></StyledSearchInput>
-					<StyledSearchIcon>
-						<BsSearch />
-					</StyledSearchIcon>
-				</StyledBoxSearchInput>
-
 				<StyledTitle onClick={() => navigate('/')}>
 					Prjkt <span>10</span>
 				</StyledTitle>
@@ -57,11 +54,10 @@ const Header = () => {
 								<h4>{loggedUser.name}</h4>
 							</StyledLoggedUser>
 							<button onClick={logOutUser}>
-								<FiLogOut />
+								<FiLogOut color='#dadacb' />
 							</button>
 						</StyledDivLogged>
 					)}
-
 					<div>
 						<Link to={'/order'}>
 							<SlBag />
@@ -84,11 +80,9 @@ const Header = () => {
 			<StyledRowNav>
 				{loggedUser !== null && loggedUser.role !== 'client' && (
 					<StyledNav>
-						<StyledNavAdmin>
-							<Link to='/products'>products list</Link>
-							<Link to='/ordersList'>orders list</Link>
-							{loggedUser !== null && loggedUser.role === 'admin' && <Link to='/usersList'>users list</Link>}
-						</StyledNavAdmin>
+						<Link to='/products'>products list</Link>
+						<Link to='/ordersList'>orders list</Link>
+						{loggedUser !== null && loggedUser.role === 'admin' && <Link to='/usersList'>users list</Link>}
 					</StyledNav>
 				)}
 			</StyledRowNav>

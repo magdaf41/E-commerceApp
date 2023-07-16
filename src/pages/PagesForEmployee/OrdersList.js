@@ -21,7 +21,7 @@ const OrdersList = () => {
 			</StyledTableHeaders>
 			<tbody>
 				{orders.map(o => (
-					<StyledContentTableTbody>
+					<StyledContentTableTbody >
 						<td>{orders.indexOf(o) + 1}</td>
 						<td>{o.id}</td>
 						<td>{new Date(8.64e15).toString()}</td>

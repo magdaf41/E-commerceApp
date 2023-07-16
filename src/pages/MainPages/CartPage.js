@@ -13,10 +13,6 @@ import {
 	StyledContainerFormPage,
 	StyledCart,
 	StyledOrderedProductsContainer,
-	StyledOrderedTable,
-	StyledOrderedColumn,
-	StyledOrderedHeader,
-	StyledOrderedHeaderRow,
 	StyledOrderedQuantity,
 	StyledCartSumUp,
 	StyledClearCart,
@@ -27,6 +23,7 @@ import { addOrder } from '../../store/ordersListSlice'
 import { openModal } from '../../store/modalSlice'
 import Modal from '../../components/Modals/ClearCartModal'
 import ClearCartModal from '../../components/Modals/ClearCartModal'
+import { StyledTable, StyledTableHeaders, StyledContentTableTbody } from '../../components/_shared/Table.css'
 
 const CartPage = () => {
 	const dispatch = useDispatch()
@@ -69,46 +66,49 @@ const CartPage = () => {
 				<p>Your cart is currently empty</p>
 			) : (
 				<StyledCart>
-					<StyledOrderedProductsContainer>
-						<StyledOrderedHeaderRow>
-							<StyledOrderedHeader>product</StyledOrderedHeader>
-							<StyledOrderedHeader>price</StyledOrderedHeader>
-							<StyledOrderedHeader>quantity</StyledOrderedHeader>
-							<StyledOrderedHeader>total</StyledOrderedHeader>
-						</StyledOrderedHeaderRow>
-						{orderedProducts.map(product => (
-							<StyledOrderedTable>
-								<StyledOrderedColumn key={product.id}>
-									<img src={product.image}></img>
-									<div>
-										<p>{product.title}</p>
-										<button
-											onClick={() => {
-												dispatch(removeProductFromCart(product))
-											}}>
-											Remove
-										</button>
-									</div>
-								</StyledOrderedColumn>
+					<StyledTable>
+						<StyledTableHeaders>
+							<th>product</th>
+							<th>price</th>
+							<th>quantity</th>
+							<th>total</th>
+						</StyledTableHeaders>
+						<tbody>
+							{orderedProducts.map(product => (
+								<StyledContentTableTbody>
+									<td>
+										<img src={product.image}></img>
+										<div>
+											<p>{product.title}</p>
+											<StyledBtn
+												onClick={() => {
+													dispatch(removeProductFromCart(product))
+												}}>
+												Remove
+											</StyledBtn>
+										</div>
+									</td>
 
-								<StyledOrderedColumn>
-									<p>${product.price}</p>
-								</StyledOrderedColumn>
-								<StyledOrderedColumn>
-									<div key={product.id}>
-										<StyledOrderedQuantity>
-											<button onClick={() => handleDecreaseCart(product)}>-</button>
-											<div className='count'>{product.cartQuantity}</div>
-											<button onClick={() => handleAddToCart(product)}>+</button>
-										</StyledOrderedQuantity>
-									</div>
-								</StyledOrderedColumn>
-								<StyledOrderedColumn>
-									<p>${product.price * product.cartQuantity}</p>
-								</StyledOrderedColumn>
-							</StyledOrderedTable>
-						))}
-					</StyledOrderedProductsContainer>
+									<td>
+										<p>${product.price}</p>
+									</td>
+									<td>
+										<div key={product.id}>
+											<StyledOrderedQuantity>
+												<button onClick={() => handleDecreaseCart(product)}>-</button>
+												<div className='count'>{product.cartQuantity}</div>
+												<button onClick={() => handleAddToCart(product)}>+</button>
+											</StyledOrderedQuantity>
+										</div>
+									</td>
+									<td>
+										<p>${product.price * product.cartQuantity}</p>
+									</td>
+								</StyledContentTableTbody>
+							))}
+						</tbody>
+					</StyledTable>
+
 					<StyledCartSumUp>
 						<StyledClearCart>
 							<StyledBtn

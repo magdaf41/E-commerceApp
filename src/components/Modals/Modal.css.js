@@ -16,6 +16,7 @@ export const StyledModalContainer = styled.div`
   align-items: center;
   outline: 2px solid white;
   outline-offset: -15px;
+  color: red;
 `;
 
 export const StyledModalBtn = styled.div`
@@ -25,4 +26,5 @@ export const StyledModalBtn = styled.div`
   width: 80px;
   height: 20px;
   border: 1px solid white;
+  color:red ;
 `;

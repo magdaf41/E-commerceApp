@@ -1,19 +1,24 @@
 import styled from 'styled-components'
 
+export const StyledContainerFormPage = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`
+
 export const StyledFormContainer = styled.div`
 	width: 300px;
 	height: 400px;
 	border: 1px solid #64615a;
 	padding: 20px;
 	font-size: 12px;
-	color: black;
 `
 export const StyledFormTitle = styled.h4`
 	color: black;
 	font-size: 14px;
 	text-align: left;
 	border-bottom: 1px solid black;
-	font-weight: 300;
+	font-weight: 500;
 	width: 100%;
 	margin-bottom: 20px;
 `
@@ -33,33 +38,19 @@ export const StyledLabel = styled.label`
 `
 
 export const StyledInput = styled.input`
-	border: 1px solid black;
-	background-color: transparent;
 	width: 100%;
 	padding: 2px;
+	color: black;
 `
 
 export const StyledPError = styled.p`
-	font-size: 12px;
-	color: black;
+	font-size: 10px;
+	color: red;
+	font-weight: 700;
 `
 
-// export const StyledBtn = styled.button`
-// 	font-size: 10px;
-// 	background-color: #222222;
-// 	width: 100px;
-// 	height: 35px;
-// 	text-transform: uppercase;
-// 	color: white;
-
-// 	&:hover {
-// 		background-color: gray;
-// 	}
-// `
-
 export const StyledPLogin = styled.p`
-	font-size: 12px;
-	color: black;
+	/* font-size: 12px; */
 `
 
 export const StyledSpanLink = styled.span`

@@ -1,23 +1,14 @@
 import styled from 'styled-components'
 
 export const StyledContainerHomePage = styled.div`
-	width: 100%;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	padding: 30px 0;
-`
-export const StyledNextPage = styled.div`
-	padding: 30px;
-	background: #ffffff;
-`
-
-export const StyledContainerFormPage = styled.div`
+	min-height: 80vh;
 	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+`
+export const StyledProductsPage = styled.div`
 	padding: 30px;
 	background: #ffffff;
 `
@@ -27,7 +18,7 @@ export const StyledButtonPreviousPage = styled.button`
 	display: flex;
 	justify-content: end;
 	font-size: 10px;
-	/* color:  ${(props) => (props.light ? "white" : "black")}; */
+	color: #000000;
 	font-weight: 500;
 	padding: 20px;
 `

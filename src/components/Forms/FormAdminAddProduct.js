@@ -1,15 +1,17 @@
 import { React, useEffect } from 'react'
 import { Formik, Form, Field } from 'formik'
 import * as Yup from 'yup'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import {
+	// StyledFormContainer,
 	StyledFormTitle,
 	StyledBoxForm,
+	// StyledBoxInput,
 	StyledInput,
 	StyledLabel,
 	StyledPError,
 	StyledBtn,
-} from './_shared/Form.css'
+} from '../_shared/Form.css'
 
 import {
 	StyledAdminProduct,
@@ -19,13 +21,23 @@ import {
 	StyledInputsWrapper,
 } from './FormAdminAddProduct.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { editProduct } from '../store/cartSlice'
+import { addNewProduct } from '../../store/cartSlice'
+
+const initialValues = {
+	id: '',
+	title: '',
+	desc: '',
+	image: '',
+	price: '',
+	type: '',
+	category: '',
+}
 
 const validationSchema = Yup.object().shape({
-	//   id: Yup.string().required().min(4).max(30),
+	id: Yup.string().required().min(4).max(30),
 	title: Yup.string().min(4).required(),
 	desc: Yup.string().min(10).required(),
-	//   image: Yup.string().min(4).max(30).required(),
+	image: Yup.string().min(4).max(30).required(),
 	price: Yup.string().min(4).max(30).required(),
 	type: Yup.string().min(4).max(30).required(),
 	category: Yup.string().min(4).max(30).required(),
@@ -34,26 +46,12 @@ const validationSchema = Yup.object().shape({
 const FormAdminEditProduct = () => {
 	const dispatch = useDispatch()
 	const navigate = useNavigate()
-	const products = useSelector(state => state.cart.updateListOfProducts)
-	const params = useParams()
-	const id = params.id
-
-	const editedProduct = useSelector(state => state.cart.products.find(product => product.id === id))
-
-	const initialValues = {
-		id: editedProduct.id,
-		title: editedProduct.title,
-		desc: editedProduct.desc,
-		image: editedProduct.image,
-		price: editedProduct.price,
-		type: editedProduct.type,
-		category: editedProduct.category,
-	}
+	// const products = useSelector(state => state.cart.updateListOfProducts)
+	const products = useSelector(state => state.cart.products)
 
 	const submitForm = values => {
-		dispatch(editProduct(values))
+		dispatch(addNewProduct(values))
 		navigate('/products')
-		console.log(products)
 	}
 
 	return (
@@ -151,7 +149,7 @@ const FormAdminEditProduct = () => {
 									</StyledInput>
 									{errors.category && touched.category && <StyledPError>{errors.category}</StyledPError>}
 								</StyledBoxInput>
-								<StyledBtn>Accept</StyledBtn>
+								<StyledBtn>Add</StyledBtn>
 							</StyledFormContainer>
 						</StyledAdminForm>
 					)}

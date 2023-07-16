@@ -1,13 +1,13 @@
 import React from 'react'
 import { StyledButtonPreviousPage } from '../pages/MainPages/HomePage.css'
 import { useNavigate } from 'react-router-dom'
-import { IoIosArrowBack } from 'react-icons/io'
+import { BsArrowLeftSquare } from 'react-icons/bs'
 
-const ReturnBtn = ({ light }) => {
+const ReturnBtn = () => {
 	const navigate = useNavigate()
 	return (
 		<StyledButtonPreviousPage onClick={() => navigate('/')} light>
-			<IoIosArrowBack />
+			<BsArrowLeftSquare />
 			Return to previous page
 		</StyledButtonPreviousPage>
 	)

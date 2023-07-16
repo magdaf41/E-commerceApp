@@ -1,14 +1,14 @@
 import React from 'react'
-import { Login } from '../../components/Login'
-import { StyledContainerFormPage } from './HomePage.css'
+import { StyledContainerFormPage, StyledProductsPage } from './HomePage.css'
 import ReturnBtn from '../../components/ReturnBtn'
+import { FormLogin } from '../../components/Forms/FormLogin'
 
 const LoginPage = () => {
 	return (
-		<StyledContainerFormPage>
+		<StyledProductsPage>
 			<ReturnBtn />
-			<Login />
-		</StyledContainerFormPage>
+			<FormLogin />
+		</StyledProductsPage>
 	)
 }
 

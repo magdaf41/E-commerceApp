@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { productsList } from '../db/productsList'
-// import { toast } from 'react-toastify'
 
 const initialState = {
 	products: productsList,
@@ -15,7 +14,6 @@ export const cartSlice = createSlice({
 	initialState,
 	reducers: {
 		addProductToCart: (state, action) => {
-			//   state.orderedProducts = [...state.orderedProducts, action.payload];
 			const existingIndex = state.orderedProducts.findIndex(item => item.id === action.payload.id)
 			if (existingIndex >= 0) {
 				state.orderedProducts[existingIndex] = {
@@ -39,33 +37,20 @@ export const cartSlice = createSlice({
 
 			if (state.orderedProducts[itemIndex].cartQuantity > 1) {
 				state.orderedProducts[itemIndex].cartQuantity -= 1
-
-				// toast.info('Decreased product quantity', {
-				// 	position: 'bottom-left',
-				// })
 			} else if (state.orderedProducts[itemIndex].cartQuantity === 1) {
 				const nextCartItems = state.orderedProducts.filter(item => item.id !== action.payload.id)
-
 				state.orderedProducts = nextCartItems
-
-				// toast.error('Product removed from cart', {
-				// 	position: 'bottom-left',
-				// })
 			}
-
-			// localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
 		},
 		removeProductFromCart: (state, action) => {
 			state.orderedProducts.map(orderedProducts => {
 				if (orderedProducts.id === action.payload.id) {
 					const updateOrderedProducts = state.orderedProducts.filter(item => item.id !== orderedProducts.id)
-
 					state.orderedProducts = updateOrderedProducts
 				}
 			})
 		},
 		getTotals(state, action) {
-			// state.cartTotalAmount=state.orderedProducts.reduce((prev,curr)=>prev+ curr.price *curr.quantity,0)
 			let { total, quantity } = state.orderedProducts.reduce(
 				(cartTotal, cartItem) => {
 					const { price, cartQuantity } = cartItem
@@ -89,21 +74,9 @@ export const cartSlice = createSlice({
 			state.orderedProducts = []
 		},
 		addNewProduct: (state, action) => {
-			//   state.updateListOfProducts = [
-			//     ...state.updateListOfProducts,
-			//     action.payload,
-			//   ];
 			state.products = [...state.products, action.payload]
 		},
 		removeProduct: (state, action) => {
-			// state.updateListOfProducts.map(products => {
-			// 	if (products.id === action.payload.id) {
-			// 		const updateProductsList = state.updateListOfProducts.filter(item => item.id !== products.id)
-
-			// 		state.updateListOfProducts = updateProductsList
-			// 	}
-			// })
-
 			state.products = state.products.filter(product => product.id !== action.payload)
 			console.log(action.payload)
 			console.log(state.products)

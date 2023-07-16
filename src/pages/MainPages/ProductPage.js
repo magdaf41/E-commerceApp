@@ -18,7 +18,7 @@ import {
 	StyledProductPrice,
 	StyledProductDesc,
 } from '../../components/_shared/ProductsList.css'
-import { StyledNextPage } from './HomePage.css'
+import { StyledProductsPage } from './HomePage.css'
 
 const ProductPage = ({ name, img, autoCloseModalTime }) => {
 	const dispatch = useDispatch()
@@ -27,7 +27,7 @@ const ProductPage = ({ name, img, autoCloseModalTime }) => {
 	const isOpen = useSelector(store => store.modal.isOpen)
 
 	return (
-		<StyledNextPage>
+		<StyledProductsPage>
 			<ReturnBtn />
 			<SyledBackgroundImage>
 				<img src={img} alt={name}></img>
@@ -36,20 +36,20 @@ const ProductPage = ({ name, img, autoCloseModalTime }) => {
 				{(name === 'sale' || name === 'newest'
 					? products.filter(p => p.category === name)
 					: products.filter(p => p.type === name)
-				).map(phone => (
+				).map(product => (
 					<StyledProduct>
 						<StyledProductImage>
-							<img src={phone.image} />
+							<img src={product.image} />
 						</StyledProductImage>
 						<StyledProductContent>
-							<StyledProductHeader>{phone.title}</StyledProductHeader>
-							<StyledProductPrice>${phone.price}</StyledProductPrice>
-							<StyledProductDesc>{phone.desc}</StyledProductDesc>
+							<StyledProductHeader>{product.title}</StyledProductHeader>
+							<StyledProductPrice>${product.price}</StyledProductPrice>
+							<StyledProductDesc>{product.desc}</StyledProductDesc>
 						</StyledProductContent>
 
 						<StyledButtons
 							onClick={() => {
-								loggedUser ? dispatch(addProductToCart(phone)) : dispatch(openModal())
+								loggedUser ? dispatch(addProductToCart(product)) : dispatch(openModal())
 							}}>
 							Add to cart
 						</StyledButtons>
@@ -61,7 +61,7 @@ const ProductPage = ({ name, img, autoCloseModalTime }) => {
 					</Modal>
 				) : null}
 			</StyledProductsListContainer>
-		</StyledNextPage>
+		</StyledProductsPage>
 	)
 }
 

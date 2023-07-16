@@ -19,10 +19,9 @@ import CartPage from './pages/MainPages/CartPage'
 
 import OrdersList from './pages/PagesForEmployee/OrdersList'
 import ProductsList from './pages/PagesForEmployee/ProductsList'
-import FormAdminAddProduct from './components/FormAdminAddProduct'
-import FormAdminEditProduct from './components/FormAdminEditProduct'
+import FormAdminAddProduct from './components/Forms/FormAdminAddProduct'
+import FormAdminEditProduct from './components/Forms/FormAdminEditProduct'
 
-import Modal from './components/Modals/ClearCartModal'
 import UsersListPage from './pages/PagesForEmployee/UsersListPage'
 
 // import Modal from './components/Modal'

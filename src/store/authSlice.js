@@ -63,7 +63,6 @@ export const authSlice = createSlice({
 		changeRole: (state, action) => {
 			state.users = state.users.map(user => {
 				if (user.id === action.payload.editUser) {
-					// return Object.assign({}, user, { id: action.payload.editUser }, { role: action.payload.newRole })
 					return { ...user, role: action.payload.newRole }
 				} else {
 					return user

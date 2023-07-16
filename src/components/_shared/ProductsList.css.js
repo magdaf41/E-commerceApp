@@ -63,3 +63,22 @@ export const StyledSearchAndSelectBox = styled.div`
 	justify-content: space-between;
 	align-items: center;
 `
+export const StyledBoxSearchInput = styled.div`
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border: 1px solid #b9b5a8;
+	padding: 5px;
+	max-width: 400px;
+`
+export const StyledSearchInput = styled.input`
+	background-color: transparent;
+	outline: none;
+	border: none;
+	width: 300px;
+`
+export const StyledSearchIcon = styled.div`
+	color: white;
+	font-size: 13px;
+	font-weight: 300;
+`
