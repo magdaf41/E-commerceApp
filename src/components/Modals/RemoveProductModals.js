@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { removeProduct } from '../../store/cartSlice'
 import { closeModal } from '../../store/modalSlice'
 import { StyledModalContainer } from './Modal.css'
-import { StyledButtons } from '../_shared/Buttons.css'
+import { StyledSideButtons, StyledButtonsArea } from '../_shared/Buttons.css'
 
 const RemoveProductModal = ({ id }) => {
 	const dispatch = useDispatch()
@@ -12,28 +12,24 @@ const RemoveProductModal = ({ id }) => {
 		<StyledModalContainer>
 			{/* <div className='modal'> */}
 			<h4>remove all items from your shopping cart?</h4>
-			<div>
-				{/* {products.map(p => ( */}
+			<StyledButtonsArea>
+				<StyledSideButtons
+					onClick={() => {
+						dispatch(removeProduct(id))
+						dispatch(closeModal())
+					}}>
+					Confirm
+				</StyledSideButtons>
 
-				<div>
-					<StyledButtons
-						onClick={() => {
-							dispatch(removeProduct(id))
-							dispatch(closeModal())
-						}}>
-						Confirm
-					</StyledButtons>
-				</div>
-				{/* ))} */}
-				<StyledButtons
+				<StyledSideButtons
 					type='button'
 					className='btn clear-btn'
 					onClick={() => {
 						dispatch(closeModal())
 					}}>
 					cancel
-				</StyledButtons>
-			</div>
+				</StyledSideButtons>
+			</StyledButtonsArea>
 			{/* </div> */}
 		</StyledModalContainer>
 	)

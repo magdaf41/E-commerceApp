@@ -17,7 +17,8 @@ import {
 	StyledSpanLink,
 	StyledContainerFormPage,
 } from '../_shared/Form.css'
-import { StyledButtons } from '../_shared/Buttons.css'
+import { StyledButton } from '../_shared/Buttons.css'
+import { openModal } from '../../store/modalSlice'
 import Modal from '../Modals/Modal'
 
 const validationSchema = Yup.object().shape({
@@ -36,6 +37,7 @@ export const FormRegister = () => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 	const response = useSelector(state => state.auth.response)
+	const isOpen = useSelector(store => store.modal.isOpen)
 
 	useEffect(() => {
 		if (response.success) {
@@ -75,7 +77,7 @@ export const FormRegister = () => {
 								{errors.password && touched.password && <StyledPError>{errors.password}</StyledPError>}
 							</StyledBoxInput>
 
-							<StyledButtons>Register</StyledButtons>
+							<StyledButton>Register</StyledButton>
 							<StyledPLogin>
 								Already have an account?
 								<Link to='/login'>
@@ -86,6 +88,11 @@ export const FormRegister = () => {
 						</StyledBoxForm>
 					)}
 				</Formik>
+				{isOpen ? (
+					<Modal openTime={2000}>
+						<h4>You have successfully registered</h4>
+					</Modal>
+				) : null}
 			</StyledFormContainer>
 		</StyledContainerFormPage>
 	)

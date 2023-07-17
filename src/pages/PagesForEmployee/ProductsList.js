@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ReturnBtn from '../../components/ReturnBtn'
+import ReturnBtn from '../../components/_shared/ReturnBtn'
 import { StyledTable, StyledTableHeaders } from '../../components/_shared/Table.css'
 // import { StyledBoxSearchInput, StyledSearchInput, StyledSearchIcon } from '../../components/Header.css'
 import { BsSearch } from 'react-icons/bs'
@@ -7,14 +7,21 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import RemoveProductModal from '../../components/Modals/RemoveProductModals'
 import Product from '../../components/Product'
-import { StyledButtons } from '../../components/_shared/Buttons.css'
+import { StyledButton, StyledButtonsArea } from '../../components/_shared/Buttons.css'
 import {
 	StyledSearchAndSelectBox,
 	StyledBoxSearchInput,
 	StyledSearchInput,
 	StyledSearchIcon,
 } from '../../components/_shared/ProductsList.css'
-import Select from 'react-select'
+
+import Box from '@mui/material/Box'
+import InputLabel from '@mui/material/InputLabel'
+import MenuItem from '@mui/material/MenuItem'
+import FormControl from '@mui/material/FormControl'
+import Select from '@mui/material/Select'
+
+import SelectInput from '../../components/_shared/SelectInput'
 
 const ProductsList = () => {
 	const navigate = useNavigate()
@@ -65,8 +72,9 @@ const ProductsList = () => {
 	return (
 		<>
 			{isOpen && <RemoveProductModal id={productToDeleteId} />}
-			<ReturnBtn />
+			<ReturnBtn whiteColor />
 			<StyledSearchAndSelectBox>
+				<SelectInput />
 				<div className='select-column'>
 					<label for='column-name'>Sort by column </label>
 					<select className='select' onChange={onSorterChange}>
@@ -76,7 +84,15 @@ const ProductsList = () => {
 						<option value='category'>Category</option>
 					</select>
 				</div>
-
+				{/* <Select>
+					<option value='' hidden>
+						Type
+					</option>
+					<option value='1'>Audi</option>
+					<option value='2'>BMW</option>
+					<option value='3'>Citroen</option>
+					<option value='4'>Ford</option>
+				</Select> */}
 				{/* <Switch
 				onColor='#136c94'
 				offColor='white'
@@ -85,7 +101,6 @@ const ProductsList = () => {
 				checked={sortAscending}
 				checkedIcon='asc'
 				uncheckedIcon='desc'></Switch> */}
-
 				<StyledBoxSearchInput>
 					<StyledSearchInput
 						type='text'
@@ -117,12 +132,11 @@ const ProductsList = () => {
 					{searchProducts.map((product, index) => (
 						<Product key={product.id} data={product} orderNo={index + 1} setProductToDeleteId={setProductToDeleteId} />
 					))}
-
-					<StyledButtons onClick={() => navigate('/products/addNewproduct')}>
-						<span>Add new product</span>
-					</StyledButtons>
 				</tbody>
 			</StyledTable>
+			<StyledButtonsArea>
+				<StyledButton onClick={() => navigate('/products/addNewproduct')}>Add new product</StyledButton>
+			</StyledButtonsArea>
 		</>
 	)
 }

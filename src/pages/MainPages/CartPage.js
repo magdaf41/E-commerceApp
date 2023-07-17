@@ -24,6 +24,8 @@ import { openModal } from '../../store/modalSlice'
 import Modal from '../../components/Modals/ClearCartModal'
 import ClearCartModal from '../../components/Modals/ClearCartModal'
 import { StyledTable, StyledTableHeaders, StyledContentTableTbody } from '../../components/_shared/Table.css'
+import { StyledButton, StyledSideButtons } from '../../components/_shared/Buttons.css'
+import ReturnBtn from '../../components/_shared/ReturnBtn'
 
 const CartPage = () => {
 	const dispatch = useDispatch()
@@ -80,12 +82,12 @@ const CartPage = () => {
 										<img src={product.image}></img>
 										<div>
 											<p>{product.title}</p>
-											<StyledBtn
+											<StyledSideButtons
 												onClick={() => {
 													dispatch(removeProductFromCart(product))
 												}}>
 												Remove
-											</StyledBtn>
+											</StyledSideButtons>
 										</div>
 									</td>
 
@@ -111,12 +113,12 @@ const CartPage = () => {
 
 					<StyledCartSumUp>
 						<StyledClearCart>
-							<StyledBtn
+							<StyledButton
 								onClick={() => {
 									dispatch(openModal())
 								}}>
 								Clear Cart
-							</StyledBtn>
+							</StyledButton>
 							{isOpen ? <ClearCartModal></ClearCartModal> : null}
 						</StyledClearCart>
 						<div>
@@ -125,10 +127,10 @@ const CartPage = () => {
 								<span> ${orderValue}</span>
 							</StyledSubtotal>
 							<div>
-								<StyledBtn onClick={sendOrder}>Buy</StyledBtn>
+								<StyledButton onClick={sendOrder}>Buy</StyledButton>
 							</div>
 
-							<div className='continue-shopping'>
+							<div>
 								<Link to='/'>
 									<span>Continue Shopping</span>
 								</Link>

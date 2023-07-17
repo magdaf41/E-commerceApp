@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { openModal } from '../../store/modalSlice'
 import { addProductToCart } from '../../store/cartSlice'
 
-import ReturnBtn from '../../components/ReturnBtn'
-import { StyledButtons } from '../../components/_shared/Buttons.css'
+import ReturnBtn from '../../components/_shared/ReturnBtn'
+import { StyledButton } from '../../components/_shared/Buttons.css'
 import Modal from '../../components/Modals/Modal'
 
 import {
@@ -47,12 +47,12 @@ const ProductPage = ({ name, img, autoCloseModalTime }) => {
 							<StyledProductDesc>{product.desc}</StyledProductDesc>
 						</StyledProductContent>
 
-						<StyledButtons
+						<StyledButton
 							onClick={() => {
 								loggedUser ? dispatch(addProductToCart(product)) : dispatch(openModal())
 							}}>
 							Add to cart
-						</StyledButtons>
+						</StyledButton>
 					</StyledProduct>
 				))}
 				{isOpen ? (

@@ -13,15 +13,7 @@ export const StyledProductsPage = styled.div`
 	background: #ffffff;
 `
 
-export const StyledButtonPreviousPage = styled.button`
-	width: 100%;
-	display: flex;
-	justify-content: end;
-	font-size: 10px;
-	color: #000000;
-	font-weight: 500;
-	padding: 20px;
-`
+
 
 export const StyledImage = styled.div`
 	width: 200px;

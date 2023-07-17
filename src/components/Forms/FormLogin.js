@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Formik, Form, Field } from 'formik'
+import { Formik } from 'formik'
 import * as Yup from 'yup'
 import {
 	StyledFormContainer,
@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearResponse, login } from '../../store/authSlice'
-import { StyledButtons } from '../_shared/Buttons.css'
+import { StyledButton } from '../_shared/Buttons.css'
 import { openModal } from '../../store/modalSlice'
 import Modal from '../Modals/Modal'
 
@@ -54,12 +54,8 @@ export const FormLogin = () => {
 
 	const submitForm = values => {
 		dispatch(login(values))
-
-		console.log(response.success)
 	}
 
-	console.log(response.success)
-	console.log(response.message)
 	return (
 		<StyledContainerFormPage>
 			<StyledFormContainer>
@@ -78,7 +74,7 @@ export const FormLogin = () => {
 								<StyledInput name='password' value={values.password} onBlur={handleBlur} onChange={handleChange} />
 								{errors.password && touched.password && <StyledPError>{errors.password}</StyledPError>}
 							</StyledBoxInput>
-							<StyledButtons>Log In</StyledButtons>
+							<StyledButton>Log In</StyledButton>
 							<StyledPLogin>
 								Don't have an account?
 								<Link to='/register'>

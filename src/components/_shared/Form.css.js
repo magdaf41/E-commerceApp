@@ -7,8 +7,8 @@ export const StyledContainerFormPage = styled.div`
 `
 
 export const StyledFormContainer = styled.div`
-	width: 300px;
-	height: 400px;
+	min-width: 300px;
+	min-height: 400px;
 	border: 1px solid #64615a;
 	padding: 20px;
 	font-size: 12px;
@@ -41,6 +41,9 @@ export const StyledInput = styled.input`
 	width: 100%;
 	padding: 2px;
 	color: black;
+	&& option {
+		color: red;
+	}
 `
 
 export const StyledPError = styled.p`
@@ -59,15 +62,15 @@ export const StyledSpanLink = styled.span`
 	padding: 0 5px;
 `
 
-export const StyledBtn = styled.button`
-	font-size: 10px;
-	background-color: #222222;
-	width: 100px;
-	height: 35px;
-	text-transform: uppercase;
-	color: white;
+// export const StyledBtn = styled.button`
+// 	font-size: 10px;
+// 	background-color: #222222;
+// 	width: 100px;
+// 	height: 35px;
+// 	text-transform: uppercase;
+// 	color: white;
 
-	&:hover {
-		background-color: gray;
-	}
-`
+// 	&:hover {
+// 		background-color: gray;
+// 	}
+// `
