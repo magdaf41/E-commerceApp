@@ -74,7 +74,7 @@ const ProductsList = () => {
 			{isOpen && <RemoveProductModal id={productToDeleteId} />}
 			<ReturnBtn whiteColor />
 			<StyledSearchAndSelectBox>
-				<SelectInput />
+				{/* <SelectInput /> */}
 				<div className='select-column'>
 					<label for='column-name'>Sort by column </label>
 					<select className='select' onChange={onSorterChange}>
