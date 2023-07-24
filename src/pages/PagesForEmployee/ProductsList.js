@@ -30,60 +30,60 @@ const ProductsList = () => {
 
 	const params = new URLSearchParams(location.search)
 	const sortParam = params.get('sort')
+	const searchParam = params.get('search')
 
-	const [searchProducts, setSearchProducts] = useState(products)
+	console.log(params)
+
 	const [searchPhrase, setSearchPhrase] = useState('')
-	const [sortedProducts, setSortedProducts] = useState(searchProducts)
 	const [productToDeleteId, setProductToDeleteId] = useState('')
 	const [productsToDisplay, setProductsToDisplay] = useState(products)
 
-	const updateSortParams = value => {
-		params.set('sort', value)
+	console.log(sortParam)
+
+	useEffect(() => {
+		let productsToShow = products
+
+		if (searchParam) {
+			productsToShow = products.filter(
+				product =>
+					product.title.toLowerCase().includes(searchParam) ||
+					product.category.toLowerCase().includes(searchParam) ||
+					product.type.toLowerCase().includes(searchParam)
+			)
+		}
+
+		if (sortParam) {
+			if (sortParam === 'title') {
+				productsToShow = [...productsToShow].sort((a, b) => (a.title > b.title ? 1 : a.title === b.title ? 0 : -1))
+			} else if (sortParam === 'price') {
+				productsToShow = [...productsToShow].sort((a, b) => a.price - b.price)
+			} else if (sortParam === 'category') {
+				productsToShow = [...productsToShow].sort((a, b) =>
+					a.category > b.category ? 1 : a.category === b.category ? 0 : -1
+				)
+			} else if (sortParam === 'type') {
+				productsToShow = [...productsToShow].sort((a, b) => (a.type > b.type ? 1 : a.type === b.type ? 0 : -1))
+			}
+		}
+
+		setProductsToDisplay(productsToShow)
+	}, [products, sortParam, searchParam])
+
+	const updateSortParam = event => {
+		if (!event.target.value) {
+			params.delete('sort')
+		} else {
+			params.set('sort', event.target.value)
+		}
 		navigate(`${location.pathname}?${params.toString()}`)
 	}
-
-	console.log(products)
-	console.log(productsToDisplay)
-	console.log(sortParam)
-	// console.log(updateSortParams())
-
-	useEffect(() => {
-		setProductsToDisplay(products)
-	}, [products]) //dodałam useEffect po to aby obsłużyć zarówno searchProducts jak i produkt ale jak wyświetlać tylko wyszukane produkty jak sie usunie jeden z nich
-
-	useEffect(() => {
-		setSearchProducts(productsToDisplay)
-	}, [sortedProducts])
-
-	const onSorterChange = e => {
-		let selectedSorter = e.target.value
-		const sortedListProducts = [...sortedProducts]
-		if (selectedSorter === 'title') {
-			sortedListProducts.sort((a, b) => (a.title > b.title ? 1 : a.title === b.title ? 0 : -1))
-		} else if (selectedSorter === 'price') {
-			sortedListProducts.sort((a, b) => a.price - b.price)
-		} else if (selectedSorter === 'category') {
-			sortedListProducts.sort((a, b) => (a.category > b.category ? 1 : a.category === b.category ? 0 : -1))
-		} else if (selectedSorter === 'type') {
-			sortedListProducts.sort((a, b) => (a.type > b.type ? 1 : a.type === b.type ? 0 : -1))
+	const updateSearchParam = value => {
+		if (!value) {
+			params.delete('search')
+		} else {
+			params.set('search', value)
 		}
-		setSortedProducts(sortedListProducts)
-		updateSortParams(selectedSorter)
-		setProductsToDisplay(sortedListProducts)
-	}
-	const search = event => {
-		// params.set("search", event.target.value);
-		const matchedProducts = productsToDisplay.filter(
-			product =>
-				product.title.toLowerCase().includes(event.target.value.toLowerCase()) ||
-				product.category.toLowerCase().includes(event.target.value.toLowerCase()) ||
-				product.type.toLowerCase().includes(event.target.value.toLowerCase())
-		)
-		// setSearchProducts(matchedProducts)
-		setProductsToDisplay(matchedProducts)
-		setSearchPhrase(event.target.value)
-		console.log(event.target.value)
-		console.log(matchedProducts)
+		navigate(`${location.pathname}?${params.toString()}`)
 	}
 
 	return (
@@ -94,7 +94,7 @@ const ProductsList = () => {
 				{/* <SelectInput /> */}
 				<div className='select-column'>
 					<label for='column-name'>Sort by column </label>
-					<select className='select' onChange={onSorterChange}>
+					<select className='select' onChange={updateSortParam}>
 						<option value=''>--Please choose an option--</option>
 						<option value='title'>Title</option>
 						<option value='price'>Price</option>
@@ -124,7 +124,10 @@ const ProductsList = () => {
 						type='text'
 						placeholder='Search by title, category and type'
 						value={searchPhrase}
-						onChange={search}></StyledSearchInput>
+						onChange={event => {
+							setSearchPhrase(event.target.value.toLowerCase())
+							updateSearchParam(event.target.value.toLowerCase())
+						}}></StyledSearchInput>
 					<StyledSearchIcon>
 						<BsSearch />
 					</StyledSearchIcon>
@@ -148,7 +151,13 @@ const ProductsList = () => {
 
 				<tbody>
 					{productsToDisplay.map((product, index) => (
-						<Product key={product.id} data={product} orderNo={index + 1} setProductToDeleteId={setProductToDeleteId} />
+						<Product
+							key={product.id}
+							data={product}
+							orderNo={index + 1}
+							setProductToDeleteId={setProductToDeleteId}
+							sortParam={sortParam}
+						/>
 					))}
 				</tbody>
 			</StyledTable>

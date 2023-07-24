@@ -1,14 +1,19 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { editProduct } from '../store/cartSlice'
 import { openModal } from '../store/modalSlice'
 import { StyledContentTableTbody } from './_shared/Table.css'
 import { StyledSideButtons } from './_shared/Buttons.css'
 
-const Product = ({ data, orderNo, setProductToDeleteId }) => {
+const Product = ({ data, orderNo, setProductToDeleteId, sortParam }) => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
+
+	const location = useLocation()
+	const params = new URLSearchParams(location.search)
+	const editProductParam = params.get('edit')
+	const addProductParam = params.get('add')
 
 	return (
 		<StyledContentTableTbody key={data.id}>
@@ -26,7 +31,9 @@ const Product = ({ data, orderNo, setProductToDeleteId }) => {
 				<StyledSideButtons
 					onClick={() => {
 						dispatch(editProduct(data.id))
-						navigate(`/editproduct/${data.id}`)
+						params.set('editProduct', data.id)
+
+						navigate(`${location.pathname}?${params.toString()}`)
 					}}>
 					Edit
 				</StyledSideButtons>
