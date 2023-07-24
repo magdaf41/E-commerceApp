@@ -76,7 +76,6 @@ export const StyledSearchInput = styled.input`
 	outline: none;
 	border: none;
 	width: 300px;
-	color: white;
 `
 export const StyledSearchIcon = styled.div`
 	color: white;

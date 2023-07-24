@@ -6,3 +6,7 @@
 
 Do zrobienia, wyświetlanie popupów po zalegowaniu po wylogowaniu itp...
 Uporządkowanie kodu stworzenie więcej componentów to sheard
+
+
+Dodać popupy np. po wylogowaniu
+Jak szukam i sortuje produkty to tworzyć nowy adres strony
