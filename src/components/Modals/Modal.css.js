@@ -17,6 +17,7 @@ export const StyledModalContainer = styled.div`
   outline: 2px solid white;
   outline-offset: -15px;
   color: #dadacb;
+  z-index: 100;
 `;
 
 export const StyledModalBtn = styled.div`

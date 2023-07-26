@@ -1,4 +1,4 @@
-import { Formik} from 'formik'
+import { Formik } from 'formik'
 import { v4 as uuid } from 'uuid'
 import {
 	StyledFormContainer,

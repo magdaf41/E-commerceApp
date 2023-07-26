@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux'
 import { clearCart } from '../../store/cartSlice'
 import { closeModal } from '../../store/modalSlice'
 import { StyledModalContainer } from './Modal.css'
+import { StyledButton, StyledButtonsArea } from '../_shared/Buttons.css'
 
 const ClearCartModal = () => {
 	const dispatch = useDispatch()
@@ -9,8 +10,8 @@ const ClearCartModal = () => {
 		<StyledModalContainer>
 			<div className='modal'>
 				<h4>remove all items from your shopping cart?</h4>
-				<div className='btn-container'>
-					<button
+				<StyledButtonsArea>
+					<StyledButton
 						type='button'
 						className='btn confirm-btn'
 						onClick={() => {
@@ -18,16 +19,16 @@ const ClearCartModal = () => {
 							dispatch(closeModal())
 						}}>
 						confirm
-					</button>
-					<button
+					</StyledButton>
+					<StyledButton
 						type='button'
 						className='btn clear-btn'
 						onClick={() => {
 							dispatch(closeModal())
 						}}>
 						cancel
-					</button>
-				</div>
+					</StyledButton>
+				</StyledButtonsArea>
 			</div>
 		</StyledModalContainer>
 	)

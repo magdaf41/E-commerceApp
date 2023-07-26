@@ -12,11 +12,11 @@ import {
 import {
 	StyledContainerFormPage,
 	StyledCart,
-	StyledOrderedProductsContainer,
 	StyledOrderedQuantity,
 	StyledCartSumUp,
 	StyledClearCart,
 	StyledSubtotal,
+	StyledProductColumn,
 } from './CartPage.css'
 import { StyledBtn } from '../../components/_shared/Form.css'
 import { addOrder } from '../../store/ordersListSlice'
@@ -68,20 +68,22 @@ const CartPage = () => {
 				<p>Your cart is currently empty</p>
 			) : (
 				<StyledCart>
-					<StyledTable>
+					<StyledTable dark>
 						<StyledTableHeaders>
-							<th>product</th>
-							<th>price</th>
-							<th>quantity</th>
-							<th>total</th>
+							<tr>
+								<th>product</th>
+								<th>price</th>
+								<th>quantity</th>
+								<th>total</th>
+							</tr>
 						</StyledTableHeaders>
 						<tbody>
 							{orderedProducts.map(product => (
 								<StyledContentTableTbody>
-									<td>
+									<StyledProductColumn>
 										<img src={product.image}></img>
 										<div>
-											<p>{product.title}</p>
+											<h3>{product.title}</h3>
 											<StyledSideButtons
 												onClick={() => {
 													dispatch(removeProductFromCart(product))
@@ -89,23 +91,19 @@ const CartPage = () => {
 												Remove
 											</StyledSideButtons>
 										</div>
-									</td>
+									</StyledProductColumn>
 
 									<td>
-										<p>${product.price}</p>
+										${product.price}
 									</td>
 									<td>
-										<div key={product.id}>
-											<StyledOrderedQuantity>
-												<button onClick={() => handleDecreaseCart(product)}>-</button>
-												<div className='count'>{product.cartQuantity}</div>
-												<button onClick={() => handleAddToCart(product)}>+</button>
-											</StyledOrderedQuantity>
-										</div>
+										<StyledOrderedQuantity key={product.id}>
+											<button onClick={() => handleDecreaseCart(product)}>-</button>
+											<div className='count'>{product.cartQuantity}</div>
+											<button onClick={() => handleAddToCart(product)}>+</button>
+										</StyledOrderedQuantity>
 									</td>
-									<td>
-										<p>${product.price * product.cartQuantity}</p>
-									</td>
+									<td>${product.price * product.cartQuantity}</td>
 								</StyledContentTableTbody>
 							))}
 						</tbody>

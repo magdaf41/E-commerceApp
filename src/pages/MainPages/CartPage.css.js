@@ -14,49 +14,15 @@ export const StyledContainerFormPage = styled.div`
 	}
 `
 export const StyledCart = styled.div`
-	width: 100%;
-`
-export const StyledOrderedProductsContainer = styled.div`
-	width: 100%;
-`
-export const StyledOrderedTable = styled.div`
-	display: grid;
-	grid-template-columns: 3fr 1fr 1fr 1fr;
-`
-export const StyledOrderedHeaderRow = styled.div`
-	display: grid;
-	grid-template-columns: 3fr 1fr 1fr 1fr;
-	padding: 10px;
-	border-bottom: 1px solid #b9b5a8;
-`
-
-export const StyledOrderedHeader = styled.h4`
-	color: #42413c;
-	font-weight: 500;
-	font-size: 12px;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-`
-
-export const StyledOrderedColumn = styled.div`
-	height: 80px;
-	display: flex;
-	align-items: center;
-	color: #42413c;
-
-	& img {
-		width: 40px;
-		height: 40px;
-		object-fit: cover;
-	}
+	padding: 20px;
 `
 
 export const StyledOrderedQuantity = styled.div`
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	text-align: center;
 	font-size: 20px;
-	width: 50px;
 	& button {
 		text-align: center;
 	}
@@ -79,4 +45,20 @@ export const StyledSubtotal = styled.div`
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	gap: 20px;
 `
+export const StyledProductColumn = styled.td`
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	& h3 {
+		font-size: 16px;
+		margin-bottom: 15px;
+	}
+`
+// export const StyledSumUpCart = styled.td`
+// 	display: flex;
+// 	flex-direction: column;
+// 	justify-content: space-around;
+// 	align-items: center;
+// `

@@ -6,7 +6,7 @@ const SalePage = () => {
 		<ProductPage
 			name='sale'
 			img='https://daisylinden.com/wp-content/uploads/apple-watch-girl-hand.jpg'
-			autoCloseModalTime={2000}
+			autoCloseModalTime={1000}
 		/>
 	)
 }

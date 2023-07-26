@@ -6,11 +6,9 @@ import { StyledSideButtons, StyledButtonsArea } from '../_shared/Buttons.css'
 
 const RemoveProductModal = ({ id }) => {
 	const dispatch = useDispatch()
-	// const products = useSelector(state => state.cart.products)
 
 	return (
 		<StyledModalContainer>
-			{/* <div className='modal'> */}
 			<h4>remove all items from your shopping cart?</h4>
 			<StyledButtonsArea>
 				<StyledSideButtons
@@ -27,10 +25,9 @@ const RemoveProductModal = ({ id }) => {
 					onClick={() => {
 						dispatch(closeModal())
 					}}>
-					cancel
+					Cancel
 				</StyledSideButtons>
 			</StyledButtonsArea>
-			{/* </div> */}
 		</StyledModalContainer>
 	)
 }

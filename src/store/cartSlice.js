@@ -74,6 +74,11 @@ export const cartSlice = createSlice({
 			state.orderedProducts = []
 		},
 		addNewProduct: (state, action) => {
+			// const newProduct = {
+			// 	id: uuid(),
+			// 	...action.payload,
+			// }
+			// state.products = [...state.products, newProduct]
 			state.products = [...state.products, action.payload]
 		},
 		removeProduct: (state, action) => {

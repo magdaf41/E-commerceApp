@@ -32,8 +32,8 @@ export const StyledSideButtons = styled.button`
 	font-size: 10px;
 	background-color: #222222;
 	border: 1px solid #dadacb;
-	width: 100px;
-	height: 30px;
+	width: 80px;
+	height: 20px;
 	text-transform: uppercase;
 	font-weight: 700;
 	color: white;

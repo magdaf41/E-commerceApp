@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { changeRole } from '../store/authSlice'
 import { StyledContentTableTbody } from './_shared/Table.css'
+import { StyledButton, StyledSideButtons } from './_shared/Buttons.css'
 
 const User = ({ data, orderNo }) => {
 	const [userRole, setUserRole] = useState(false)
@@ -38,24 +39,24 @@ const User = ({ data, orderNo }) => {
 			<td>{data.email}</td>
 			<td>{data.password}</td>
 			<td>
-				<p>{data.role}</p>
-				{userRole ? (
-					<div>
+				<StyledUserRoleWrapper>
+					<p>{data.role}</p>
+					{userRole ? (
 						<select value={role} onChange={e => setNewRole(e.target.value)} onBlur={() => setUserRole(false)}>
 							<option value='admin'>Admin</option>
 							<option value='employee'>Employee</option>
 							<option value='client'>Client</option>
 						</select>
-					</div>
-				) : (
-					<button
-						onClick={() => {
-							setUserRole(true)
-							setEditUser(data.id)
-						}}>
-						Edit
-					</button>
-				)}
+					) : (
+						<StyledSideButtons
+							onClick={() => {
+								setUserRole(true)
+								setEditUser(data.id)
+							}}>
+							Edit
+						</StyledSideButtons>
+					)}
+				</StyledUserRoleWrapper>
 			</td>
 		</StyledContentTableTbody>
 	)

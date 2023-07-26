@@ -6,14 +6,12 @@ import { openModal } from '../store/modalSlice'
 import { StyledContentTableTbody } from './_shared/Table.css'
 import { StyledSideButtons } from './_shared/Buttons.css'
 
-const Product = ({ data, orderNo, setProductToDeleteId, sortParam }) => {
+const Product = ({ data, orderNo, setProductToDeleteId }) => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 
 	const location = useLocation()
 	const params = new URLSearchParams(location.search)
-	const editProductParam = params.get('edit')
-	const addProductParam = params.get('add')
 
 	return (
 		<StyledContentTableTbody key={data.id}>

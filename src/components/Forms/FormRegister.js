@@ -41,10 +41,16 @@ export const FormRegister = () => {
 
 	useEffect(() => {
 		if (response.success) {
-			navigate('/')
+			dispatch(openModal())
 		}
-		dispatch(clearResponse())
 	}, [response.success])
+
+	useEffect(() => {
+		if (!isOpen && response.success) {
+			navigate('/')
+			dispatch(clearResponse())
+		}
+	}, [isOpen])
 
 	const submitForm = values => {
 		dispatch(register(values))
@@ -89,7 +95,7 @@ export const FormRegister = () => {
 					)}
 				</Formik>
 				{isOpen ? (
-					<Modal openTime={2000}>
+					<Modal openTime={1000}>
 						<h4>You have successfully registered</h4>
 					</Modal>
 				) : null}

@@ -41,13 +41,11 @@ export const FormLogin = () => {
   useEffect(() => {
     if (response.success) {
       dispatch(openModal());
-      // jak zrobić, żeby po modalu przechodzić na HomePage i czyścić odpowiedzi?
     }
   }, [response.success]);
 
   useEffect(() => {
     if (!isOpen && response.success) {
-      console.log("przekierowuje");
       navigate("/");
       dispatch(clearResponse());
     }

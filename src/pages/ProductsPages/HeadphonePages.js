@@ -5,7 +5,7 @@ const HeadphonePages = () => {
 		<ProductPage
 			name='headphones'
 			img='https://www.theladders.com/wp-content/uploads/work-headphones-190820-1490x838.jpg'
-			autoCloseModalTime={2000}
+			autoCloseModalTime={1000}
 		/>
 	)
 }

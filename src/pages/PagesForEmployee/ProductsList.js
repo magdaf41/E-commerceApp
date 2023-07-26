@@ -32,13 +32,9 @@ const ProductsList = () => {
 	const sortParam = params.get('sort')
 	const searchParam = params.get('search')
 
-	console.log(params)
-
 	const [searchPhrase, setSearchPhrase] = useState('')
 	const [productToDeleteId, setProductToDeleteId] = useState('')
 	const [productsToDisplay, setProductsToDisplay] = useState(products)
-
-	console.log(sortParam)
 
 	useEffect(() => {
 		let productsToShow = products
