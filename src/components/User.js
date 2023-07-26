@@ -39,7 +39,7 @@ const User = ({ data, orderNo }) => {
 			<td>{data.email}</td>
 			<td>{data.password}</td>
 			<td>
-				<StyledUserRoleWrapper>
+				<div>
 					<p>{data.role}</p>
 					{userRole ? (
 						<select value={role} onChange={e => setNewRole(e.target.value)} onBlur={() => setUserRole(false)}>
@@ -56,7 +56,7 @@ const User = ({ data, orderNo }) => {
 							Edit
 						</StyledSideButtons>
 					)}
-				</StyledUserRoleWrapper>
+				</div>
 			</td>
 		</StyledContentTableTbody>
 	)
