@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { StyledButtonReturnHomePage, StyledPositionButton } from './Buttons.css'
 
-const ReturnBtn = () => {
+const ReturnBtn = ({ white }) => {
 	const navigate = useNavigate()
 	return (
 		<StyledPositionButton>

@@ -14,7 +14,7 @@ export const StyledRowNav = styled.div`
 	align-items: center;
 	justify-content: center;
 	border-top: 1px solid #354147;
-	border-bottom: 1px solid #354147;
+	/* border-bottom: 1px solid #354147; */
 	color: #dadacb;
 `
 
@@ -24,22 +24,62 @@ export const StyledNav = styled.div`
 	justify-content: space-around;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
+	& a {
+		transition: transform 0.5s;
+	}
+
+	& a:hover {
+		transform: scale(1.5);
+	}
+
+	& a:focus {
+		color: #068fff;
+	}
 `
 
-export const StyledTitle = styled.h3`
-	color: #dadacb;
+export const StyledCartIcon = styled.div`
+	display: flex;
+	transition: transform 0.5s;
+	& a:hover {
+		transform: scale(1.5);
+	}
+	& a:focus {
+		color: #068fff;
+	}
+`
+
+export const StyledTitle = styled.h1`
+	color: transparent;
+	-webkit-text-stroke: 0.5px #b9b5a8;
 	font-weight: 700;
-	font-size: 28px;
+	font-size: 50px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	cursor: pointer;
 	span {
-		font-size: 30px;
-		border-bottom: 1px solid #b9b5a8;
+		font-size: 55px;
+		border-bottom: 4px solid #b9b5a8;
+		/* color: #b9b5a8; */
 	}
 `
+
+export const StyledLogo = styled.div`
+	width: 50px;
+	height: 100px;
+	&& img {
+		object-fit: contain;
+		filter: grayscale(100%);
+		transition: all 0.3s ease-in-out 0s;
+	}
+	&& img:hover {
+		cursor: default;
+		transform: rotate(360deg);
+		transition: all 0.3s ease-in-out 0s;
+	}
+`
+
 export const StyledSingInBasket = styled.div`
-	width: 200px;
+	min-width: 220px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -50,14 +90,22 @@ export const StyledPSignIn = styled.p`
 	padding: 0 10px;
 	border-right: 0.5px solid #b9b5a8;
 	font-weight: 700;
+	transition: transform 0.5s;
+	&:hover {
+		transform: scale(1.5);
+	}
+	& a:focus {
+		color: #068fff;
+	}
 `
 export const StyledDivLogged = styled.div`
 	display: flex;
-	justify-content: space-between;
-	width: 150px;
+	gap: 30px;
+	& button {
+	}
 `
 export const StyledLoggedUser = styled.div`
-	min-width: 80px;
 	display: flex;
-	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
 `

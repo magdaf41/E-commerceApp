@@ -4,3 +4,6 @@
 4. type script
 5. hosting 
 6. Po wylogowaniu kasuje zawartość koszyka
+
+
+1. paginacja przy edit i add products, generowanie id przy add produkt, generowanie daty

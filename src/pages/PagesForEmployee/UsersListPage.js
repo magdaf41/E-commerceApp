@@ -1,18 +1,24 @@
 import React from 'react'
-import ReturnBtn from '../../components/_shared/ReturnBtn'
-import { StyledTable, StyledTableHeaders } from '../../components/_shared/Table.css'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+
+import ReturnBtn from '../../components/_shared/ReturnBtn'
 import User from '../../components/User'
-import { StyledButton, StyledButtonSingleArea } from '../../components/_shared/Buttons.css'
+
+import { StyledTable, StyledTableHeaders } from '../../components/_shared/Table.css'
+import { StyledButton, StyledPositionButtonAddNewUser } from '../../components/_shared/Buttons.css'
+import { StyledPage, StyledProductsPage } from '../MainPages/HomePage.css'
 
 const UsersListPage = () => {
 	const navigate = useNavigate()
 	const users = useSelector(state => state.auth.users)
 
 	return (
-		<>
+		<StyledPage>
 			<ReturnBtn />
+			<StyledPositionButtonAddNewUser>
+				<StyledButton onClick={() => navigate('/register')}>Add new user</StyledButton>
+			</StyledPositionButtonAddNewUser>
 			<StyledTable>
 				<StyledTableHeaders>
 					<tr>
@@ -31,10 +37,7 @@ const UsersListPage = () => {
 					))}
 				</tbody>
 			</StyledTable>
-			<StyledButtonSingleArea>
-				<StyledButton onClick={() => navigate('/register')}>Add new user</StyledButton>
-			</StyledButtonSingleArea>
-		</>
+		</StyledPage>
 	)
 }
 

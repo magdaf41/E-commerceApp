@@ -87,7 +87,7 @@ export const FormRegister = () => {
 							<StyledPLogin>
 								Already have an account?
 								<Link to='/login'>
-									<StyledSpanLink>Sign In</StyledSpanLink>
+									Sign In
 								</Link>
 							</StyledPLogin>
 							{response.message && !response.success && <p>{response.message}</p>}

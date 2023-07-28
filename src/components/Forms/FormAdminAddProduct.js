@@ -4,10 +4,9 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { addNewProduct } from '../../store/cartSlice'
 import FormAdmin from './FormAdmin'
-import { StyledProductsPage } from '../../pages/MainPages/HomePage.css'
+import { StyledPage, StyledProductsPage } from '../../pages/MainPages/HomePage.css'
 
 const initialValues = {
-	id: '',
 	title: '',
 	desc: '',
 	image: '',
@@ -17,10 +16,11 @@ const initialValues = {
 }
 
 const validationSchema = Yup.object().shape({
-	id: Yup.string().required().min(4).max(30),
 	title: Yup.string().min(4).required(),
 	desc: Yup.string().min(10).required(),
-	image: Yup.string().min(4).max(30).required(),
+	image: Yup.string()
+		.matches(/^(https?:\/\/)/, 'Podany link nie zaczyna się od "http" lub "https".')
+		.url('Podany link nie jest poprawnym adresem URL.'),
 	price: Yup.string().min(4).max(30).required(),
 	type: Yup.string().min(4).max(30).required(),
 	category: Yup.string().min(4).max(30).required(),
@@ -37,9 +37,9 @@ const FormAdminAddProduct = () => {
 	}
 
 	return (
-		<StyledProductsPage>
-			<FormAdmin initialValues={initialValues} validationSchema={validationSchema} submitForm={submitForm} />
-		</StyledProductsPage>
+		<StyledPage>
+			<FormAdmin initialValues={initialValues} validationSchema={validationSchema} submitForm={submitForm} type='add' />
+		</StyledPage>
 	)
 }
 

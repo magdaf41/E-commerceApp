@@ -18,36 +18,39 @@ import {
 	StyledDivLogged,
 	StyledNavAdmin,
 	StyledLoggedUser,
+	StyledLogo,
+	StyledCartIcon,
 } from './Header.css'
 import { logout } from '../store/authSlice'
 import { openModal } from '../store/modalSlice'
-import Modal from './Modals/Modal'
 
 const Header = () => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 	const loggedUser = useSelector(state => state.auth.loggedUser)
-	const isOpen = useSelector(store => store.modal.isOpen)
 
 	const logOutUser = values => {
+		navigate('/')
 		dispatch(logout(values))
 		dispatch(openModal())
-		navigate('/')
 	}
 	const orderedProducts = useSelector(state => state.cart.orderedProducts)
 
 	return (
 		<StyledHeader>
 			<StyledRowTitle>
+				<StyledLogo>
+					<img src='https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/1/2/8/128f5fedfebb9989ba1e5dd6d95c4109a94e55a2.png'></img>
+				</StyledLogo>
 				<StyledTitle onClick={() => navigate('/')}>
 					Prjkt <span>10</span>
 				</StyledTitle>
 
 				<StyledSingInBasket>
 					{loggedUser === null ? (
-						<Link to='/login'>
-							<StyledPSignIn>Sign in</StyledPSignIn>
-						</Link>
+						<StyledPSignIn>
+							<Link to='/login'>Sign in</Link>
+						</StyledPSignIn>
 					) : (
 						<StyledDivLogged>
 							<StyledLoggedUser>
@@ -59,20 +62,15 @@ const Header = () => {
 							</button>
 						</StyledDivLogged>
 					)}
-					<div>
+					<StyledCartIcon>
 						<Link to={'/order'}>
 							<SlBag />
 						</Link>
 						<span>{orderedProducts.length}</span>
-					</div>
+					</StyledCartIcon>
 				</StyledSingInBasket>
 			</StyledRowTitle>
 
-			{isOpen ? (
-				<Modal openTime={1000}>
-					<h4>You have successfully logged out</h4>
-				</Modal>
-			) : null}
 			<StyledRowNav>
 				<StyledNav>
 					<Link to='/mobile'>mobile phone</Link>

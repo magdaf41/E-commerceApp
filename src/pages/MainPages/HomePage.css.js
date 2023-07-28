@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledContainerHomePage = styled.div`
+/* border: 3px solid red; */
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -8,12 +9,10 @@ export const StyledContainerHomePage = styled.div`
 	min-height: 80vh;
 	width: 100%;
 `
-export const StyledProductsPage = styled.div`
+export const StyledPage = styled.div`
 	padding: 30px;
 	background: #ffffff;
 `
-
-
 
 export const StyledImage = styled.div`
 	width: 200px;

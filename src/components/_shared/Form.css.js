@@ -53,24 +53,20 @@ export const StyledPError = styled.p`
 `
 
 export const StyledPLogin = styled.p`
+	a {
+		font-weight: 700;
+		color: black;
+		padding: 0 5px;
+		transition: transform 0.5s;
+	}
+	:hover {
+		transform: scale(1.5);
+	}
+	:focus {
+		color: #068fff;
+	}
+
 	/* font-size: 12px; */
 `
 
-export const StyledSpanLink = styled.span`
-	font-weight: 700;
-	color: black;
-	padding: 0 5px;
-`
-
-// export const StyledBtn = styled.button`
-// 	font-size: 10px;
-// 	background-color: #222222;
-// 	width: 100px;
-// 	height: 35px;
-// 	text-transform: uppercase;
-// 	color: white;
-
-// 	&:hover {
-// 		background-color: gray;
-// 	}
-// `
+export const StyledSpanLink = styled.span``

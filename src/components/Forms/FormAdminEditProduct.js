@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { editProduct } from '../../store/cartSlice'
 import FormAdmin from './FormAdmin'
-import { StyledProductsPage } from '../../pages/MainPages/HomePage.css'
+import { StyledPage, StyledProductsPage } from '../../pages/MainPages/HomePage.css'
 
 const validationSchema = Yup.object().shape({
 	//   id: Yup.string().required().min(4).max(30),
@@ -46,9 +46,14 @@ const FormAdminEditProduct = () => {
 	}
 
 	return (
-		<StyledProductsPage>
-			<FormAdmin initialValues={initialValues} validationSchema={validationSchema} submitForm={submitForm} />
-		</StyledProductsPage>
+		<StyledPage>
+			<FormAdmin
+				type='edit'
+				initialValues={initialValues}
+				validationSchema={validationSchema}
+				submitForm={submitForm}
+			/>
+		</StyledPage>
 	)
 }
 

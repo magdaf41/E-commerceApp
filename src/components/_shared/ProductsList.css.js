@@ -1,85 +1,118 @@
 import styled from 'styled-components'
 
+export const StyledSearchAndSelectBox = styled.div`
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+`
+export const StyledBoxSearchInput = styled.div`
+	display: flex;
+	align-items: center;
+	border: 1px solid #b9b5a8;
+	padding: 5px;
+	max-width: 400px;
+	height: 35px;
+	&:hover {
+		border: 2px solid #068fff;
+	}
+`
+
+export const StyledSelectArea = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	gap: 10px;
+`
+
+export const StyledSelect = styled.select`
+	border: 1px solid #b9b5a8;
+	padding: 5px;
+	height: 35px;
+	outline: none;
+	&:hover {
+		border: 2px solid #068fff;
+	}
+`
+
+export const StyledSearchInput = styled.input`
+	background-color: transparent;
+	outline: none;
+	border: none;
+	width: 300px;
+	color: #222222;
+`
+export const StyledSearchIcon = styled.i``
+
+export const StyledBackgroundImage = styled.div`
+	background-image: url(${props => props.img});
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 250px;
+	color: white;
+	& img {
+		object-fit: cover;
+	}
+`
+export const StyledProductsPageTitle = styled.p`
+	font-size: 40px;
+	line-height: 250px;
+	/* color: #dadacb; */
+	text-shadow: 3px 3px 3px black;
+	text-transform: uppercase;
+	letter-spacing: 10px;
+	font-weight: 700;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	color: transparent;
+	-webkit-text-stroke: 2px #dadacb;
+`
+
 export const StyledProductsListContainer = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 30px;
-	background-color: white;
 	padding: 30px 0;
 	text-align: center;
 `
 export const StyledProduct = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 	border: 1px solid grey;
 	padding: 20px;
+	color: #41413c;
 `
+
 export const StyledProductHeader = styled.h3`
-	font-size: 14px;
+	font-size: 16px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	color: #222222;
 `
 
 export const StyledProductImage = styled.div`
 	width: 200px;
 	height: 200px;
-	border: 1px solid white;
 	padding: 15px;
 	& img {
 		object-fit: contain;
 	}
 `
 
-export const SyledBackgroundImage = styled.div`
-	width: 100%;
-	height: 250px;
-	& img {
-		object-fit: cover;
-	}
-`
-
 export const StyledProductContent = styled.div`
+	width: 90%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
 	margin-bottom: 10px;
+	font-size: 14px;
 `
 export const StyledProductPrice = styled.p`
+	font-size: 17px;
 	font-weight: 700;
-	color: #41413c;
 `
-export const StyledProductDesc = styled.p`
-	font-size: 12px;
-	color: #41413c;
-`
-export const StyledSearchAndSelectBox = styled.div`
-	width: 80%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-`
-export const StyledBoxSearchInput = styled.div`
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	border: 1px solid #b9b5a8;
-	padding: 5px;
-	max-width: 400px;
-`
-export const StyledSearchInput = styled.input`
-	background-color: transparent;
-	outline: none;
-	border: none;
-	width: 300px;
-	color: white;
-`
-export const StyledSearchIcon = styled.div`
-	color: white;
-	font-size: 13px;
-	font-weight: 300;
-`
+export const StyledProductDesc = styled.p``

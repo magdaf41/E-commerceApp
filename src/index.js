@@ -32,9 +32,7 @@ const router = createBrowserRouter([
 		element: (
 			<>
 				<Header />
-				<main>
-					<HomePage />
-				</main>
+				<HomePage />
 				<Footer />
 			</>
 		),
@@ -44,9 +42,7 @@ const router = createBrowserRouter([
 		element: (
 			<>
 				<Header />
-				<main>
-					<MobilePhonesPages />
-				</main>
+				<MobilePhonesPages />
 				<Footer />
 			</>
 		),
@@ -56,9 +52,7 @@ const router = createBrowserRouter([
 		element: (
 			<>
 				<Header />
-				<main>
-					<HeadphonePages />
-				</main>
+				<HeadphonePages />
 				<Footer />
 			</>
 		),
@@ -68,9 +62,7 @@ const router = createBrowserRouter([
 		element: (
 			<>
 				<Header />
-				<main>
-					<SmartwatchPages />
-				</main>
+				<SmartwatchPages />
 				<Footer />
 			</>
 		),
@@ -80,9 +72,7 @@ const router = createBrowserRouter([
 		element: (
 			<>
 				<Header />
-				<main>
-					<LaptopPages />
-				</main>
+				<LaptopPages />
 				<Footer />
 			</>
 		),
@@ -92,9 +82,7 @@ const router = createBrowserRouter([
 		element: (
 			<>
 				<Header />
-				<main>
-					<TheNewesPage />
-				</main>
+				<TheNewesPage />
 				<Footer />
 			</>
 		),
@@ -104,9 +92,7 @@ const router = createBrowserRouter([
 		element: (
 			<>
 				<Header />
-				<main>
-					<SalePage />
-				</main>
+				<SalePage />
 				<Footer />
 			</>
 		),
@@ -116,9 +102,7 @@ const router = createBrowserRouter([
 		element: (
 			<>
 				<Header />
-				<main>
-					<RegisterPage />
-				</main>
+				<RegisterPage />
 				<Footer />
 			</>
 		),
@@ -128,9 +112,7 @@ const router = createBrowserRouter([
 		element: (
 			<>
 				<Header />
-				<main>
-					<LoginPage />
-				</main>
+				<LoginPage />
 				<Footer />
 			</>
 		),
@@ -140,9 +122,7 @@ const router = createBrowserRouter([
 		element: (
 			<>
 				<Header />
-				<main>
-					<CartPage />
-				</main>
+				<CartPage />
 				<Footer />
 			</>
 		),
@@ -152,9 +132,7 @@ const router = createBrowserRouter([
 		element: (
 			<>
 				<Header />
-				<main>
-					<OrdersList />
-				</main>
+				<OrdersList />
 				<Footer />
 			</>
 		),
@@ -164,9 +142,7 @@ const router = createBrowserRouter([
 		element: (
 			<>
 				<Header />
-				<main>
-					<ProductsList />
-				</main>
+				<ProductsList />
 				<Footer />
 			</>
 		),
@@ -176,9 +152,7 @@ const router = createBrowserRouter([
 		element: (
 			<>
 				<Header />
-				<main>
-					<FormAdminAddProduct />
-				</main>
+				<FormAdminAddProduct />
 				<Footer />
 			</>
 		),
@@ -188,9 +162,7 @@ const router = createBrowserRouter([
 		element: (
 			<>
 				<Header />
-				<main>
-					<FormAdminEditProduct />
-				</main>
+				<FormAdminEditProduct />
 				<Footer />
 			</>
 		),
@@ -200,9 +172,7 @@ const router = createBrowserRouter([
 		element: (
 			<>
 				<Header />
-				<main>
-					<UsersListPage />
-				</main>
+				<UsersListPage />
 				<Footer />
 			</>
 		),

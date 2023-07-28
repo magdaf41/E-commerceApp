@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledButtonSingleArea = styled.div`
+export const StyledPositionButtonAddNewUser = styled.div`
 	width: 90vw;
 	display: flex;
 	align-items: center;
@@ -17,7 +17,7 @@ export const StyledButtonsArea = styled.div`
 export const StyledButton = styled.button`
 	font-size: 10px;
 	background-color: #222222;
-	width: 100px;
+	width: 120px;
 	height: 35px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -44,20 +44,25 @@ export const StyledSideButtons = styled.button`
 	}
 `
 export const StyledButtonReturnHomePage = styled.button`
-	width: 180px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	font-size: 10px;
-	color: ${props => (props.whiteColor ? 'red' : '#000000')};
-	font-weight: 500;
+	font-size: 12px;
+	font-weight: 700;
 	padding: 20px;
+	transition: transform 0.5s;
+
+	&:hover {
+		transform: scale(1.2);
+	}
+
+	&:focus {
+		color: #068fff;
+	}
 `
 
 export const StyledPositionButton = styled.div`
-	width: 100%;
+	background-color: #ffffff;
 	display: flex;
 	justify-content: end;
-	align-items: center;
-	color: ${props => (props.whiteColor ? '#dadacb' : '#000000')};
 `
