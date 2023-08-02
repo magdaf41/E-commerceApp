@@ -55,10 +55,25 @@ export const StyledPError = styled.p`
 export const StyledPLogin = styled.p`
 	a {
 		font-weight: 700;
-		color: black;
+		color: red;
 		padding: 0 5px;
 		transition: transform 0.5s;
 	}
+	a:hover {
+		transform: scale(1.5);
+	}
+	:focus {
+		color: #068fff;
+	}
+
+	/* font-size: 12px; */
+`
+
+export const StyledRegisterDiv = styled.div`
+	 
+		color: green;
+		transition: transform 0.5s;
+	
 	:hover {
 		transform: scale(1.5);
 	}

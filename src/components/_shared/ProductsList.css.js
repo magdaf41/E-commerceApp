@@ -116,3 +116,24 @@ export const StyledProductPrice = styled.p`
 	font-weight: 700;
 `
 export const StyledProductDesc = styled.p``
+
+export const StyledSelectUser = styled.select`
+	border: 1px solid #b9b5a8;
+	width: 80px;
+	height: 25px;
+	outline: none;
+	font-size: 10px;
+	padding: 3px;
+	&& option {
+		font-size: 10px;
+	}
+	&:hover {
+		border: 2px solid #068fff;
+	}
+`
+
+export const StyledRoleArea = styled.div`
+	width: 160px;
+	height: 60px;
+	font-size: 10px;
+`

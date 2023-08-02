@@ -17,6 +17,7 @@ export const StyledTableHeaders = styled.thead`
 	& th {
 		padding: 10px;
 		text-align: center;
+		min-width: 120px;
 	}
 `
 
@@ -27,9 +28,9 @@ export const StyledContentTableTbody = styled.tr`
 		text-align: center;
 		font-size: 14px;
 		& img {
-			width: 100px;
-			height: auto;
-			object-fit: cover;
+			width: 120px;
+			height: 120px;
+			object-fit: contain;
 		}
 	}
 `

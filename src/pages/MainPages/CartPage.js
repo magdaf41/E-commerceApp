@@ -58,7 +58,7 @@ const CartPage = () => {
 			})
 		)
 		dispatch(clearCart(orderedProducts))
-		navigate('/ordersList')
+		navigate('/')
 	}
 
 	return (

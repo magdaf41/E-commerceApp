@@ -14,10 +14,9 @@ export const StyledModalContainer = styled.div`
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	outline: 0.02px solid #dadacb;
-	outline-offset: -5px;
 	color: #dadacb;
 	z-index: 100;
+	border: 1px solid #fff;
 `
 
 export const StyledModalBtn = styled.div`

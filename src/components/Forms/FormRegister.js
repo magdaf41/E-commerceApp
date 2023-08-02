@@ -16,6 +16,7 @@ import {
 	StyledPLogin,
 	StyledSpanLink,
 	StyledContainerFormPage,
+	StyledRegisterDiv,
 } from '../_shared/Form.css'
 import { StyledButton } from '../_shared/Buttons.css'
 import { openModal } from '../../store/modalSlice'
@@ -86,9 +87,9 @@ export const FormRegister = () => {
 							<StyledButton>Register</StyledButton>
 							<StyledPLogin>
 								Already have an account?
-								<Link to='/login'>
-									Sign In
-								</Link>
+								<StyledRegisterDiv>
+									<Link to='/login'>Sign In</Link>
+								</StyledRegisterDiv>
 							</StyledPLogin>
 							{response.message && !response.success && <p>{response.message}</p>}
 						</StyledBoxForm>

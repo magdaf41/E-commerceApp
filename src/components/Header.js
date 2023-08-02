@@ -23,6 +23,7 @@ import {
 } from './Header.css'
 import { logout } from '../store/authSlice'
 import { openModal } from '../store/modalSlice'
+import { clearCart } from '../store/cartSlice'
 
 const Header = () => {
 	const navigate = useNavigate()
@@ -33,6 +34,7 @@ const Header = () => {
 		navigate('/')
 		dispatch(logout(values))
 		dispatch(openModal())
+		dispatch(clearCart(orderedProducts))
 	}
 	const orderedProducts = useSelector(state => state.cart.orderedProducts)
 

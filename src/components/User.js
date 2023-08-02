@@ -3,11 +3,12 @@ import { useDispatch } from 'react-redux'
 import { changeRole } from '../store/authSlice'
 import { StyledContentTableTbody } from './_shared/Table.css'
 import { StyledButton, StyledSideButtons } from './_shared/Buttons.css'
+import { StyledRoleArea, StyledSelectUser } from './_shared/ProductsList.css'
 
 const User = ({ data, orderNo }) => {
 	const [userRole, setUserRole] = useState(false)
 	const [role, setRole] = useState(data.role)
-	const [newRole, setNewRole] = useState('')
+	const [newRole, setNewRole] = useState(role)
 	const [editUser, setEditUser] = useState('')
 
 	const dispatch = useDispatch()
@@ -30,7 +31,6 @@ const User = ({ data, orderNo }) => {
 		dispatch(changeRole({ editUser, newRole }))
 	}, [newRole])
 
-	console.log(role)
 	return (
 		<StyledContentTableTbody key={data.id}>
 			<td order>{orderNo}</td>
@@ -39,14 +39,17 @@ const User = ({ data, orderNo }) => {
 			<td>{data.email}</td>
 			<td>{data.password}</td>
 			<td>
-				<div>
+				<StyledRoleArea>
 					<p>{data.role}</p>
 					{userRole ? (
-						<select value={role} onChange={e => setNewRole(e.target.value)} onBlur={() => setUserRole(false)}>
+						<StyledSelectUser
+							value={newRole}
+							onChange={e => setNewRole(e.target.value)}
+							onBlur={() => setUserRole(false)}>
 							<option value='admin'>Admin</option>
 							<option value='employee'>Employee</option>
 							<option value='client'>Client</option>
-						</select>
+						</StyledSelectUser>
 					) : (
 						<StyledSideButtons
 							onClick={() => {
@@ -56,7 +59,7 @@ const User = ({ data, orderNo }) => {
 							Edit
 						</StyledSideButtons>
 					)}
-				</div>
+				</StyledRoleArea>
 			</td>
 		</StyledContentTableTbody>
 	)

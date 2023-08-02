@@ -85,7 +85,7 @@ const ProductsList = () => {
 			<StyledSearchAndSelectBox>
 				<StyledSelectArea className='select-column'>
 					<label for='column-name'>Sort by column </label>
-					<StyledSelect className='select' onChange={updateSortParam}>
+					<StyledSelect onChange={updateSortParam}>
 						<option value=''>--Please choose an option--</option>
 						<option value='title'>Title</option>
 						<option value='price'>Price</option>
