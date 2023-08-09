@@ -34,7 +34,7 @@ const initialValues = {
 	password: '',
 }
 
-export const FormRegister = () => {
+export const FormRegister = ({ addNewUser }) => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 	const response = useSelector(state => state.auth.response)
@@ -48,21 +48,29 @@ export const FormRegister = () => {
 
 	useEffect(() => {
 		if (!isOpen && response.success) {
-			navigate('/')
 			dispatch(clearResponse())
+			if (addNewUser) {
+				navigate('/usersList')
+			} else {
+				navigate('/')
+			}
 		}
 	}, [isOpen])
 
 	const submitForm = values => {
 		dispatch(register(values))
 		if (response.success) {
-			navigate('/')
+			if (addNewUser) {
+				navigate('/usersList')
+			} else {
+				navigate('/')
+			}
 		}
 	}
 	return (
 		<StyledContainerFormPage>
 			<StyledFormContainer>
-				<StyledFormTitle>Sing up</StyledFormTitle>
+				<StyledFormTitle>Sign up</StyledFormTitle>
 				<Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={submitForm}>
 					{({ errors, touched, handleBlur, handleChange, handleSubmit, values }) => (
 						<StyledBoxForm onSubmit={handleSubmit} noValidate>

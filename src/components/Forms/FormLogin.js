@@ -58,7 +58,7 @@ export const FormLogin = () => {
 	return (
 		<StyledContainerFormPage>
 			<StyledFormContainer>
-				<StyledFormTitle>Sing in</StyledFormTitle>
+				<StyledFormTitle>Sign in</StyledFormTitle>
 				<Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={submitForm}>
 					{({ errors, touched, handleBlur, handleChange, handleSubmit, values }) => (
 						<StyledBoxForm onSubmit={handleSubmit} noValidate>
@@ -83,7 +83,7 @@ export const FormLogin = () => {
 					)}
 				</Formik>
 				{isOpen ? (
-					<Modal openTime={2000}>
+					<Modal openTime={1000}>
 						<h4>You have successfully logged in</h4>
 					</Modal>
 				) : null}

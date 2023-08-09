@@ -17,7 +17,7 @@ const UsersListPage = () => {
 		<StyledPage>
 			<ReturnBtn />
 			<StyledPositionButtonAddNewUser>
-				<StyledButton onClick={() => navigate('/register')}>Add new user</StyledButton>
+				<StyledButton onClick={() => navigate('/register/addNewUser')}>Add new user</StyledButton>
 			</StyledPositionButtonAddNewUser>
 			<StyledTable>
 				<StyledTableHeaders>

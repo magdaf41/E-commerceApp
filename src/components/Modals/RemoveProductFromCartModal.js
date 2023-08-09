@@ -1,19 +1,19 @@
 import { useDispatch } from 'react-redux'
-import { removeProduct } from '../../store/cartSlice'
+import { removeProductFromCart } from '../../store/cartSlice'
 import { closeModal } from '../../store/modalSlice'
 import { StyledModalContainer } from './Modal.css'
 import { StyledSideButtons, StyledButtonsArea } from '../_shared/Buttons.css'
 
-const RemoveProductModal = ({ id }) => {
+const RemoveProductFromCartModal = ({ product }) => {
 	const dispatch = useDispatch()
 
 	return (
 		<StyledModalContainer>
-			<h4>remove product from your shopping cart?</h4>
+			<h4>Are you shure to remove product from cart?</h4>
 			<StyledButtonsArea>
 				<StyledSideButtons
 					onClick={() => {
-						dispatch(removeProduct(id))
+						dispatch(removeProductFromCart(product))
 						dispatch(closeModal())
 					}}>
 					Confirm
@@ -30,4 +30,4 @@ const RemoveProductModal = ({ id }) => {
 		</StyledModalContainer>
 	)
 }
-export default RemoveProductModal
+export default RemoveProductFromCartModal

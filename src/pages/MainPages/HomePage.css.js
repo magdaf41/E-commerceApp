@@ -1,17 +1,19 @@
 import styled from 'styled-components'
 
 export const StyledContainerHomePage = styled.div`
-/* border: 3px solid red; */
+	/* border: 3px solid red; */
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	padding: 30px 0;
-	min-height: 80vh;
+	flex-grow: 1;
+	/* min-height: 80vh; */
 	width: 100%;
 `
 export const StyledPage = styled.div`
 	padding: 30px;
 	background: #ffffff;
+	flex-grow: 1;
 `
 
 export const StyledImage = styled.div`

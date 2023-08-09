@@ -3,11 +3,11 @@ import { StyledContainerFormPage, StyledPage, StyledProductsPage } from './HomeP
 import ReturnBtn from '../../components/_shared/ReturnBtn'
 import { FormRegister } from '../../components/Forms/FormRegister'
 
-const RegisterPage = () => {
+const RegisterPage = ({ addNewUser }) => {
 	return (
 		<StyledPage>
 			<ReturnBtn />
-			<FormRegister />
+			<FormRegister addNewUser={addNewUser} />
 		</StyledPage>
 	)
 }

@@ -102,7 +102,7 @@ const router = createBrowserRouter([
 		element: (
 			<>
 				<Header />
-				<RegisterPage />
+				<RegisterPage addNewUser={false} />
 				<Footer />
 			</>
 		),
@@ -173,6 +173,16 @@ const router = createBrowserRouter([
 			<>
 				<Header />
 				<UsersListPage />
+				<Footer />
+			</>
+		),
+	},
+	{
+		path: '/register/addNewUser',
+		element: (
+			<>
+				<Header />
+				<RegisterPage addNewUser={true} />
 				<Footer />
 			</>
 		),

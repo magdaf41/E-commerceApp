@@ -8,14 +8,12 @@ import FormAdmin from './FormAdmin'
 import { StyledPage, StyledProductsPage } from '../../pages/MainPages/HomePage.css'
 
 const validationSchema = Yup.object().shape({
-	//   id: Yup.string().required().min(4).max(30),
 	title: Yup.string().min(4).required(),
 	desc: Yup.string().min(10).required(),
-	// image: Yup.string().matches(
-	// 	/((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/,
-	// 	'Enter correct url!'
-	// ),
-	price: Yup.string().min(4).max(30).required(),
+	image: Yup.string()
+		.matches(/^(https?:\/\/)/, 'Podany link nie zaczyna się od "http" lub "https".')
+		.url('Podany link nie jest poprawnym adresem URL.'),
+	price: Yup.number(),
 	type: Yup.string().min(4).max(30).required(),
 	category: Yup.string().min(4).max(30).required(),
 })

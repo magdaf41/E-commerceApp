@@ -4,7 +4,7 @@ import { closeModal } from '../../store/modalSlice'
 import { StyledModalContainer } from './Modal.css'
 import { StyledButton, StyledButtonsArea, StyledSideButtons } from '../_shared/Buttons.css'
 
-const ClearCartModal = () => {
+const ClearCartModal = ({ orderedProducts }) => {
 	const dispatch = useDispatch()
 	return (
 		<StyledModalContainer>
@@ -13,7 +13,7 @@ const ClearCartModal = () => {
 				<StyledButtonsArea>
 					<StyledSideButtons
 						onClick={() => {
-							dispatch(clearCart())
+							dispatch(clearCart(orderedProducts))
 							dispatch(closeModal())
 						}}>
 						confirm

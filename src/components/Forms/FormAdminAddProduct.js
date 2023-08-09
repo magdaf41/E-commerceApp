@@ -21,7 +21,7 @@ const validationSchema = Yup.object().shape({
 	image: Yup.string()
 		.matches(/^(https?:\/\/)/, 'Podany link nie zaczyna się od "http" lub "https".')
 		.url('Podany link nie jest poprawnym adresem URL.'),
-	price: Yup.string().min(4).max(30).required(),
+	price: Yup.number(),
 	type: Yup.string().min(4).max(30).required(),
 	category: Yup.string().min(4).max(30).required(),
 })

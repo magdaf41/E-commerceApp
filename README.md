@@ -7,3 +7,7 @@
 
 
 1. paginacja przy edit i add products, generowanie id przy add produkt, generowanie daty
+
+
+1. Dodać alt do img
+2. Modale przy kupowaniu produktów jak i przy usuwaniu

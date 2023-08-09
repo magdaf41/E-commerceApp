@@ -42,9 +42,9 @@ const ProductPage = ({ name, img, autoCloseModalTime }) => {
 					? products.filter(p => p.category === name)
 					: products.filter(p => p.type === name)
 				).map(product => (
-					<StyledProduct>
+					<StyledProduct key={product.id}>
 						<StyledProductImage>
-							<img src={product.image} />
+							<img src={product.image} alt={product.title} />
 						</StyledProductImage>
 						<StyledProductContent>
 							<StyledProductHeader>{product.title}</StyledProductHeader>

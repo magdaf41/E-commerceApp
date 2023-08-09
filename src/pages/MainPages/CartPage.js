@@ -21,11 +21,14 @@ import {
 import { StyledBtn } from '../../components/_shared/Form.css'
 import { addOrder } from '../../store/ordersListSlice'
 import { openModal } from '../../store/modalSlice'
-import Modal from '../../components/Modals/ClearCartModal'
+// import Modal from '../../components/Modals/ClearCartModal'
 import ClearCartModal from '../../components/Modals/ClearCartModal'
 import { StyledTable, StyledTableHeaders, StyledContentTableTbody } from '../../components/_shared/Table.css'
 import { StyledButton, StyledSideButtons } from '../../components/_shared/Buttons.css'
 import ReturnBtn from '../../components/_shared/ReturnBtn'
+import Modal from '../../components/Modals/Modal'
+import RemoveProductModal from '../../components/Modals/RemoveProductModals'
+import RemoveProductFromCartModal from '../../components/Modals/RemoveProductFromCartModal'
 
 const CartPage = () => {
 	const dispatch = useDispatch()
@@ -35,10 +38,21 @@ const CartPage = () => {
 	const orderValue = orderedProducts.reduce((prev, curr) => prev + curr.price * curr.cartQuantity, 0)
 	console.log(orderedProducts)
 	const isOpen = useSelector(store => store.modal.isOpen)
+	const [openModalClearCart, setOpenModalClearCart] = useState(false)
+	const [openModalBuyProducts, setOpenModalBuyProducts] = useState(false)
+	const [openModalRemoveProductFromCart, setOpenModalRemoveProductFromCart] = useState(false)
 
 	useEffect(() => {
 		dispatch(getTotals())
 	}, [orderedProducts, dispatch])
+
+	useEffect(() => {
+		dispatch(openModal())
+	}, [openModalClearCart])
+
+	useEffect(() => {
+		dispatch(openModal())
+	}, [openModalRemoveProductFromCart])
 
 	const handleAddToCart = product => {
 		dispatch(addProductToCart(product))
@@ -58,9 +72,13 @@ const CartPage = () => {
 			})
 		)
 		dispatch(clearCart(orderedProducts))
-		navigate('/')
+		// dispatch(openModal())
+		// setOpenModalBuyProducts(true)
+		// setOpenModal(true)
+		navigate('/ordersList')
 	}
 
+	console.log(orderedProducts)
 	return (
 		<StyledContainerFormPage>
 			<h2>Shopping Cart</h2>
@@ -80,22 +98,25 @@ const CartPage = () => {
 						<tbody>
 							{orderedProducts.map(product => (
 								<StyledContentTableTbody>
-									<StyledProductColumn>
-										<img src={product.image}></img>
+									{openModalClearCart && isOpen && <ClearCartModal orderedProducts={orderedProducts} />}
+									{openModalRemoveProductFromCart && isOpen && <RemoveProductFromCartModal product={product} />}
+
+									<StyledProductColumn key={product.id}>
+										<img src={product.image} alt={product.title}></img>
 										<div>
 											<h3>{product.title}</h3>
 											<StyledSideButtons
 												onClick={() => {
-													dispatch(removeProductFromCart(product))
+													// dispatch(openModal())
+													setOpenModalRemoveProductFromCart(true)
+													// dispatch(removeProductFromCart(product))
 												}}>
 												Remove
 											</StyledSideButtons>
 										</div>
 									</StyledProductColumn>
 
-									<td>
-										${product.price}
-									</td>
+									<td>${product.price}</td>
 									<td>
 										<StyledOrderedQuantity key={product.id}>
 											<button onClick={() => handleDecreaseCart(product)}>-</button>
@@ -114,10 +135,11 @@ const CartPage = () => {
 							<StyledButton
 								onClick={() => {
 									dispatch(openModal())
+									setOpenModalClearCart(true)
+									// dispatch(clearCart(orderedProducts))
 								}}>
 								Clear Cart
 							</StyledButton>
-							{isOpen ? <ClearCartModal></ClearCartModal> : null}
 						</StyledClearCart>
 						<div>
 							<StyledSubtotal>

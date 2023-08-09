@@ -6,7 +6,8 @@ export const StyledHeader = styled.div`
 export const StyledRowTitle = styled.div`
 	display: flex;
 	justify-content: space-around;
-	padding: 30px;
+	align-items: center;
+	padding: 10px;
 `
 export const StyledRowNav = styled.div`
 	height: 30px;
@@ -35,6 +36,29 @@ export const StyledNav = styled.div`
 	& a:focus {
 		color: #068fff;
 	}
+
+	@media (max-width: 992px) {
+		display: none;
+	}
+`
+
+export const StyledBurgerMenu = styled.div`
+	@media (max-width: 992px) {
+		width: 120rem;
+		height: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+`
+
+export const StyledBurgerMenuIcon = styled.div`
+	height: 8rem;
+	padding: 2rem;
+	display: flex;
+	align-items: center;
+	transition: border-bottom 0.1s;
+	background-color: red;
 `
 
 export const StyledCartIcon = styled.div`
@@ -49,17 +73,17 @@ export const StyledCartIcon = styled.div`
 `
 
 export const StyledTitle = styled.h1`
-	color: transparent;
-	-webkit-text-stroke: 0.5px #b9b5a8;
-	font-weight: 700;
-	font-size: 50px;
+	font-size: 35px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
+	color: #dadacb;
 	cursor: pointer;
+	&&:hover {
+		color: red;
+	}
 	span {
-		font-size: 55px;
+		font-size: 38px;
 		border-bottom: 4px solid #b9b5a8;
-		/* color: #b9b5a8; */
 	}
 `
 

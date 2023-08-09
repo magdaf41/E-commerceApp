@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { SlBag } from 'react-icons/sl'
 import { BsSearch, BsPerson } from 'react-icons/bs'
@@ -20,15 +20,26 @@ import {
 	StyledLoggedUser,
 	StyledLogo,
 	StyledCartIcon,
+	StyledBurgerMenu,
+	StyledBurgerMenuIcon,
 } from './Header.css'
 import { logout } from '../store/authSlice'
 import { openModal } from '../store/modalSlice'
 import { clearCart } from '../store/cartSlice'
+import Navbar from './Navbar'
+import Sidebar from './Sidebar'
+
 
 const Header = () => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 	const loggedUser = useSelector(state => state.auth.loggedUser)
+
+	const [isOpen, setIsOpen] = useState(false)
+
+	const toggle = () => {
+		setIsOpen(!isOpen)
+	}
 
 	const logOutUser = values => {
 		navigate('/')
@@ -42,7 +53,9 @@ const Header = () => {
 		<StyledHeader>
 			<StyledRowTitle>
 				<StyledLogo>
-					<img src='https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/1/2/8/128f5fedfebb9989ba1e5dd6d95c4109a94e55a2.png'></img>
+					<img
+						src='https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/1/2/8/128f5fedfebb9989ba1e5dd6d95c4109a94e55a2.png'
+						alt='logo'></img>
 				</StyledLogo>
 				<StyledTitle onClick={() => navigate('/')}>
 					Prjkt <span>10</span>
@@ -73,7 +86,7 @@ const Header = () => {
 				</StyledSingInBasket>
 			</StyledRowTitle>
 
-			<StyledRowNav>
+			{/* <StyledRowNav>
 				<StyledNav>
 					<Link to='/mobile'>mobile phone</Link>
 					<Link to='/headphone'>headphone</Link>
@@ -91,7 +104,9 @@ const Header = () => {
 						{loggedUser !== null && loggedUser.role === 'admin' && <Link to='/usersList'>users list</Link>}
 					</StyledNav>
 				)}
-			</StyledRowNav>
+			</StyledRowNav> */}
+			<Navbar isOpen={isOpen} toggle={toggle} />
+			<Sidebar isOpen={isOpen} toggle={toggle} />
 		</StyledHeader>
 	)
 }
