@@ -55,6 +55,9 @@ export const StyledProductColumn = styled.td`
 		font-size: 16px;
 		margin-bottom: 15px;
 	}
+	@media (max-width: 768px) {
+		flex-direction: column;
+	}
 `
 // export const StyledSumUpCart = styled.td`
 // 	display: flex;

@@ -58,7 +58,6 @@ export const StyledBackgroundImage = styled.div`
 export const StyledProductsPageTitle = styled.p`
 	font-size: 40px;
 	line-height: 250px;
-	/* color: #dadacb; */
 	text-shadow: 3px 3px 3px black;
 	text-transform: uppercase;
 	letter-spacing: 10px;
@@ -66,8 +65,13 @@ export const StyledProductsPageTitle = styled.p`
 	display: flex;
 	justify-content: center;
 	align-content: center;
-	color: transparent;
-	-webkit-text-stroke: 2px #dadacb;
+	color: black;
+	-webkit-text-stroke: 1px #dadacb;
+
+		@media (max-width: 576px) {
+		font-size: 15px;
+			-webkit-text-stroke: 0.5px #dadacb;
+		}
 `
 
 export const StyledProductsListContainer = styled.div`
@@ -76,6 +80,14 @@ export const StyledProductsListContainer = styled.div`
 	gap: 30px;
 	padding: 30px 0;
 	text-align: center;
+
+	@media (max-width: 992px) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+	@media (max-width: 576px) {
+			grid-template-columns: 1fr;
+		}
 `
 export const StyledProduct = styled.div`
 	display: flex;

@@ -17,6 +17,7 @@ import {
 	StyledSelectArea,
 } from '../../components/_shared/ProductsList.css'
 import { StyledPage, StyledProductsPage } from '../MainPages/HomePage.css'
+import Modal from '../../components/Modals/Modal'
 
 const ProductsList = () => {
 	const navigate = useNavigate()
@@ -81,6 +82,21 @@ const ProductsList = () => {
 	return (
 		<StyledPage>
 			{isOpen && <RemoveProductModal id={productToDeleteId} />}
+			{/* {isOpen && (
+				<Modal
+					cancelText='Cancel'
+					confirmAction={
+						isSingleRemove && removeProduct
+							? () => dispatch(removeProductFromCart(removeProduct))
+							: () => dispatch(clearCart(orderedProducts))
+					}>
+					{isSingleRemove && removeProduct ? (
+						<h4>Are you sure to remove product from cart?</h4>
+					) : (
+						<h4>remove all items from your shopping cart?</h4>
+					)}
+				</Modal>
+			)} */}
 			<ReturnBtn />
 			<StyledSearchAndSelectBox>
 				<StyledSelectArea className='select-column'>

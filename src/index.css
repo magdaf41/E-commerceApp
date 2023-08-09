@@ -1,39 +1,39 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Poppins', Helvetica, sans-serif;
-	font-size: 14px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-size: 14px;
 }
 
 #root {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	min-height: 100%;
-	background-image: url(https://cdn.wallpapersafari.com/11/38/VPEXil.jpg);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(https://cdn.wallpapersafari.com/11/38/VPEXil.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 a {
-	text-decoration: none;
-	color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 button {
-	cursor: pointer;
-	border: none;
-	background-color: transparent;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
 }

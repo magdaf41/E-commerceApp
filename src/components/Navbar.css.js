@@ -1,30 +1,11 @@
 import styled from 'styled-components'
-import { FaBars } from 'react-icons/fa'
-import { FaNodeJs, FaTimes } from 'react-icons/fa'
+import { FaTimes } from 'react-icons/fa'
 
 export const Nav = styled.nav`
-	/* background: #fff; */
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	font-weight: 700;
-	font-size: 18px;
 	height: 60px;
-	padding: 30px;
 
-	@media (max-width: 960px) {
+	@media (max-width: 768px) {
 		transition: 0.8s all ease;
-	}
-`
-
-export const NavLogo = styled.div`
-	display: flex;
-	align-items: center;
-	gap: 5px;
-	color: white;
-	font-weight: 700;
-	&:hover {
-		color: #ff7b00;
 	}
 `
 
@@ -49,48 +30,43 @@ export const CloseIcon = styled(FaTimes)`
 `
 
 export const NavMenu = styled.ul`
-	width: 100%;
-	color: wheat;
+	height: 40px;
 	display: flex;
 	justify-content: space-around;
+	align-items: center;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
+	font-weight: 700;
+	color: #dadacb;
+	border-top: 1px solid #354147;
+	border-bottom: 1px solid #354147;
+
 	& a {
 		transition: transform 0.5s;
+		@media (max-width: 992px) {
+			font-size: 13px;
+			padding: 0 20px;
+		}
 	}
 
 	& a:hover {
 		transform: scale(1.5);
+		@media (max-width: 992px) {
+			transform: scale(1.2);
+		}
 	}
 
 	& a:focus {
 		color: #068fff;
+	}
+
+	@media (max-width: 992px) {
+		height: 60px;
+		flex-wrap: wrap;
+		gap: 10px;
 	}
 
 	@media (max-width: 768px) {
 		display: none;
-	}
-`
-
-export const NavItem = styled.li`
-	height: 80px;
-`
-export const NavLink = styled.a`
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	text-decoration: none;
-	padding: 0 10px;
-	/* height: 100%; */
-	cursor: pointer;
-
-	&:hover {
-		/* transform: scale(1.5); */
-		border-bottom: 2px solid #001aff;
-		transition: 0.2s ease-in-out;
-	}
-
-	& a:focus {
-		color: #068fff;
 	}
 `
