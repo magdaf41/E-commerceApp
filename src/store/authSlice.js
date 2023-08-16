@@ -33,6 +33,7 @@ export const authSlice = createSlice({
 			}
 		},
 		register: (state, action) => {
+			console.log(action.payload)
 			const foundUserByEmail = state.users.find(user => user.email === action.payload.email)
 			if (foundUserByEmail) {
 				state.response.success = false
@@ -44,7 +45,7 @@ export const authSlice = createSlice({
 					role: 'client',
 				}
 				state.users = [...state.users, newUser]
-				state.loggedUser = newUser
+				// state.loggedUser = newUser
 				state.response.success = true
 				state.response.message = ''
 			}

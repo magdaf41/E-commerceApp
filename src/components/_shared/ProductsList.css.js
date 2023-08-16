@@ -4,6 +4,11 @@ export const StyledSearchAndSelectBox = styled.div`
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+
+		@media (max-width: 768px) {
+		flex-direction:column ;
+		gap: 10px;
+	}
 `
 export const StyledBoxSearchInput = styled.div`
 	display: flex;
@@ -21,7 +26,13 @@ export const StyledSelectArea = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-	gap: 10px;
+	gap: 5px;
+	
+	& label{
+		@media (max-width: 768px) {
+		font-size: 12px;
+	}
+	}
 `
 
 export const StyledSelect = styled.select`
@@ -40,6 +51,9 @@ export const StyledSearchInput = styled.input`
 	border: none;
 	width: 300px;
 	color: #222222;
+	@media (max-width: 768px) {
+		width: 290px;
+	}
 `
 export const StyledSearchIcon = styled.i``
 

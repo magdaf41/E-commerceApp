@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { removeProduct } from '../../store/cartSlice'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 import ReturnBtn from '../../components/_shared/ReturnBtn'
-import RemoveProductModal from '../../components/Modals/RemoveProductModals'
 import Product from '../../components/Product'
 import { BsSearch } from 'react-icons/bs'
+import Modal from '../../components/Modals/Modal'
 
 import { StyledTable, StyledTableHeaders } from '../../components/_shared/Table.css'
-import { StyledButton, StyledButtonsArea } from '../../components/_shared/Buttons.css'
+import { StyledButton } from '../../components/_shared/Buttons.css'
 import {
 	StyledSearchAndSelectBox,
 	StyledBoxSearchInput,
@@ -16,21 +18,21 @@ import {
 	StyledSelect,
 	StyledSelectArea,
 } from '../../components/_shared/ProductsList.css'
-import { StyledPage, StyledProductsPage } from '../MainPages/HomePage.css'
-import Modal from '../../components/Modals/Modal'
+import { StyledPage } from '../MainPages/HomePage.css'
 
 const ProductsList = () => {
 	const navigate = useNavigate()
 	const location = useLocation()
 	const products = useSelector(state => state.cart.products)
 	const isOpen = useSelector(store => store.modal.isOpen)
+	const dispatch = useDispatch()
 
 	const params = new URLSearchParams(location.search)
 	const sortParam = params.get('sort')
 	const searchParam = params.get('search')
 
 	const [searchPhrase, setSearchPhrase] = useState('')
-	const [productToDeleteId, setProductToDeleteId] = useState('')
+	const [productsToDelete, setProductToDelete] = useState('')
 	const [productsToDisplay, setProductsToDisplay] = useState(products)
 
 	useEffect(() => {
@@ -81,26 +83,16 @@ const ProductsList = () => {
 
 	return (
 		<StyledPage>
-			{isOpen && <RemoveProductModal id={productToDeleteId} />}
-			{/* {isOpen && (
-				<Modal
-					cancelText='Cancel'
-					confirmAction={
-						isSingleRemove && removeProduct
-							? () => dispatch(removeProductFromCart(removeProduct))
-							: () => dispatch(clearCart(orderedProducts))
-					}>
-					{isSingleRemove && removeProduct ? (
-						<h4>Are you sure to remove product from cart?</h4>
-					) : (
-						<h4>remove all items from your shopping cart?</h4>
-					)}
+			{isOpen && (
+				<Modal cancelText='Cancel' confirmAction={() => dispatch(removeProduct(productsToDelete))}>
+					<h4>Are you sure to remove product from ProductList?</h4>
 				</Modal>
-			)} */}
+			)}
+
 			<ReturnBtn />
 			<StyledSearchAndSelectBox>
-				<StyledSelectArea className='select-column'>
-					<label for='column-name'>Sort by column </label>
+				<StyledSelectArea>
+					<label>Sort by column </label>
 					<StyledSelect onChange={updateSortParam}>
 						<option value=''>--Please choose an option--</option>
 						<option value='title'>Title</option>
@@ -144,7 +136,7 @@ const ProductsList = () => {
 							key={product.id}
 							data={product}
 							orderNo={index + 1}
-							setProductToDeleteId={setProductToDeleteId}
+							setProductToDelete={setProductToDelete}
 							sortParam={sortParam}
 						/>
 					))}

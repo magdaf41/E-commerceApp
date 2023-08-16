@@ -73,7 +73,6 @@ const CartPage = () => {
     navigate("/ordersList");
   };
 
-  console.log(orderedProducts);
   return (
     <StyledContainerFormPage>
       <h2>Shopping Cart</h2>

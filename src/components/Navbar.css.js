@@ -10,7 +10,7 @@ export const Nav = styled.nav`
 `
 
 export const MobileIcon = styled.div`
-	font-size: 25px;
+	font-size: 30px;
 	display: none;
 	color: white;
 	padding: 20px;
@@ -21,8 +21,8 @@ export const MobileIcon = styled.div`
 `
 export const CloseIcon = styled(FaTimes)`
 	position: absolute;
-	top: 20%;
-	left: 35%;
+	top: 15%;
+	left: 80%;
 	font-size: 30px;
 	padding: 5px;
 	border: 1px solid #dadacb;

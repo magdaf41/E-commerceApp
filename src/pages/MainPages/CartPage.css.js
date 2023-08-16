@@ -54,6 +54,7 @@ export const StyledProductColumn = styled.td`
 	& h3 {
 		font-size: 16px;
 		margin-bottom: 15px;
+		max-width:150px ;
 	}
 	@media (max-width: 768px) {
 		flex-direction: column;

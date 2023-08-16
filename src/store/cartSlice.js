@@ -83,6 +83,7 @@ export const cartSlice = createSlice({
 			state.products = [...state.products, newProduct]
 		},
 		removeProduct: (state, action) => {
+			console.log(action.payload)
 			state.products = state.products.filter(product => product.id !== action.payload)
 		},
 		editProduct: (state, action) => {
