@@ -1,116 +1,63 @@
-import { useDispatch } from "react-redux";
-import {
-  StyledModalContainer,
-  StyledModalBtn,
-  StyledBackdrop,
-  StyledModalContent,
-} from "./Modal.css";
-import { useEffect } from "react";
-import { closeModal } from "../../store/modalSlice";
-import {
-  StyledButton,
-  StyledButtonsArea,
-  StyledSideButtons,
-} from "../_shared/Buttons.css";
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
-const Modal = ({
-  children,
-  openTime,
-  confirmAction = null,
-  confirmText = "confirm",
-  cancelText = "Ok",
-}) => {
-  const dispatch = useDispatch();
+import { closeModal } from '../../store/modalSlice'
 
-  useEffect(() => {
-    let timeoutID;
+import { StyledButton, StyledButtonsArea, StyledSideButtons } from '../_shared/Buttons.css'
+import { StyledModalContainer, StyledBackdrop, StyledModalContent } from './Modal.css'
 
-    document.body.style.overflowY = "hidden";
+const Modal = ({ children, openTime, confirmAction = null, confirmText = 'confirm', cancelText = 'Ok' }) => {
+	const dispatch = useDispatch()
 
-    if (openTime) {
-      timeoutID = setTimeout(() => {
-        dispatch(closeModal());
-      }, openTime);
-    }
+	useEffect(() => {
+		let timeoutID
 
-    return () => {
-      clearInterval(timeoutID);
-      document.body.style.overflowY = "scroll";
-    };
-  }, []);
+		document.body.style.overflowY = 'hidden'
 
-  return openTime ? (
-    <StyledModalContainer>
-      <StyledBackdrop />
-      <StyledModalContent>{children}</StyledModalContent>
-    </StyledModalContainer>
-  ) : confirmAction ? (
-    <StyledModalContainer>
-      <StyledBackdrop />
-      <StyledModalContent>
-        {children}
-        <StyledButtonsArea>
-          <StyledSideButtons
-            onClick={() => {
-              confirmAction();
-              dispatch(closeModal());
-            }}
-          >
-            {confirmText}
-          </StyledSideButtons>
-          <StyledSideButtons
-            onClick={() => {
-              dispatch(closeModal());
-            }}
-          >
-            {cancelText}
-          </StyledSideButtons>
-        </StyledButtonsArea>
-      </StyledModalContent>
-    </StyledModalContainer>
-  ) : (
-    <StyledModalContainer>
-      {children}
-      <StyledButton onClick={() => dispatch(closeModal())}>
-        {cancelText}
-      </StyledButton>
-    </StyledModalContainer>
-  );
-  // if (openTime) {
-  //   return <StyledModalContainer>{children}</StyledModalContainer>;
-  // } else if (confirmAction) {
-  //   return (
+		if (openTime) {
+			timeoutID = setTimeout(() => {
+				dispatch(closeModal())
+			}, openTime)
+		}
 
-  //     <StyledModalContainer>
-  //       {children}
-  //       <StyledButtonsArea>
-  //         <StyledSideButtons
-  //           onClick={() => {
-  //             confirmAction();
-  //             dispatch(closeModal());
-  //           }}
-  //         >
-  //           {confirmText}
-  //         </StyledSideButtons>
-  //         <StyledSideButtons
-  //           onClick={() => {
-  //             dispatch(closeModal());
-  //           }}
-  //         >
-  //           {cancelText}
-  //         </StyledSideButtons>
-  //       </StyledButtonsArea>
-  //     </StyledModalContainer>
-  //   );
-  // }
+		return () => {
+			clearInterval(timeoutID)
+			document.body.style.overflowY = 'scroll'
+		}
+	}, [])
 
-  // return (
-  //   <StyledModalContainer>
-  //     {children}
-  //     <StyledButton onClick={() => dispatch(closeModal())}>
-  //       {cancelText}
-  //     </StyledButton>
-  //   </StyledModalContainer>
-  // );
-};
-export default Modal;
+	return openTime ? (
+		<StyledModalContainer>
+			<StyledBackdrop />
+			<StyledModalContent>{children}</StyledModalContent>
+		</StyledModalContainer>
+	) : confirmAction ? (
+		<StyledModalContainer>
+			<StyledBackdrop />
+			<StyledModalContent>
+				{children}
+				<StyledButtonsArea>
+					<StyledSideButtons
+						onClick={() => {
+							confirmAction()
+							dispatch(closeModal())
+						}}>
+						{confirmText}
+					</StyledSideButtons>
+					<StyledSideButtons
+						onClick={() => {
+							dispatch(closeModal())
+						}}>
+						{cancelText}
+					</StyledSideButtons>
+				</StyledButtonsArea>
+			</StyledModalContent>
+		</StyledModalContainer>
+	) : (
+		<StyledModalContainer>
+			{children}
+			<StyledButton onClick={() => dispatch(closeModal())}>{cancelText}</StyledButton>
+		</StyledModalContainer>
+	)
+}
+export default Modal

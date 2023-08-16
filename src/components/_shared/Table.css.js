@@ -5,6 +5,7 @@ export const StyledTable = styled.table`
 	box-shadow: 0 0 3px #222222;
 	border-collapse: collapse;
 	margin: 25px 0;
+	table-layout: ${props => (props.cart ? 'fixed' : 'none')};
 `
 
 export const StyledTableHeaders = styled.thead`
@@ -24,11 +25,10 @@ export const StyledContentTableTbody = styled.tr`
 		padding: 10px;
 		text-align: center;
 		font-size: 14px;
-		
-		& img {
-			width: 120px;
-			height: 120px;
-			object-fit: contain;
-		}
 	}
+`
+export const StyledImageContainer = styled.div`
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
 `

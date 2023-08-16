@@ -5,20 +5,20 @@ export const StyledSearchAndSelectBox = styled.div`
 	justify-content: space-around;
 	align-items: center;
 
-		@media (max-width: 768px) {
-		flex-direction:column ;
+	@media (max-width: 768px) {
+		flex-direction: column;
 		gap: 10px;
 	}
 `
 export const StyledBoxSearchInput = styled.div`
 	display: flex;
 	align-items: center;
-	border: 1px solid #b9b5a8;
+	outline: 1px solid #b9b5a8;
 	padding: 5px;
 	max-width: 400px;
 	height: 35px;
 	&:hover {
-		border: 2px solid #068fff;
+		outline: 2px solid #068fff;
 	}
 `
 
@@ -27,21 +27,21 @@ export const StyledSelectArea = styled.div`
 	align-items: center;
 	justify-content: space-around;
 	gap: 5px;
-	
-	& label{
+
+	& label {
 		@media (max-width: 768px) {
-		font-size: 12px;
-	}
+			font-size: 12px;
+		}
 	}
 `
 
 export const StyledSelect = styled.select`
-	border: 1px solid #b9b5a8;
+	outline: 1px solid #b9b5a8;
 	padding: 5px;
 	height: 35px;
-	outline: none;
+	border: none;
 	&:hover {
-		border: 2px solid #068fff;
+		outline: 2px solid #068fff;
 	}
 `
 
@@ -82,10 +82,10 @@ export const StyledProductsPageTitle = styled.p`
 	color: black;
 	-webkit-text-stroke: 1px #dadacb;
 
-		@media (max-width: 576px) {
+	@media (max-width: 576px) {
 		font-size: 15px;
-			-webkit-text-stroke: 0.5px #dadacb;
-		}
+		-webkit-text-stroke: 0.5px #dadacb;
+	}
 `
 
 export const StyledProductsListContainer = styled.div`
@@ -96,12 +96,12 @@ export const StyledProductsListContainer = styled.div`
 	text-align: center;
 
 	@media (max-width: 992px) {
-			grid-template-columns: 1fr 1fr;
-		}
+		grid-template-columns: 1fr 1fr;
+	}
 
 	@media (max-width: 576px) {
-			grid-template-columns: 1fr;
-		}
+		grid-template-columns: 1fr;
+	}
 `
 export const StyledProduct = styled.div`
 	display: flex;

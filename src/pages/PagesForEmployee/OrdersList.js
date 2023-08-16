@@ -1,10 +1,11 @@
 import React from 'react'
+import { v4 as uuid } from 'uuid'
 import { useSelector } from 'react-redux'
 
-import { StyledTable, StyledTableHeaders, StyledContentTableTbody } from '../../components/_shared/Table.css'
 import ReturnBtn from '../../components/_shared/ReturnBtn'
-import { StyledPage, StyledProductsPage } from '../MainPages/HomePage.css'
-import { v4 as uuid } from 'uuid'
+
+import { StyledTable, StyledTableHeaders, StyledContentTableTbody } from '../../components/_shared/Table.css'
+import { StyledPage } from '../MainPages/HomePage.css'
 
 const OrdersList = () => {
 	const orders = useSelector(state => state.ordersList.orders)

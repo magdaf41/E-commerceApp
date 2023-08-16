@@ -5,7 +5,6 @@ import { openModal } from '../../store/modalSlice'
 import { addProductToCart } from '../../store/cartSlice'
 
 import ReturnBtn from '../../components/_shared/ReturnBtn'
-import { StyledButton } from '../../components/_shared/Buttons.css'
 import Modal from '../../components/Modals/Modal'
 
 import {
@@ -17,10 +16,10 @@ import {
 	StyledProductContent,
 	StyledProductPrice,
 	StyledProductDesc,
-	StyledProductPageTitle,
 	StyledProductsPageTitle,
 } from '../../components/_shared/ProductsList.css'
-import { StyledPage, StyledProductsPage } from './HomePage.css'
+import { StyledPage } from './HomePage.css'
+import { StyledButton } from '../../components/_shared/Buttons.css'
 
 const ProductPage = ({ name, img, autoCloseModalTime }) => {
 	const dispatch = useDispatch()

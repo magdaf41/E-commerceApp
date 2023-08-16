@@ -11,7 +11,7 @@ export const SidebarContainer = styled.aside`
 	opacity: ${({ isOpen }) => (isOpen ? '100' : '0')};
 	top: ${({ isOpen }) => (isOpen ? '0px' : '-100')};
 	z-index: ${({ isOpen }) => (isOpen ? '999' : '-100')};
-	color: #dadacb;
+	color: white;
 	padding: 40px 5px;
 
 	@media (max-width: 768px) {
@@ -29,16 +29,4 @@ export const SidebarMenu = styled.ul`
 	padding: 20px;
 	font-weight: 700;
 	text-transform: uppercase;
-
-	& a {
-		transition: transform 0.5s;
-	}
-
-	& a:hover {
-		transform: scale(1.5);
-	}
-
-	& a:focus {
-		color: #068fff;
-	}
 `

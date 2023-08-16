@@ -1,7 +1,9 @@
 import React from 'react'
-import { StyledContainerFormPage, StyledPage, StyledProductsPage } from './HomePage.css'
+
 import ReturnBtn from '../../components/_shared/ReturnBtn'
 import { FormRegister } from '../../components/Forms/FormRegister'
+
+import { StyledPage } from './HomePage.css'
 
 const RegisterPage = ({ addNewUser }) => {
 	return (

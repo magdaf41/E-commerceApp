@@ -1,35 +1,48 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { FaBars } from 'react-icons/fa'
-import {
-	Nav,
-	MobileIcon,
-	NavMenu,
-	CloseIcon,
-} from './Navbar.css'
+import { Link } from 'react-router-dom'
+import { Nav, MobileIcon, NavMenu, CloseIcon, BurgerIcon } from './Navbar.css'
+import { ListItem } from './_shared/ListItem.css'
 
 const Navbar = ({ isOpen, toggle, loggedUser }) => {
 	return (
-			<Nav>
-				<MobileIcon onClick={toggle}>{isOpen ? <CloseIcon /> : <FaBars />}</MobileIcon>
-
-				<NavMenu>
+		<Nav>
+			<MobileIcon onClick={toggle}>{isOpen ? <CloseIcon /> : <BurgerIcon />}</MobileIcon>
+			<NavMenu>
+				<ListItem>
 					<Link to='/mobile'>mobile phone</Link>
+				</ListItem>
+				<ListItem>
 					<Link to='/headphone'>headphone</Link>
+				</ListItem>
+				<ListItem>
 					<Link to='/smartwatch'>smartwatch</Link>
+				</ListItem>
+				<ListItem>
 					<Link to='/laptop'>laptop</Link>
+				</ListItem>
+				<ListItem>
 					<Link to='/thenewest'>the newest</Link>
+				</ListItem>
+				<ListItem>
 					<Link to='/sale'>sale</Link>
-					{loggedUser !== null && loggedUser.role !== 'client' && (
-						<>
-							<Link to='/products'>products list</Link>
-							<Link to='/ordersList'>orders list</Link>
-							{loggedUser !== null && loggedUser.role === 'admin' && <Link to='/usersList'>users list</Link>}
-						</>
+				</ListItem>
+			</NavMenu>
+			{loggedUser !== null && loggedUser.role !== 'client' && (
+				<NavMenu>
+					<ListItem>
+						<Link to='/products'>products list</Link>
+					</ListItem>
+					<ListItem>
+						<Link to='/ordersList'>orders list</Link>
+					</ListItem>
+					{loggedUser !== null && loggedUser.role === 'admin' && (
+						<ListItem>
+							<Link to='/usersList'>users list</Link>
+						</ListItem>
 					)}
 				</NavMenu>
-			</Nav>
-		
+			)}
+		</Nav>
 	)
 }
 

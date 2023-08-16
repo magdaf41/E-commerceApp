@@ -45,7 +45,6 @@ export const authSlice = createSlice({
 					role: 'client',
 				}
 				state.users = [...state.users, newUser]
-				// state.loggedUser = newUser
 				state.response.success = true
 				state.response.message = ''
 			}

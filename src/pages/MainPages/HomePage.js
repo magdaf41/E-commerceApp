@@ -1,7 +1,9 @@
 import React from 'react'
-import { StyledContainerHomePage, StyledImage } from './HomePage.css'
 import { useSelector } from 'react-redux'
+
 import Modal from '../../components/Modals/Modal'
+
+import { StyledContainerHomePage, StyledImage } from './HomePage.css'
 
 const HomePage = () => {
 	const isOpen = useSelector(store => store.modal.isOpen)

@@ -1,10 +1,15 @@
-import { React, useEffect, useState } from 'react'
+import { React, useEffect} from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { clearResponse, register, changeRole } from '../../store/authSlice'
+
+import { openModal } from '../../store/modalSlice'
+import { clearResponse, register } from '../../store/authSlice'
+
+import Modal from '../Modals/Modal'
+
 import {
 	StyledFormContainer,
 	StyledFormTitle,
@@ -14,18 +19,10 @@ import {
 	StyledLabel,
 	StyledPError,
 	StyledPLogin,
-	StyledSpanLink,
 	StyledContainerFormPage,
 	StyledRegisterDiv,
 } from '../_shared/Form.css'
 import { StyledButton } from '../_shared/Buttons.css'
-import { openModal } from '../../store/modalSlice'
-import Modal from '../Modals/Modal'
-
-// import { changeRole } from '../store/authSlice'
-import { StyledContentTableTbody } from '../_shared/Table.css'
-
-import { StyledRoleArea, StyledSelectUser } from '../_shared/ProductsList.css'
 
 const validationSchema = Yup.object().shape({
 	name: Yup.string().required().min(4).max(30),
@@ -44,12 +41,6 @@ export const FormRegister = ({ addNewUser }) => {
 	const dispatch = useDispatch()
 	const response = useSelector(state => state.auth.response)
 	const isOpen = useSelector(store => store.modal.isOpen)
-
-	const [userRole, setUserRole] = useState(false)
-	const [role, setRole] = useState('client')
-	const [newRole, setNewRole] = useState(role)
-
-	console.log(addNewUser)
 
 	useEffect(() => {
 		if (response.success) {

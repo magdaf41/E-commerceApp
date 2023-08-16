@@ -1,6 +1,15 @@
 import React, { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+
 import { Formik } from 'formik'
 import * as Yup from 'yup'
+
+import { clearResponse, login } from '../../store/authSlice'
+import { openModal } from '../../store/modalSlice'
+
+import Modal from '../Modals/Modal'
+
 import {
 	StyledFormContainer,
 	StyledFormTitle,
@@ -10,17 +19,9 @@ import {
 	StyledLabel,
 	StyledPError,
 	StyledPLogin,
-	StyledSpanLink,
-	StyledBtn,
 	StyledContainerFormPage,
 } from '../_shared/Form.css'
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { clearResponse, login } from '../../store/authSlice'
 import { StyledButton } from '../_shared/Buttons.css'
-import { openModal } from '../../store/modalSlice'
-import Modal from '../Modals/Modal'
 
 const validationSchema = Yup.object().shape({
 	email: Yup.string().required().min(4).max(30),

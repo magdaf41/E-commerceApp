@@ -53,10 +53,10 @@ export const StyledPError = styled.p`
 `
 
 export const StyledPLogin = styled.p`
+display:flex;
+justify-content:space-between ;
 	a {
 		font-weight: 700;
-		color: red;
-		padding: 0 5px;
 		transition: transform 0.5s;
 	}
 	a:hover {
@@ -65,13 +65,9 @@ export const StyledPLogin = styled.p`
 	:focus {
 		color: #068fff;
 	}
-
-	/* font-size: 12px; */
 `
 
 export const StyledRegisterDiv = styled.div`
-	 
-		color: green;
 		transition: transform 0.5s;
 	
 	:hover {
@@ -80,8 +76,5 @@ export const StyledRegisterDiv = styled.div`
 	:focus {
 		color: #068fff;
 	}
-
-	/* font-size: 12px; */
 `
 
-export const StyledSpanLink = styled.span``

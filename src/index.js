@@ -24,8 +24,6 @@ import FormAdminEditProduct from './components/Forms/FormAdminEditProduct'
 
 import UsersListPage from './pages/PagesForEmployee/UsersListPage'
 
-// import Modal from './components/Modal'
-
 const router = createBrowserRouter([
 	{
 		path: '/',

@@ -8,8 +8,8 @@ export const StyledRowTitle = styled.div`
 	align-items: center;
 	padding: 10px;
 	@media (max-width: 768px) {
-		display:grid;
-		grid-template-columns:30% 1fr;
+		display: grid;
+		grid-template-columns: 30% 1fr;
 		justify-items: center;
 	}
 `
@@ -29,7 +29,7 @@ export const StyledTitle = styled.h1`
 	font-size: 35px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	color: #dadacb;
+	color: #fff;
 	cursor: pointer;
 	&:hover {
 		transform: scale(1.2);
@@ -40,7 +40,6 @@ export const StyledTitle = styled.h1`
 
 	@media (max-width: 600px) {
 		font-size: 20px;
-		/* padding: 0 10px; */
 	}
 
 	span {
@@ -79,10 +78,10 @@ export const StyledHeaderIcons = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	color: #dadacb;
+	color: #fff;
 	@media (max-width: 768px) {
-		width:auto ;
-		grid-column:2/3;
+		width: auto;
+		grid-column: 2/3;
 		padding: 10px;
 		justify-self: left;
 	}

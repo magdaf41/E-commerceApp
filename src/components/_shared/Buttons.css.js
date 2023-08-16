@@ -23,7 +23,12 @@ export const StyledButton = styled.button`
 	text-transform: uppercase;
 	font-weight: 700;
 	color: white;
-	margin-bottom: 10px;
+
+	@media (max-width: 768px) {
+		width: 110px;
+		height: 30px;
+		font-size: 11px;
+	}
 
 	&:hover {
 		background-color: gray;
@@ -42,6 +47,12 @@ export const StyledSideButtons = styled.button`
 
 	&:hover {
 		background-color: gray;
+	}
+
+	@media (max-width: 768px) {
+		width: 60px;
+		height: 20px;
+		font-size: 8px;
 	}
 `
 export const StyledButtonReturnHomePage = styled.button`

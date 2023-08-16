@@ -1,22 +1,44 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { SidebarContainer, SidebarMenu } from './Sidebar.css'
+import { ListItem } from './_shared/ListItem.css'
 
 const Sidebar = ({ isOpen, toggle, loggedUser }) => {
 	return (
 		<SidebarContainer isOpen={isOpen} onClick={toggle}>
 			<SidebarMenu>
-				<Link to='/mobile'>mobile phone</Link>
-				<Link to='/headphone'>headphone</Link>
-				<Link to='/smartwatch'>smartwatch</Link>
-				<Link to='/laptop'>laptop</Link>
-				<Link to='/thenewest'>the newest</Link>
-				<Link to='/sale'>sale</Link>
+				<ListItem>
+					<Link to='/mobile'>mobile phone</Link>
+				</ListItem>
+				<ListItem>
+					<Link to='/headphone'>headphone</Link>
+				</ListItem>
+				<ListItem>
+					<Link to='/smartwatch'>smartwatch</Link>
+				</ListItem>
+				<ListItem>
+					<Link to='/laptop'>laptop</Link>
+				</ListItem>
+				<ListItem>
+					<Link to='/thenewest'>the newest</Link>
+				</ListItem>
+				<ListItem>
+					<Link to='/sale'>sale</Link>
+				</ListItem>
+
 				{loggedUser !== null && loggedUser.role !== 'client' && (
 					<>
-						<Link to='/products'>products list</Link>
-						<Link to='/ordersList'>orders list</Link>
-						{loggedUser !== null && loggedUser.role === 'admin' && <Link to='/usersList'>users list</Link>}
+						<ListItem>
+							<Link to='/products'>products list</Link>
+						</ListItem>
+						<ListItem>
+							<Link to='/ordersList'>orders list</Link>
+						</ListItem>
+						{loggedUser !== null && loggedUser.role === 'admin' && (
+							<ListItem>
+								<Link to='/usersList'>users list</Link>
+							</ListItem>
+						)}
 					</>
 				)}
 			</SidebarMenu>

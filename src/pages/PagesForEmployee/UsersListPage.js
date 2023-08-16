@@ -7,7 +7,7 @@ import User from '../../components/User'
 
 import { StyledTable, StyledTableHeaders } from '../../components/_shared/Table.css'
 import { StyledButton, StyledPositionButtonAddNewUser } from '../../components/_shared/Buttons.css'
-import { StyledPage, StyledProductsPage } from '../MainPages/HomePage.css'
+import { StyledPage } from '../MainPages/HomePage.css'
 
 const UsersListPage = () => {
 	const navigate = useNavigate()

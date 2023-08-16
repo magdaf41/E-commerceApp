@@ -1,6 +1,8 @@
 import { useDispatch } from 'react-redux'
+
 import { removeProductFromCart } from '../../store/cartSlice'
 import { closeModal } from '../../store/modalSlice'
+
 import { StyledModalContainer } from './Modal.css'
 import { StyledSideButtons, StyledButtonsArea } from '../_shared/Buttons.css'
 
