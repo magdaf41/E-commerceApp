@@ -55,3 +55,13 @@ npm start
 ```
 http://localhost:3000
 ```
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+*   ReactJs
+*   Redux Toolkit
+*   StyledComponents
+*   React Router
+*   Formik
+*   You
