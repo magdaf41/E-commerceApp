@@ -1,6 +1,7 @@
 <h1 align="center" id="title">EccomerceApp</h1>
 
 <p align="center"><img src="https://ibb.co/W3QKq1V" alt="project-image"></p>
+![Alt text](https://ibb.co/W3QKq1V "Optional title")
 
 <p id="description">Eccomerce App is a shopping website with equipment like: mobile phones laptops headphones and smartwatches. In main navigation there are sections dedicated for one type of products and also products on sale and the newest products. The website is useful for customers employees and admins. If you are a customer you can register your email and passwords or login if you have an account and do shopping in the traditional way. As an employee you can login and you have additional options in the menu: you can edit products list e.g. add or remove products change price description etc. you all check orders list. If you are admin you can do all things like customer and employee but you can also change a role for a new registered person. Shop website is designed for all screens (desktop tablets and mobile phones except for admin and employee additional option which displays correctly only on desktop screens.</p>
 
