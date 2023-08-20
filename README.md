@@ -1,7 +1,8 @@
 <h1 align="center" id="title">EccomerceApp</h1>
 
 
-![image](https://github.com/magdaf41/EcommerceApp/assets/58744071/d1af7e60-4446-45bb-b782-28687b143b1f)
+![image](https://github.com/magdaf41/EcommerceApp/assets/58744071/68479a0b-cc11-4ce3-a3fa-255812d090af)
+
 
 
 
