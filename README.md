@@ -70,6 +70,7 @@ http://localhost:3000
 
 <p>If you would like login as customer you should register by name email and password.</p>
 **Bold text**
+__This will also be bold__
 <p></p>If you would like login as employee you can use date: --email:-- "michael.johnson@example.com" **password:** "abc123" </p>
 <p>If you would like login as admin you can use date: ** email:** "jane.smith@example.com" **password:** "securepassword"</p>
 
