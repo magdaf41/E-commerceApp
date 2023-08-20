@@ -68,4 +68,4 @@ Technologies used in the project:
 *   StyledComponents
 *   React Router
 *   Formik
-*   You
+*   Yup
