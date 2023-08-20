@@ -1,12 +1,15 @@
 <h1 align="center" id="title">EccomerceApp</h1>
-![EccomerceAppLogo](https://github.com/magdaf41/EcommerceApp/assets/58744071/88a6400a-4d05-486f-95c2-92bdedd88680)
 
-![image](https://github.com/magdaf41/EcommerceApp/assets/58744071/3ff29061-7d26-4020-ac3e-dc56cb985d6e)
+
+![image](https://github.com/magdaf41/EcommerceApp/assets/58744071/d1af7e60-4446-45bb-b782-28687b143b1f)
+
 
 
 <p id="description">Eccomerce App is a shopping website with equipment like: mobile phones laptops headphones and smartwatches. In main navigation there are sections dedicated for one type of products and also products on sale and the newest products. The website is useful for customers employees and admins. If you are a customer you can register your email and passwords or login if you have an account and do shopping in the traditional way. As an employee you can login and you have additional options in the menu: you can edit products list e.g. add or remove products change price description etc. you all check orders list. If you are admin you can do all things like customer and employee but you can also change a role for a new registered person. Shop website is designed for all screens (desktop tablets and mobile phones except for admin and employee additional option which displays correctly only on desktop screens.</p>
 
 <h2>🚀 Demo</h2>
+
+![image](https://github.com/magdaf41/EcommerceApp/assets/58744071/c41a84ee-ae89-4bdc-b41e-2d8cb5c4c603)
 
 [https://ecommerce-app-khaki.vercel.app/smartwatch](https://ecommerce-app-khaki.vercel.app/smartwatch)
 
