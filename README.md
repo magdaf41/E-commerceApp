@@ -1,135 +1,57 @@
-<br/>
-<p align="center">
-  <a href="https://github.com/ShaanCoding/ReadME-Generator">
-    <img src="/EccomerceAppLog.PNG" alt="Logo" width="80" height="80">
-  </a>
+<h1 align="center" id="title">EccomerceApp</h1>
 
-  <h3 align="center">ReadME Generator</h3>
+<p id="description">Eccomerce App is a shopping website with equipment like: mobile phones laptops headphones and smartwatches. In main navigation there are sections dedicated for one type of products and also products on sale and the newest products. The website is useful for customers employees and admins. If you are a customer you can register your email and passwords or login if you have an account and do shopping in the traditional way. As an employee you can login and you have additional options in the menu: you can edit products list e.g. add or remove products change price description etc. you all check orders list. If you are admin you can do all things like customer and employee but you can also change a role for a new registered person. Shop website is designed for all screens (desktop tablets and mobile phones except for admin and employee additional option which displays correctly only on desktop screens.</p>
 
-  <p align="center">
-    An Awesome ReadME Generator To Jumpstart Your Projects!
-    <br/>
-    <br/>
-    <a href="https://github.com/ShaanCoding/ReadME-Generator"><strong>Explore the docs »</strong></a>
-    <br/>
-    <br/>
-    <a href="https://github.com/ShaanCoding/ReadME-Generator">View Demo</a>
-    .
-    <a href="https://github.com/ShaanCoding/ReadME-Generator/issues">Report Bug</a>
-    .
-    <a href="https://github.com/ShaanCoding/ReadME-Generator/issues">Request Feature</a>
-  </p>
-</p>
+<h2>🚀 Demo</h2>
 
-![Downloads](https://img.shields.io/github/downloads/ShaanCoding/ReadME-Generator/total) ![Contributors](https://img.shields.io/github/contributors/ShaanCoding/ReadME-Generator?color=dark-green) ![Issues](https://img.shields.io/github/issues/ShaanCoding/ReadME-Generator) ![License](https://img.shields.io/github/license/ShaanCoding/ReadME-Generator) 
+[https://ecommerce-app-khaki.vercel.app/smartwatch](https://ecommerce-app-khaki.vercel.app/smartwatch)
 
-## Table Of Contents
+  
+  
+<h2>🧐 Features</h2>
 
-* [About the Project](#about-the-project)
-* [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Roadmap](#roadmap)
-* [Contributing](#contributing)
-* [License](#license)
-* [Authors](#authors)
-* [Acknowledgements](#acknowledgements)
+Here're some of the project's best features:
 
-## About The Project
+*   Login and registration for customers employees and administrators.
+*   Browse available products in the store.
+*   Add products to the cart and place orders.
+*   Employees panel for managing products and orders.
+*   Admin panel for managing products users and orders.
 
-![Screen Shot](images/screenshot.png)
+<h2>🛠️ Installation Steps:</h2>
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need.
+<p>1. Make sure you have Node.js installed on your computer.</p>
 
-Here's why:
-
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue.
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
-
-## Built With
-
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-
-* npm
-
-```sh
-npm install npm@latest -g
+```
+Node.js
 ```
 
-### Installation
+<p>2. Clone this repository to your machine:</p>
 
-1. Get a free API Key at [https://example.com](https://example.com)
-
-2. Clone the repo
-
-```sh
-git clone https://github.com/your_username_/Project-Name.git
+```
+git clone https://github.com/magdaf41/EccomerceApp
 ```
 
-3. Install NPM packages
+<p>3. Navigate to the project folder:</p>
 
-```sh
+```
+cd EccomerceApp
+```
+
+<p>4. Install the required dependencies:</p>
+
+```
 npm install
 ```
 
-4. Enter your API in `config.js`
+<p>5. Run the project:</p>
 
-```JS
-const API_KEY = 'ENTER YOUR API';
+```
+npm start
 ```
 
-## Usage
+<p>6. The project should now be accessible in your browser at</p>
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-## Roadmap
-
-See the [open issues](https://github.com/ShaanCoding/ReadME-Generator/issues) for a list of proposed features (and known issues).
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-* If you have suggestions for adding or removing projects, feel free to [open an issue](https://github.com/ShaanCoding/ReadME-Generator/issues/new) to discuss it, or directly create a pull request after you edit the *README.md* file with necessary changes.
-* Please make sure you check your spelling and grammar.
-* Create individual PR for each suggestion.
-* Please also read through the [Code Of Conduct](https://github.com/ShaanCoding/ReadME-Generator/blob/main/CODE_OF_CONDUCT.md) before posting your first idea as well.
-
-### Creating A Pull Request
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-Distributed under the MIT License. See [LICENSE](https://github.com/ShaanCoding/ReadME-Generator/blob/main/LICENSE.md) for more information.
-
-## Authors
-
-* **Shaan Khan** - *Comp Sci Student* - [Shaan Khan](https://github.com/ShaanCoding/) - *Built ReadME Template*
-
-## Acknowledgements
-
-* [ShaanCoding](https://github.com/ShaanCoding/)
-* [Othneil Drew](https://github.com/othneildrew/Best-README-Template)
-* [ImgShields](https://shields.io/)
+```
+http://localhost:3000
+```
