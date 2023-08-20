@@ -1,4 +1,5 @@
 <h1 align="center" id="title">EccomerceApp</h1>
+![EccomerceAppLogo](https://github.com/magdaf41/EcommerceApp/assets/58744071/88a6400a-4d05-486f-95c2-92bdedd88680)
 
 <p align="center"><img src="https://ibb.co/W3QKq1V" alt="project-image"></p>
 ![Alt text](https://ibb.co/W3QKq1V "Optional title")
