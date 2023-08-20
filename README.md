@@ -69,7 +69,7 @@ http://localhost:3000
 <h2>🍰 Contribution Guidelines:</h2>
 
 <p>If you would like login as customer you should register by name email and password.</p>>
-<p></p>If you would like login as employee you can use date: __email:__ "michael.johnson@example.com" **password:** "abc123" </p>
+<p></p>If you would like login as employee you can use date: --email:-- "michael.johnson@example.com" **password:** "abc123" </p>
 <p>If you would like login as admin you can use date: ** email:** "jane.smith@example.com" **password:** "securepassword"</p>
 
 
