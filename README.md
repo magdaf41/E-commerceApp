@@ -17,7 +17,7 @@
 https://github.com/magdaf41/EcommerceApp/assets/58744071/f49e4acd-b209-43f6-804b-9f8aae3b2b5d
 
 
-[https://ecommerce-app-khaki.vercel.app/smartwatch](https://ecommerce-app-khaki.vercel.app/smartwatch)
+[https://ecommerce-app-khaki.vercel.app/smartwatch](https://ecommerce-app-khaki.vercel.app/)
 
   
   
