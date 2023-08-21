@@ -74,7 +74,7 @@ http://localhost:3000
 <h2>🍰 Contribution Guidelines:</h2>
 
 * In order to login as customer you should register by name email and password.
-* In order to like login as an employee you can use date:<strong>email:</strong> <span style="color:purple >"michael.johnson@example.com"</span> <strong>password: </strong>"abc123" 
+* In order to like login as an employee you can use date:<strong>email:</strong> "michael.johnson@example.com" <strong>password: </strong>"abc123" 
 * In order to login as an admin you can use date:<strong>email:</strong> "jane.smith@example.com" <strong>password: </strong> "securepassword"
 
 
