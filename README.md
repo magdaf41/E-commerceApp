@@ -1,4 +1,4 @@
-<h1 align="center" id="title">EccomerceApp</h1>
+<h1 align="center" id="title">E-ccomerce App</h1>
 
 
 ![image](https://github.com/magdaf41/EcommerceApp/assets/58744071/68479a0b-cc11-4ce3-a3fa-255812d090af)
@@ -6,7 +6,7 @@
 
 
 
-<p id="description">Eccomerce App is a shopping website with equipment like: mobile phones laptops headphones and smartwatches. In main navigation there are sections dedicated for one type of products and also products on sale and the newest products. The website is useful for customers employees and admins. If you are a customer you can register your email and passwords or login if you have an account and do shopping in the traditional way. As an employee you can login and you have additional options in the menu: you can edit products list e.g. add or remove products change price description etc. you all check orders list. If you are admin you can do all things like customer and employee but you can also change a role for a new registered person. Shop website is designed for all screens (desktop tablets and mobile phones except for admin and employee additional option which displays correctly only on desktop screens.</p>
+<p id="description">E-ccomerce App is a shopping website with electronic equipment like: mobile phones, laptops, headphones and smartwatches. In the main navigation there are sections dedicated to one type of products and also products on sale as well as the newest products. The website is useful to customers employees and admins. If you are a customer you can register your email and password or login if you have an account and do shopping in the traditional way. As an employee you can login and you have additional options in the menu: you can edit products list e.g. add or remove products, change price description, etc. In addition, any employee can check order lists here. If you are an admin you can carry out the same tasks as a customer and an employee but you can also change a role for a new registered person. The shopping website is designed for all screens (desktops, tablets and mobile phones) except for an additional option for an admin and an emloyee, which is correctly displayed only on desktop screens. </p>
 
 <h2>🚀 Demo</h2>
 
@@ -23,13 +23,13 @@ https://github.com/magdaf41/EcommerceApp/assets/58744071/f49e4acd-b209-43f6-804b
   
 <h2>🧐 Features</h2>
 
-Here're some of the project's best features:
+Here are some of the project's best features:
 
 *   Login and registration for customers employees and administrators.
-*   User Registration: Users can create an account with their name, email, and password.
-*   Product Catalog: Browse and view available products with detailed information
-*   Shopping Cart: Add products to the cart and manage quantities before placing the order.
-*   Order Summary: View a summary of placed orders with order details.
+*   User Registration: users can create an account with their name, email, and password.
+*   Product Catalog: browse and view available products with detailed information
+*   Shopping Cart: add products to the cart and manage quantities before placing the order.
+*   Order Summary: view a summary of placed orders with order details.
 *   Employees panel for managing products and orders.
 *   Admin panel for managing products users and orders.
 
@@ -73,11 +73,9 @@ http://localhost:3000
 
 <h2>🍰 Contribution Guidelines:</h2>
 
-<p>If you would like login as customer you should register by name email and password.</p>
-<strong>bold text</strong>.
-__This will also be bold__
-<p></p>If you would like login as employee you can use date: <strong>email:</strong>"michael.johnson@example.com" <strong>password: </strong>"abc123" </p>
-<p>If you would like login as admin you can use date:<strong>email:</strong> "jane.smith@example.com" <strong>password: </strong> "securepassword"</p>
+<p>In order to login as customer you should register by name email and password.</p>
+<p></p>In order to like login as an employee you can use date: <strong>email:</strong>"michael.johnson@example.com" <strong>password: </strong>"abc123" </p>
+<p>In order to login as an admin you can use date:<strong>email:</strong> "jane.smith@example.com" <strong>password: </strong> "securepassword"</p>
 
 
 <h2>💻 Built with</h2>
