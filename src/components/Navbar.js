@@ -33,7 +33,7 @@ const Navbar = ({ isOpen, toggle, loggedUser }) => {
 						<Link to='/products'>product list</Link>
 					</ListItem>
 					<ListItem>
-						<Link to='/ordersList'>ordero list</Link>
+						<Link to='/ordersList'>order list</Link>
 					</ListItem>
 					{loggedUser !== null && loggedUser.role === 'admin' && (
 						<ListItem>
