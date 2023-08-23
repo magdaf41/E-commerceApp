@@ -28,9 +28,13 @@ export const StyledPage = styled.div`
 export const StyledImage = styled.div`
 	width: 200px;
 	height: 300px;
-
+	border-radius: 30px;
+    box-shadow: inset 0 0 15px 3px #FFF;
+	
 	& img {
-		object-fit: center;
+		width: 200px;
+		height: 300px;
+		object-fit:cover ;
 		border-radius: 20px;
 		opacity: 80%;
 	}

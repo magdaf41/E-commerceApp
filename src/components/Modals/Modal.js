@@ -12,8 +12,6 @@ const Modal = ({ children, openTime, confirmAction = null, confirmText = 'confir
 	useEffect(() => {
 		let timeoutID
 
-		document.body.style.overflowY = 'hidden'
-
 		if (openTime) {
 			timeoutID = setTimeout(() => {
 				dispatch(closeModal())
@@ -22,7 +20,6 @@ const Modal = ({ children, openTime, confirmAction = null, confirmText = 'confir
 
 		return () => {
 			clearInterval(timeoutID)
-			document.body.style.overflowY = 'scroll'
 		}
 	}, [])
 

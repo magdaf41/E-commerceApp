@@ -119,6 +119,9 @@ export const StyledProductHeader = styled.h3`
 `
 
 export const StyledProductImage = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 200px;
 	height: 200px;
 	padding: 15px;

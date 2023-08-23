@@ -16,7 +16,9 @@ export const StyledRowTitle = styled.div`
 
 export const StyledCartIcon = styled.div`
 	display: flex;
-	transition: transform 0.5s;
+	a {
+		transition: transform 0.5s;
+	}
 	& a:hover {
 		transform: scale(1.5);
 	}
@@ -31,6 +33,8 @@ export const StyledTitle = styled.h1`
 	letter-spacing: 2px;
 	color: #fff;
 	cursor: pointer;
+	transition: transform 0.5s;
+
 	&:hover {
 		transform: scale(1.2);
 	}
@@ -103,6 +107,7 @@ export const StyledDivLogged = styled.div`
 	display: flex;
 	gap: 30px;
 	& button {
+		transition: transform 0.5s;
 		&:hover {
 			transform: scale(1.5);
 		}
