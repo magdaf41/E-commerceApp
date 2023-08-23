@@ -40,7 +40,6 @@ const FormAdminEditProduct = () => {
 	const submitForm = values => {
 		dispatch(editProduct(values))
 		navigate('/products')
-		console.log(products)
 	}
 
 	return (

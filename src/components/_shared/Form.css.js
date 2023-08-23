@@ -42,7 +42,7 @@ export const StyledInput = styled.input`
 	padding: 2px;
 	color: black;
 	&& option {
-		color: red;
+		color: #068fff;
 	}
 `
 

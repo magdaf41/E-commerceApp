@@ -6,7 +6,7 @@ export const ListItem = styled(Link)`
 	&:hover {
 		transform: scale(1.5);
 	}
-	&:focus {
+	& :focus {
 		color: #068fff;
 	}
 `
