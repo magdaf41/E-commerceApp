@@ -1,4 +1,4 @@
-<h1 align="center" id="title">E-ccomerce App</h1>
+<h1 align="center" id="title">E-commerce App</h1>
 
 
 ![image](https://github.com/magdaf41/EcommerceApp/assets/58744071/68479a0b-cc11-4ce3-a3fa-255812d090af)
@@ -6,7 +6,7 @@
 
 
 
-<p id="description">E-ccomerce App is a shopping website with electronic equipment like: mobile phones, laptops, headphones and smartwatches. In the main navigation there are sections dedicated to one type of products and also products on sale as well as the newest products. The website is useful to customers employees and admins. If you are a customer you can register your email and password or login if you have an account and do shopping in the traditional way. As an employee you can login and you have additional options in the menu: you can edit products list e.g. add or remove products, change price description, etc. In addition, any employee can check order lists here. If you are an admin you can carry out the same tasks as a customer and an employee but you can also change a role for a new registered person. The shopping website is designed for all screens (desktops, tablets and mobile phones) except for an additional option for an admin and an emloyee, which is correctly displayed only on desktop screens. </p>
+<p id="description">E-commerce App is a shopping website with electronic equipment like: mobile phones, laptops, headphones and smartwatches. The main navigation includes sections dedicated to one type of products, products on sale as well as the newest products. The website is useful to customers employees and admins. If you are a customer you can register your email and password or login if you have an account and do shopping in the traditional way. As an employee you can login and then you have additional options in the menu: you can edit product list e.g. add or remove products, change price description, etc. In addition, any employee can check order list here. If you are an admin you can carry out the same tasks as a customer and an employee but you can also change a role for a new registered person. The shopping website is designed for all screens (desktops, tablets and mobile phones) except for an additional option for an admin and an emloyee, which can only be displayed correctly on desktop screens.  </p>
 
 <h2>🚀 Demo</h2>
 
@@ -23,7 +23,7 @@ https://github.com/magdaf41/EcommerceApp/assets/58744071/f49e4acd-b209-43f6-804b
   
 <h2>🧐 Features</h2>
 
-Here are some of the project's best features:
+Here are some of the best features of the project:
 
 *   Login and registration for customers employees and administrators.
 *   User Registration: users can create an account with their name, email, and password.
@@ -74,7 +74,7 @@ http://localhost:3000
 <h2>🍰 Contribution Guidelines:</h2>
 
 * In order to login as customer you should register by name email and password.
-* In order to like login as an employee you can use date: <strong> email:</strong> "michael.johnson@example.com" <strong>password: </strong>"abc123" 
+* In order to login as an employee you can use date: <strong> email:</strong> "michael.johnson@example.com" <strong>password: </strong>"abc123" 
 * In order to login as an admin you can use date:<strong> email:</strong> "jane.smith@example.com" <strong>password: </strong> "securepassword"
 
 
