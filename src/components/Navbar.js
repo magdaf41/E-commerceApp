@@ -30,14 +30,14 @@ const Navbar = ({ isOpen, toggle, loggedUser }) => {
 			{loggedUser !== null && loggedUser.role !== 'client' && (
 				<NavMenu>
 					<ListItem>
-						<Link to='/products'>products list</Link>
+						<Link to='/products'>product list</Link>
 					</ListItem>
 					<ListItem>
-						<Link to='/ordersList'>orders list</Link>
+						<Link to='/ordersList'>ordero list</Link>
 					</ListItem>
 					{loggedUser !== null && loggedUser.role === 'admin' && (
 						<ListItem>
-							<Link to='/usersList'>users list</Link>
+							<Link to='/usersList'>user list</Link>
 						</ListItem>
 					)}
 				</NavMenu>
